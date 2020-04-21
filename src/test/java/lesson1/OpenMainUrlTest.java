@@ -19,5 +19,6 @@ public class OpenMainUrlTest {
             e.printStackTrace();
         }
         driver.close();
+
     }
 }
