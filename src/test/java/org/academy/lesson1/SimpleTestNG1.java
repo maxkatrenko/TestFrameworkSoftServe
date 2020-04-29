@@ -6,7 +6,7 @@ import org.testng.annotations.*;
 public class SimpleTestNG1 {
     @BeforeSuite
     public void beforeSuite(){
-        System.out.println("Before suite");
+        System.out.println("Before Suite");
     }
 
     @BeforeTest
@@ -24,7 +24,7 @@ public class SimpleTestNG1 {
         System.out.println("Before Class Child1");
     }
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void beforeMethod() {
         System.out.println("Before method Child1");
     }
