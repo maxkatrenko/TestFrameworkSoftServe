@@ -1,5 +1,6 @@
 package org.academy.lesson1;
 
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
@@ -10,7 +11,8 @@ public class OpenMainUrlTest {
         System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver");
         WebDriver driver = new ChromeDriver();
 
-        driver.manage().window().maximize();
+//        driver.manage().window().maximize();
+        driver.manage().window().setSize(new Dimension(1024, 768));
 
         driver.get("https://github.com/");
         try {
