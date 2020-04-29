@@ -4,6 +4,11 @@ import org.testng.Assert;
 import org.testng.annotations.*;
 
 public class SimpleTestNG1 {
+    @BeforeGroups("academy")
+    public void beforeGroup() {
+        System.out.println("Before Group");
+    }
+
     @BeforeSuite
     public void beforeSuite(){
         System.out.println("Before Suite");
@@ -12,11 +17,6 @@ public class SimpleTestNG1 {
     @BeforeTest
     public void beforeTest() {
         System.out.println("Before Test Child1");
-    }
-
-    @BeforeGroups("academy")
-    public void beforeGroup() {
-        System.out.println("Before Group");
     }
 
     @BeforeClass
