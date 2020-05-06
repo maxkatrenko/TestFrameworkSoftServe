@@ -17,11 +17,6 @@ public class ImplicitWait {
         driver.manage().window().maximize();
 
         driver.get("https://github.com/");
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
 
         driver.findElement(By.xpath("//a[(contains(@class, 'HeaderMenu-link')) and (@href='/login')]")).click();
         driver.findElement(By.xpath("//input[@name='login']")).sendKeys("alhonchar");
