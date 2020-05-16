@@ -2,8 +2,8 @@
 <suite name="Suite" parallel="false">
     <test name="Test1">
         <classes>
-            <class name="org.academy.lesson1.SimpleTestNG1" />
-            <class name="org.academy.lesson1.SimpleTestNG2" />
+            <class name="org.academy.lessons.lesson1.SimpleTestNG1" />
+            <class name="org.academy.lessons.lesson1.SimpleTestNG2" />
         </classes>
     </test>
 
