@@ -20,7 +20,7 @@ public class LocalWebDriverManager {
 			default:
 			case "chrome":
 				ChromeOptions options = new ChromeOptions();
-				System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver");
+				System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
 				WebDriver chromeWebDriver = new ChromeDriver(options);
 				chromeWebDriver.manage().timeouts().implicitlyWait(20000, TimeUnit.MILLISECONDS);
 				chromeWebDriver.manage().window().maximize();
