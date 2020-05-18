@@ -8,10 +8,10 @@ import org.openqa.selenium.support.PageFactory;
 import java.util.Objects;
 
 @Slf4j
-public class AbstractPage {
+public class AbstractPageLesson {
     public final WebDriver webDriver;
 
-    public AbstractPage(WebDriver webDriver, boolean navigateToPage, String navigateToPageUrl) {
+    public AbstractPageLesson(WebDriver webDriver, boolean navigateToPage, String navigateToPageUrl) {
         this.webDriver = webDriver;
         PageFactory.initElements(webDriver, this);
         if (navigateToPage && !Objects.equals(webDriver.getCurrentUrl(), navigateToPageUrl)) {

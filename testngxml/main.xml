@@ -2,7 +2,8 @@
 <suite name="Test suite">
     <test name="Test1">
         <classes>
-            <class name="org.academy.web.tests.LoginTest" />
+            <class name="org.academy.web.tests.LoginTest"/>
+            <class name="org.academy.homework.lessons.lesson3.test.LessonTest"/>
         </classes>
     </test>
 </suite>

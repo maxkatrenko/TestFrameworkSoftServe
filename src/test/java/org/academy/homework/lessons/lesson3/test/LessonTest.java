@@ -2,9 +2,8 @@ package org.academy.homework.lessons.lesson3.test;
 
 import lombok.extern.slf4j.Slf4j;
 import org.academy.homework.lessons.lesson3.config.MainConfigLesson;
-import org.academy.homework.lessons.lesson3.pages.HomePage;
-import org.academy.homework.lessons.lesson3.pages.LoginPage;
-import org.academy.homework.lessons.lesson3.pages.MainPage;
+import org.academy.homework.lessons.lesson3.pages.HomePageLesson;
+import org.academy.homework.lessons.lesson3.pages.MainPageLesson;
 import org.academy.web.AbstractWebDriver;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
@@ -13,8 +12,8 @@ import org.testng.annotations.Test;
 @Slf4j
 public class LessonTest extends AbstractWebDriver {
 
-    private MainPage mainPage;
-    private HomePage homePage;
+    private MainPageLesson mainPage;
+    private HomePageLesson homePage;
 
     public LessonTest() {
         super();
@@ -22,7 +21,7 @@ public class LessonTest extends AbstractWebDriver {
 
     @BeforeMethod(alwaysRun = true)
     public void login() {
-        mainPage = new MainPage(webDriver, true, MainConfigLesson.getUrl());
+        mainPage = new MainPageLesson(webDriver, true, MainConfigLesson.getUrl());
         log.info("trying to login into github account");
         homePage = mainPage.clickOnSignIn()
                 .enterUsername(MainConfigLesson.getUsername())
@@ -43,16 +42,4 @@ public class LessonTest extends AbstractWebDriver {
         log.info("Comment 21-4-20: " + commitmentText);
         log.info("Test passed");
     }
-
-
-//    @Test
-//    public void commitmentTest() {
-//        webDriver.findElement(By.xpath("//a[contains(text(),'Issues')]")).click();
-//        log.info("clicked on 'Issues' link");
-//        webDriver.findElement(By.xpath("//a[@id='issue_3_alhonchar_academylessons_link']")).click();
-//        log.info("clicked on 'Issue 21-4-20' link");
-//        String commitment = webDriver.findElement(By.xpath("//p[contains(text(),'Check this message')]")).getText();
-//        log.info("Commitment: " + commitment);
-//    }
-
 }
