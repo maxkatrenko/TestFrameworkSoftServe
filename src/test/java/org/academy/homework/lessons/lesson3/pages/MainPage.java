@@ -1,4 +1,4 @@
-package org.academy.homework.lessons.lesson3.page;
+package org.academy.homework.lessons.lesson3.pages;
 
 import org.academy.homework.lessons.lesson3.AbstractPage;
 import org.openqa.selenium.WebDriver;
@@ -17,4 +17,5 @@ public class MainPage extends AbstractPage {
         signInButton.click();
         return new LoginPage(webDriver);
     }
+
 }

@@ -1,4 +1,4 @@
-package org.academy.homework.lessons.lesson3.page;
+package org.academy.homework.lessons.lesson3.pages;
 
 import org.academy.web.AbstractPage;
 import org.openqa.selenium.WebDriver;
@@ -21,8 +21,8 @@ public class LoginPage extends AbstractPage {
     @FindBy(xpath = "//input[@name='commit']")
     private WebElement submitButton;
 
-    @FindBy(xpath = "//div[@class='container-lg px-2']")
-    private WebElement errorMessage;
+    @FindBy(xpath = "//a[contains(text(),'Issues')]")
+    private WebElement issuesLink;
 
     @BeforeTest
     public LoginPage clearAllFields() {
@@ -46,8 +46,8 @@ public class LoginPage extends AbstractPage {
         return this;
     }
 
-    public String getErrorMessage() {
-        return errorMessage.getText();
+    public IssuesPage clickOnIssuesLink() {
+        issuesLink.click();
+        return new IssuesPage(webDriver,true, "https://github.com/issues");
     }
-
 }
