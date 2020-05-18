@@ -22,9 +22,6 @@ public class LoginPage extends AbstractPage {
     @FindBy(xpath = "//input[@name='commit']")
     private WebElement submitButton;
 
-    @FindBy(xpath = "//a[contains(text(),'Issues')]")
-    private WebElement issuesLink;
-
     @BeforeTest
     public LoginPage clearAllFields() {
         loginField.clear();
@@ -42,13 +39,8 @@ public class LoginPage extends AbstractPage {
         return this;
     }
 
-    public LoginPage clickOnSubmit() {
+    public HomePage clickOnSubmit() {
         submitButton.click();
-        return this;
-    }
-
-    public IssuesPage clickOnIssuesLink() {
-        issuesLink.click();
-        return new IssuesPage(webDriver,true, MainConfig.getIssuesUrl());
+        return new HomePage(webDriver, false, "");
     }
 }
