@@ -10,7 +10,7 @@ import java.util.Properties;
 @Slf4j
 public class ConfigurationReader {
     {
-        copyValues(fromPath("config.properties"), true);
+        copyValues(fromPath("lesson3.properties"), true);
     }
 
     private static Properties properties = new Properties();

@@ -13,7 +13,7 @@ public class Issue21420 extends AbstractPage {
     @FindBy(xpath = "//p[contains(text(),'Check this message')]")
     private WebElement commitmentText;
 
-    public String getIssueText() {
+    public String getCommitmentText() {
         return commitmentText.getText();
     }
 

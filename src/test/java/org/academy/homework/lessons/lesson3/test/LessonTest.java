@@ -4,7 +4,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.academy.homework.lessons.lesson3.config.MainConfigLesson;
 import org.academy.homework.lessons.lesson3.pages.LoginPage;
 import org.academy.homework.lessons.lesson3.pages.MainPage;
-import org.academy.homework.lessons.lesson3.pages.issues.Issue21420;
 import org.academy.web.AbstractWebDriver;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
@@ -38,7 +37,7 @@ public class LessonTest extends AbstractWebDriver {
                 loginPage
                         .clickOnIssuesLink()
                         .clickOnIssue21420()
-                        .getIssueText();
+                        .getCommitmentText();
         Assert.assertEquals(commitmentText, "Check this message");
         log.info("Comment 21-4-20: " + commitmentText);
         log.info("Test passed");
