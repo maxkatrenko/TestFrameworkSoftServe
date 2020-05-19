@@ -1,6 +1,9 @@
-package org.academy.pidlisnyiMaxsym;
+package org.academy;
 
-class OsQualifier {
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
+public class OsQualifier {
 
     private static String OS = System.getProperty("os.name").toLowerCase();
 
@@ -12,15 +15,15 @@ class OsQualifier {
         return (OS.contains("nix") || OS.contains("nux") || OS.indexOf("aix") > 0);
     }
 
-    static void checkOs() {
+    public static void checkOs() {
         if (isUnix()) {
-            System.out.println("Hi unix user!");
+            log.info("Hi unix user!");
             System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver");
         } else if (isWindows()) {
-            System.out.println("Hi windows user!");
+            log.info("Hi windows user!");
             System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
         } else {
-            System.out.println("Sorry: Your OS is not supported!");
+            log.info("Sorry: Your OS is not supported!");
         }
     }
 }

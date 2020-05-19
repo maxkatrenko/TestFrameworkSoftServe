@@ -13,16 +13,9 @@ public class InsightsPage extends AbstractPage {
     @FindBy(xpath = "//a[contains(text(),'Forks')]")
     private WebElement forksBtn;
 
-    @FindBy(xpath = "//a[@class='js-selected-navigation-item menu-item'][contains(text(),'Network')]")
-    private WebElement networkBtn;
-
     public ForksPage clickOnForks() {
         forksBtn.click();
         return new ForksPage(webDriver);
     }
 
-    public NetworkPage clickOnNetwork() {
-        forksBtn.click();
-        return new NetworkPage(webDriver);
-    }
 }

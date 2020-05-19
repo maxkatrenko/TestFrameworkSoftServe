@@ -21,4 +21,8 @@ public class MainConfig {
     public static String getLogin() {
         return read("login");
     }
+
+    public static String getSearchApp() {
+        return read("searchApp");
+    }
 }

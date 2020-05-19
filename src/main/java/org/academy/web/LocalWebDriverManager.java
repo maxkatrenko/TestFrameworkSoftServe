@@ -2,6 +2,7 @@ package org.academy.web;
 
 import lombok.extern.slf4j.Slf4j;
 import org.academy.MainConfig;
+import org.academy.OsQualifier;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -20,7 +21,8 @@ public class LocalWebDriverManager {
 			default:
 			case "chrome":
 				ChromeOptions options = new ChromeOptions();
-				System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver");
+//				System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver");
+				OsQualifier.checkOs();
 				WebDriver chromeWebDriver = new ChromeDriver(options);
 				chromeWebDriver.manage().timeouts().implicitlyWait(20000, TimeUnit.MILLISECONDS);
 				chromeWebDriver.manage().window().maximize();
