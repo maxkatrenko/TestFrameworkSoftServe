@@ -10,12 +10,11 @@ public class RepositoryPage extends AbstractPage {
         super(webDriver, false, "");
     }
 
-    @FindBy(xpath = "//li[8]//a[1]")
-    private WebElement insightsBtn;
+    @FindBy(xpath = "//li[contains(@class,'position-relative float-left')]//a[1]")
+    private WebElement onActionLink;
 
-    public InsightsPage clickOnInsights() {
-        insightsBtn.click();
-        return new InsightsPage(webDriver);
+    public ActionPage clickOnActionLink() {
+        onActionLink.click();
+        return new ActionPage(webDriver);
     }
-
 }
