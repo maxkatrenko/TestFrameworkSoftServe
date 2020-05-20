@@ -41,4 +41,5 @@ public class ActionTest extends AbstractWebDriver {
     public void getHash() {
         log.info("Hash code " + runActionPage.GetActionHashCode());
     }
+
 }
