@@ -17,7 +17,6 @@ public class IssuesPage extends AbstractPageLesson {
 
     public Issue21420 clickOnIssue21420() {
         issue21420.click();
-        return new Issue21420(webDriver, true,
-                MainConfig.getIssue21420Url());
+        return new Issue21420(webDriver, true, MainConfig.getIssue21420Url());
     }
 }

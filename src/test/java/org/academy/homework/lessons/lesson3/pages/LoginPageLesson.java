@@ -1,5 +1,6 @@
 package org.academy.homework.lessons.lesson3.pages;
 
+import org.academy.MainConfig;
 import org.academy.web.AbstractPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -40,6 +41,6 @@ public class LoginPageLesson extends AbstractPage {
 
     public HomePageLesson clickOnSubmit() {
         submitButton.click();
-        return new HomePageLesson(webDriver, false, "");
+        return new HomePageLesson(webDriver, false,"");
     }
 }

@@ -1,11 +1,10 @@
 package org.academy.homework.lessons.lesson3.test;
 
 import lombok.extern.slf4j.Slf4j;
-import org.academy.homework.lessons.lesson3.config.MainConfigLesson;
+import org.academy.MainConfig;
 import org.academy.homework.lessons.lesson3.pages.HomePageLesson;
 import org.academy.homework.lessons.lesson3.pages.MainPageLesson;
 import org.academy.web.AbstractWebDriver;
-import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -21,11 +20,11 @@ public class LessonTest extends AbstractWebDriver {
 
     @BeforeMethod(alwaysRun = true)
     public void login() {
-        mainPage = new MainPageLesson(webDriver, true, MainConfigLesson.getUrl());
+        mainPage = new MainPageLesson(webDriver, true, MainConfig.getMainUrl());
         log.info("trying to login into github account");
         homePage = mainPage.clickOnSignIn()
-                .enterUsername(MainConfigLesson.getUsername())
-                .enterPassword(MainConfigLesson.getPassword())
+                .enterUsername(MainConfig.getLogin())
+                .enterPassword(MainConfig.getPassword())
                 .clickOnSubmit();
         log.info("logged in into github account");
     }
@@ -34,11 +33,9 @@ public class LessonTest extends AbstractWebDriver {
     public void getCommentTest() {
         log.info("Test launched");
         String commitmentText =
-                homePage
-                        .clickOnIssuesLink()
+                homePage.clickOnIssuesLink()
                         .clickOnIssue21420()
                         .getCommitmentText();
-        Assert.assertEquals(commitmentText, "Check this message");
         log.info("Comment 21-4-20: " + commitmentText);
         log.info("Test passed");
     }

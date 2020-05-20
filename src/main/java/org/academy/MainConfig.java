@@ -7,26 +7,26 @@ public class MainConfig {
     }
 
     public static String getMainUrl() {
-        return read("main_url_lesson");
+        return read("main_url");
     }
 
     public static String getBrowser() {
-        return read("browser_lesson");
+        return read("browser");
     }
 
     public static String getPassword() {
-        return read("password_lesson");
+        return read("pass");
     }
 
     public static String getLogin() {
-        return read("username_lesson");
+        return read("login");
     }
 
     public static String getIssuesUrl() {
-        return read("issues_url_lesson");
+        return read("issues_url");
     }
 
     public static String getIssue21420Url() {
-        return read("issue21420_url_lesson");
+        return read("issue21420_url");
     }
 }
