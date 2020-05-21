@@ -22,7 +22,7 @@ public class LoginPage extends AbstractPage {
     private WebElement passField;
 
     @FindBy(xpath = "//input[@name='commit']")
-    private WebElement submitButton;
+    private WebElement submitForm;
 
     @FindBy(xpath = "//div[@class='container-lg px-2']")
     private WebElement errorMessage;
@@ -38,7 +38,7 @@ public class LoginPage extends AbstractPage {
     }
 
     public BasePage clickOnSubmit() {
-        submitButton.click();
+        submitForm.click();
         return new BasePage(webDriver);
     }
 
