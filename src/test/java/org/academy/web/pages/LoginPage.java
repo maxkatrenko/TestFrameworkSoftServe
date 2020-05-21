@@ -37,6 +37,10 @@ public class LoginPage extends AbstractPage {
         return this;
     }
 
+    public BasePage clickOnSignIn() {
+        return new BasePage(webDriver);
+    }
+
     public String getErrorMessage() {
         return errorMessage.getText();
     }
