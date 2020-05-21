@@ -1,18 +1,18 @@
-package org.academy.homework.lessons.lesson3.test;
+package org.academy.web.tests;
 
 import lombok.extern.slf4j.Slf4j;
 import org.academy.MainConfig;
-import org.academy.homework.lessons.lesson3.pages.HomePageLesson;
-import org.academy.homework.lessons.lesson3.pages.MainPageLesson;
+import org.academy.web.pages.HomePage;
 import org.academy.web.AbstractWebDriver;
+import org.academy.web.pages.MainPage;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 @Slf4j
 public class LessonTest extends AbstractWebDriver {
 
-    private MainPageLesson mainPage;
-    private HomePageLesson homePage;
+    private MainPage mainPage;
+    private HomePage homePage;
 
     public LessonTest() {
         super();
@@ -20,11 +20,11 @@ public class LessonTest extends AbstractWebDriver {
 
     @BeforeMethod(alwaysRun = true)
     public void login() {
-        mainPage = new MainPageLesson(webDriver, true, MainConfig.getMainUrl());
+        mainPage = new MainPage(webDriver, true, MainConfig.getMainUrl());
         log.info("trying to login into github account");
         homePage = mainPage.clickOnSignIn()
-                .enterUsername(MainConfig.getLogin())
-                .enterPassword(MainConfig.getPassword())
+                .fillLoginField(MainConfig.getLogin())
+                .fillPassField(MainConfig.getPassword())
                 .clickOnSubmit();
         log.info("logged in into github account");
     }

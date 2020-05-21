@@ -1,13 +1,13 @@
-package org.academy.homework.lessons.lesson3.pages;
+package org.academy.web.pages;
 
 import org.academy.MainConfig;
-import org.academy.homework.lessons.lesson3.AbstractPageLesson;
+import org.academy.web.AbstractPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class HomePageLesson extends AbstractPageLesson {
-    public HomePageLesson(WebDriver webDriver, boolean navigateToPage, String navigateToPageUrl) {
+public class HomePage extends AbstractPage {
+    public HomePage(WebDriver webDriver, boolean navigateToPage, String navigateToPageUrl) {
         super(webDriver, navigateToPage, navigateToPageUrl);
     }
 
