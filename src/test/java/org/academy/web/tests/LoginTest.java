@@ -22,7 +22,7 @@ public class LoginTest extends AbstractWebDriver {
 
     @BeforeMethod(alwaysRun = true)
     public void precondition() {
-        mainPage = new MainPage(webDriver, true, MainConfig.getMainUrl());
+        mainPage = new MainPage(webDriver, true, MainConfig.getUrl());
         loginPage = mainPage.clickOnSignIn();
     }
 

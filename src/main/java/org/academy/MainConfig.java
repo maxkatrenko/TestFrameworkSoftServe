@@ -6,7 +6,7 @@ public class MainConfig {
         return ConfigurationReader.get().readValue(value);
     }
 
-    public static String getMainUrl() {
+    public static String getUrl() {
         return read("main_url");
     }
 
