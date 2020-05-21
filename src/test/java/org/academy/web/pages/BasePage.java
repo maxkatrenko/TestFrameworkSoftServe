@@ -26,7 +26,6 @@ public class BasePage extends AbstractPage {
         return new IssuesPage(webDriver, true, MainConfig.getIssuesUrl());
     }
 
-    public RepositoryPage getRepositoryLink() {
     private WebElement toRepositoryLink = webDriver.findElement(By.xpath("//div[@id='dashboard-repos-container']"
                                             + "//span[@class='css-truncate css-truncate-target'][contains(text(),'"
                                             + MainConfig.getParam("repository") +"')]"));
