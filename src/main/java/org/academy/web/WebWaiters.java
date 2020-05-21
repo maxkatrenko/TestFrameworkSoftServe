@@ -33,4 +33,8 @@ public class WebWaiters {
 	public static void waitUntilAlertPresent(WebDriver driver){
 		new WebDriverWait(driver, timeForWaiting).until(ExpectedConditions.alertIsPresent());
 	}
+
+	public static void waitUntilElementIsClickable(WebDriver webDriver, WebElement element){
+		new WebDriverWait(webDriver, timeForWaiting).until(ExpectedConditions.elementToBeClickable(element));
+	}
 }
