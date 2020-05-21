@@ -8,7 +8,7 @@ import org.testng.annotations.Listeners;
 
 @Listeners(TestNgListener.class)
 public abstract class AbstractWebDriver {
-    public WebDriver webDriver;
+    public static WebDriver webDriver;
 
     @BeforeClass(alwaysRun = true)
     public void openDriver() {
