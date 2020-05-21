@@ -2,7 +2,7 @@ package org.academy.web.pages;
 
 import org.academy.MainConfig;
 import org.academy.web.AbstractPage;
-import org.academy.web.pages.issues.Issue21420;
+import org.academy.web.pages.issues.Issue21420Page;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -15,8 +15,8 @@ public class IssuesPage extends AbstractPage {
     @FindBy(id = "issue_3_alhonchar_academylessons_link")
     private WebElement issue21420;
 
-    public Issue21420 clickOnIssue21420() {
+    public Issue21420Page clickOnIssue21420() {
         issue21420.click();
-        return new Issue21420(webDriver, true, MainConfig.getIssue21420Url());
+        return new Issue21420Page(webDriver, true, MainConfig.getIssue21420Url());
     }
 }

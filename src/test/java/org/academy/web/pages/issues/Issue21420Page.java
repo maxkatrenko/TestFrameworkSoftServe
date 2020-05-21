@@ -5,9 +5,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class Issue21420 extends AbstractPage {
+public class Issue21420Page extends AbstractPage {
 
-    public Issue21420(WebDriver webDriver, boolean navigateToPage, String navigateToPageUrl) {
+    public Issue21420Page(WebDriver webDriver, boolean navigateToPage, String navigateToPageUrl) {
         super(webDriver, navigateToPage, navigateToPageUrl);
     }
 

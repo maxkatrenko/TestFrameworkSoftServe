@@ -6,8 +6,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class HomePage extends AbstractPage {
-    public HomePage(WebDriver webDriver, boolean navigateToPage, String navigateToPageUrl) {
+public class BasePage extends AbstractPage {
+    public BasePage(WebDriver webDriver, boolean navigateToPage, String navigateToPageUrl) {
         super(webDriver, navigateToPage, navigateToPageUrl);
     }
 

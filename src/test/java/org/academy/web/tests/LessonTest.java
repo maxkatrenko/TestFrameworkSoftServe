@@ -2,7 +2,7 @@ package org.academy.web.tests;
 
 import lombok.extern.slf4j.Slf4j;
 import org.academy.MainConfig;
-import org.academy.web.pages.HomePage;
+import org.academy.web.pages.BasePage;
 import org.academy.web.AbstractWebDriver;
 import org.academy.web.pages.MainPage;
 import org.testng.annotations.BeforeMethod;
@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 public class LessonTest extends AbstractWebDriver {
 
     private MainPage mainPage;
-    private HomePage homePage;
+    private BasePage homePage;
 
     public LessonTest() {
         super();
