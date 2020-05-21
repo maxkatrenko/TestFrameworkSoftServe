@@ -32,7 +32,7 @@ public class ActionTest extends AbstractWebDriver {
         loginPage = mainPage.clickOnSignIn();   
         login();
         basePage = loginPage.clickOnSignIn();
-        repositoryPage = basePage.getRepositoryLink();
+        repositoryPage = basePage.goToRepositoryLink();
         actionPage = repositoryPage.clickOnActionLink();
         runActionPage = actionPage.clickOnWorkflow();
     }

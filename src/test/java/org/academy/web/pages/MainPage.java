@@ -13,8 +13,10 @@ public class MainPage extends AbstractPage {
     @FindBy(xpath = "//a[(contains(@class, 'HeaderMenu-link')) and (@href='/login')]")
     private WebElement signInButton;
 
+
     public LoginPage clickOnSignIn() {
         signInButton.click();
         return new LoginPage(webDriver);
     }
+
 }
