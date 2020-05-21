@@ -34,7 +34,11 @@ public class LoginPage extends AbstractPage {
 
     public BasePage clickOnSubmit() {
         submitButton.click();
-        return new BasePage(webDriver, false,"");
+        return new BasePage(webDriver);
+    }
+
+    public BasePage clickOnSignIn() {
+        return new BasePage(webDriver);
     }
 
     public String getErrorMessage() {

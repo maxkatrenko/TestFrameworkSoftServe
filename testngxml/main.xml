@@ -3,7 +3,7 @@
     <test name="Test1">
         <classes>
             <class name="org.academy.web.tests.LoginTest"/>
-            <class name="org.academy.web.tests.LessonTest"/>
+            <class name="org.academy.web.tests.IssueTest"/>
         </classes>
     </test>
 </suite>

@@ -2,19 +2,19 @@ package org.academy.web.tests;
 
 import lombok.extern.slf4j.Slf4j;
 import org.academy.MainConfig;
-import org.academy.web.pages.BasePage;
 import org.academy.web.AbstractWebDriver;
+import org.academy.web.pages.BasePage;
 import org.academy.web.pages.MainPage;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 @Slf4j
-public class LessonTest extends AbstractWebDriver {
+public class IssueTest extends AbstractWebDriver {
 
     private MainPage mainPage;
-    private BasePage homePage;
+    private BasePage basePage;
 
-    public LessonTest() {
+    public IssueTest() {
         super();
     }
 
@@ -22,7 +22,7 @@ public class LessonTest extends AbstractWebDriver {
     public void login() {
         mainPage = new MainPage(webDriver, true, MainConfig.getMainUrl());
         log.info("trying to login into github account");
-        homePage = mainPage.clickOnSignIn()
+        basePage = mainPage.clickOnSignIn()
                 .fillLoginField(MainConfig.getLogin())
                 .fillPassField(MainConfig.getPassword())
                 .clickOnSubmit();
@@ -33,7 +33,7 @@ public class LessonTest extends AbstractWebDriver {
     public void getCommentTest() {
         log.info("Test launched");
         String commitmentText =
-                homePage.clickOnIssuesLink()
+                basePage.clickOnIssuesLink()
                         .clickOnIssue21420()
                         .getCommitmentText();
         log.info("Comment 21-4-20: " + commitmentText);
