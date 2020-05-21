@@ -21,4 +21,8 @@ public class MainConfig {
     public static String getLogin() {
         return read("login");
     }
+
+    public static String getPageUrl(String name){return read("main_url") + read(name);}
+
+    public static String getParam(String param) {return read(param);}
 }
