@@ -35,3 +35,4 @@ public class BasePage extends AbstractPage {
         return new MarketplacePage(webDriver);
     }
 }
+
