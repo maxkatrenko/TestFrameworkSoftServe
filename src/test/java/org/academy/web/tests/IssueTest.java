@@ -32,9 +32,10 @@ public class IssueTest extends AbstractWebDriver {
     @Test
     public void getCommentTest() {
         log.info("Test launched");
-        String commitmentText = basePage.clickOnIssuesLink()
+        String commitmentText =
+                basePage.clickOnIssuesLink()
                 .clickOnIssue21420()
-                .getCommentLike("Check this message");
+                .getLastComment();
         log.info("Comment 21-4-20: " + commitmentText);
         log.info("Test passed");
     }

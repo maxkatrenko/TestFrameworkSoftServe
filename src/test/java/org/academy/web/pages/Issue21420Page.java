@@ -16,13 +16,8 @@ public class Issue21420Page extends AbstractPage {
     @FindBy(xpath = "//tr[contains(@class,'d-block')]//p")
     private List<WebElement> commentsList;
 
-    public String getCommentLike(String commentText) {
-        for (WebElement comment : commentsList) {
-            if (comment.getText().contains(commentText)) {
-                return comment.getText();
-            }
-        }
-        return "comment is not found";
+    public String getLastComment() {
+        return commentsList.get(commentsList.size()-1).getText();
     }
 
 }
