@@ -29,4 +29,12 @@ public class MainConfig {
     public static String getSearchApp() {
         return read("searchApp");
     }
+
+    public static String getIssuesUrl() {
+        return read("issues_url");
+    }
+
+    public static String getIssue21420Url() {
+        return read("issue21420_url");
+    }
 }
