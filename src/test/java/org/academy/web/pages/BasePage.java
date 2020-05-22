@@ -18,6 +18,14 @@ public class BasePage extends AbstractPage {
         super(webDriver, navigateToPage);
     }
 
+    @FindBy(xpath = "//a[contains(text(),'Issues')]")
+    private WebElement issuesLink;
+
+    public IssuesPage clickOnIssuesLink() {
+        issuesLink.click();
+        return new IssuesPage(webDriver, true, MainConfig.getIssuesUrl());
+    }
+
     private WebElement toRepositoryLink = webDriver.findElement(By.xpath("//div[@id='dashboard-repos-container']"
                                             + "//span[@class='css-truncate css-truncate-target'][contains(text(),'"
                                             + MainConfig.getParam("repository") +"')]"));
