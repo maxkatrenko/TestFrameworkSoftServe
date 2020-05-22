@@ -27,8 +27,8 @@ public class BasePage extends AbstractPage {
     }
 
     private WebElement toRepositoryLink = webDriver.findElement(By.xpath("//div[@id='dashboard-repos-container']"
-                                            + "//span[@class='css-truncate css-truncate-target'][contains(text(),'"
-                                            + MainConfig.getParam("repository") +"')]"));
+            + "//span[@class='css-truncate css-truncate-target'][contains(text(),'"
+            + MainConfig.getParam("repository") +"')]"));
 
     @FindBy(xpath = "//a[@class='js-selected-navigation-item Header-link py-lg-3 d-inline-block'][contains(text(), 'Marketplace')]")
     private WebElement marketplaceBtn;
