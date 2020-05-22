@@ -21,7 +21,7 @@ public class LocalWebDriverManager {
 			case "chrome":
 				ChromeOptions options = new ChromeOptions();
 				String os = System.getProperty("os.name").toLowerCase().substring(0, 3);
-				String chromeBinary = "src/main/resources/chromedriver" + (os.equals("win") ? "77.exe" : "");
+				String chromeBinary = "src/main/resources/chromedriver" + (os.equals("win") ? ".exe" : "");
 				System.setProperty("webdriver.chrome.driver", chromeBinary);
 				WebDriver chromeWebDriver = new ChromeDriver(options);
 				chromeWebDriver.manage().timeouts().implicitlyWait(300000, TimeUnit.MILLISECONDS);
