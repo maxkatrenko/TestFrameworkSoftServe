@@ -37,9 +37,9 @@ public class LoginPage extends AbstractPage {
         return this;
     }
 
-    public BasePage clickOnSubmit() {
+    public LoginPage clickOnSubmit() {
         submitForm.click();
-        return new BasePage(webDriver);
+        return this;
     }
 
     public BasePage clickOnSignIn() {

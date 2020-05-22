@@ -22,10 +22,9 @@ public class IssueTest extends AbstractWebDriver {
     public void login() {
         mainPage = new MainPage(webDriver, true, MainConfig.getUrl());
         log.info("trying to login into github account");
-        basePage = mainPage.clickOnSignIn()
-                .fillLoginField(MainConfig.getLogin())
-                .fillPassField(MainConfig.getPassword())
-                .clickOnSubmit();
+        basePage = mainPage
+                .clickOnSignIn()
+                .login();
         log.info("logged in into github account");
     }
 
@@ -34,8 +33,8 @@ public class IssueTest extends AbstractWebDriver {
         log.info("Test launched");
         String commitmentText =
                 basePage.clickOnIssuesLink()
-                .clickOnIssue21420()
-                .getLastComment();
+                        .clickOnIssue21420()
+                        .getLastComment();
         log.info("Comment 21-4-20: " + commitmentText);
         log.info("Test passed");
     }
