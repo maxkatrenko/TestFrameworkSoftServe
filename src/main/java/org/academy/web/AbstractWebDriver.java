@@ -14,6 +14,7 @@ public abstract class AbstractWebDriver {
     public void openDriver() {
         webDriver = LocalWebDriverManager.getWebDriver();
     }
+
     @AfterClass(alwaysRun = true)
     public void closeDriver() {
         webDriver.quit();
