@@ -2,7 +2,7 @@
 <suite name="Test suite">
     <test name="Tests">
         <packages>
-            <package name="org.academy.web.tests"/>
+            <package name="org.academy.lessons.lesson1"/>
         </packages>
     </test>
 </suite>
