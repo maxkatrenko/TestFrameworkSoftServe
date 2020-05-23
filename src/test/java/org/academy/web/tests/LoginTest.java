@@ -5,9 +5,12 @@ import org.academy.web.AbstractWebDriver;
 import org.academy.web.pages.LoginPage;
 import org.academy.web.pages.MainPage;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class LoginTest extends AbstractWebDriver {
     private LoginPage loginPage;
@@ -48,6 +51,9 @@ public class LoginTest extends AbstractWebDriver {
         loginPage.fillPassField(pass);
         loginPage.clickOnSubmit();
         String error = loginPage.getErrorMessage();
-        Assert.assertEquals(error, "Incorrect username or password.");
+        assertThat(error).as("Got incorrect verification message").isEqualTo("Incorrect username or password.");
     }
+
+
+
 }
