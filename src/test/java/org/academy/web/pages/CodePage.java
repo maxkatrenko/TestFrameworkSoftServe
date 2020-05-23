@@ -1,11 +1,11 @@
-package org.academy.chelpan.karyna.lessons3.pages;
+package org.academy.web.pages;
 
-import org.academy.chelpan.karyna.lessons3.AbstractPage;
+import org.academy.web.AbstractPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class CodePage extends AbstractPage{
+public class CodePage extends AbstractPage {
     public CodePage(WebDriver webDriver) {
         super(webDriver, false, "");
     }
@@ -19,6 +19,7 @@ public class CodePage extends AbstractPage{
     @FindBy(xpath="//div[contains(@class,'application-main')]//div[3]")
     private WebElement fileContent;
 
+
     public CodePage fillNameFile(String file){
         searchFileField.sendKeys(file);
         return new CodePage(webDriver);
@@ -31,4 +32,6 @@ public class CodePage extends AbstractPage{
     public String getFileContent() {
     return fileContent.getText();
 }
+
+
 }

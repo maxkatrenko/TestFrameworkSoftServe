@@ -14,8 +14,7 @@ public class BasePage extends AbstractPage {
     }
 
 
-    public BasePage(WebDriver webDriver, boolean navigateToPage) {
-        super(webDriver, navigateToPage);
+    public BasePage(WebDriver webDriver, boolean navigateToPage) {super(webDriver, navigateToPage);
     }
 
     @FindBy(xpath = "//a[contains(text(),'Issues')]")
@@ -41,6 +40,19 @@ public class BasePage extends AbstractPage {
     public MarketplacePage clickOnMarket() {
         marketplaceBtn.click();
         return new MarketplacePage(webDriver);
+    }
+    @FindBy(xpath = "//div[@id='dashboard-repos-container']//div[@class='width-full text-bold']")
+    private WebElement repositoryLink;
+    @FindBy(xpath="//a[@class='btn btn-sm empty-icon float-right BtnGroup-item']")
+    private WebElement findFileButton;
+
+    public CodePage clickOnRepositoryLink() {
+        repositoryLink.click();
+        return new CodePage(webDriver);
+    }
+    public CodePage clickOnFindFile() {
+        findFileButton.click();
+        return new CodePage(webDriver);
     }
 }
 

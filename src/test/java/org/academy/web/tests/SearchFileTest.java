@@ -1,39 +1,43 @@
-package org.academy.chelpan.karyna.lessons3.tests;
+package org.academy.web.tests;
 
+import lombok.extern.slf4j.Slf4j;
 import org.academy.MainConfig;
-import org.academy.chelpan.karyna.lessons3.pages.CodePage;
+import org.academy.web.pages.BasePage;
+import org.academy.web.pages.CodePage;
 import org.academy.web.AbstractWebDriver;
-import org.academy.chelpan.karyna.lessons3.pages.LoginPage;
-import org.academy.chelpan.karyna.lessons3.pages.MainPage;
+import org.academy.web.pages.LoginPage;
+import org.academy.web.pages.MainPage;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+@Slf4j
 public class SearchFileTest extends AbstractWebDriver {
     private LoginPage loginPage;
-    private MainPage mainPage;
+    private BasePage basePage;
     private CodePage codePage;
-
-    public SearchFileTest() {
-        super();
-    }
 
     @BeforeMethod(alwaysRun = true)
     public void precondition() {
-        mainPage = new MainPage(webDriver, true, MainConfig.getUrl());
-        loginPage = mainPage.clickOnSignIn();
-        loginPage.fillLoginField(MainConfig.getLogin());
-        loginPage.fillPassField(MainConfig.getPassword());
-        loginPage.clickOnSubmit();
+        log.info("Starting test");
+        loginPage = new LoginPage(webDriver, true);
+        basePage = loginPage.login();
+        log.info("Logged in");
     }
 
-    @Test
+    @Test(description = "Find and read file contents")
     public void fileContentTest() {
-        mainPage.clickOnRepositoryLink();
-        codePage = mainPage.clickOnFindFile();
+        basePage.clickOnRepositoryLink();
+        log.info("Click on repository link ");
+        codePage = basePage.clickOnFindFile();
+        log.info("Click on button 'Find File'");
         codePage.fillNameFile(MainConfig.getFile());
+        log.info("Enter 'log4j.properties'");
         codePage.clickOnFile();
+        log.info("Click on file 'log4j.properties'");
         String text = codePage.getFileContent();
+        log.info("Get file content");
         Assert.assertTrue(text.contains("log4j.rootCategory=DEBUG, stdout, file"));
+        log.info("File contains 'log4j.rootCategory=DEBUG, stdout, file'");
     }
 }
