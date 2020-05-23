@@ -29,17 +29,17 @@ public class ActionTest extends AbstractWebDriver {
     @BeforeMethod(alwaysRun = true)
     public void precondition() {
         mainPage = new MainPage(webDriver, true, MainConfig.getUrl());
-        loginPage = mainPage.clickOnSignIn();   
+        loginPage = mainPage.clickOnSignIn();
         login();
         basePage = loginPage.clickOnSignIn();
         repositoryPage = basePage.goToRepositoryLink();
         actionPage = repositoryPage.clickOnActionLink();
-        runActionPage = actionPage.clickOnWorkflow();
+        runActionPage = actionPage.goToRunActionPage();
     }
 
     @Test
     public void getHash() {
-        log.info("Hash code " + runActionPage.GetActionHashCode());
+        log.info("Hash code " + runActionPage.getActionHashCode());
     }
 
 }

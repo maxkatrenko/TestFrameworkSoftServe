@@ -28,8 +28,8 @@ public class RepositoryPage extends AbstractPage {
     }
 
     public ActionPage clickOnActionLink() {
-            onActionLink.click();
-            return new ActionPage(webDriver);
+        onActionLink.click();
+        return new ActionPage(webDriver);
     }
 
     public InsightsPage clickOnInsights() {
