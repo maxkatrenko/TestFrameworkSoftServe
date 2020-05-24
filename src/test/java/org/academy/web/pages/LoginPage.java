@@ -1,5 +1,6 @@
 package org.academy.web.pages;
 
+import org.academy.MainConfig;
 import org.academy.web.AbstractPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,6 +10,10 @@ public class LoginPage extends AbstractPage {
     public LoginPage(WebDriver webDriver) {
         super(webDriver, false, "");
     }
+    public LoginPage(WebDriver webDriver, boolean navigateToPage) {
+        super(webDriver, navigateToPage);
+    }
+
 
     @FindBy(xpath = "//input[@name='login']")
     private WebElement loginField;
@@ -37,7 +42,20 @@ public class LoginPage extends AbstractPage {
         return this;
     }
 
+    public BasePage clickOnSignIn() {
+        return new BasePage(webDriver);
+    }
+
     public String getErrorMessage() {
         return errorMessage.getText();
     }
+
+    public BasePage login(){
+        loginField.sendKeys(MainConfig.getLogin());
+        passField.sendKeys(MainConfig.getPassword());
+        submitForm.click();
+        return new BasePage(webDriver, false);
+    }
+
+
 }
