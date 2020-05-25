@@ -2,16 +2,18 @@ package org.academy.web.tests;
 
 import lombok.extern.slf4j.Slf4j;
 import org.academy.MainConfig;
+import org.academy.tools.TestNgListener;
 import org.academy.web.pages.BasePage;
 import org.academy.web.pages.CodePage;
 import org.academy.web.AbstractWebDriver;
 import org.academy.web.pages.LoginPage;
-import org.academy.web.pages.MainPage;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 @Slf4j
+@Listeners(TestNgListener.class)
 public class SearchFileTest extends AbstractWebDriver {
     private LoginPage loginPage;
     private BasePage basePage;
@@ -19,7 +21,7 @@ public class SearchFileTest extends AbstractWebDriver {
 
     @BeforeMethod(alwaysRun = true)
     public void precondition() {
-        log.info("Starting test");
+        log.info("Start 'SearchFileTest'");
         loginPage = new LoginPage(webDriver, true);
         basePage = loginPage.login();
         log.info("Logged in");
