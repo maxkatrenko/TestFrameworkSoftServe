@@ -23,8 +23,9 @@ public class IssueTest extends AbstractWebDriver {
 
     @BeforeMethod(alwaysRun = true)
     public void login() {
-        log.info("Start 'IssueTest'");
         mainPage = new MainPage(webDriver, true, MainConfig.getUrl());
+        log.info("Start 'IssueTest'");
+        log.info("trying to login into github account");
         basePage = mainPage
                 .clickOnSignIn()
                 .login();
@@ -39,5 +40,6 @@ public class IssueTest extends AbstractWebDriver {
                         .clickOnIssue21420()
                         .getLastComment();
         log.info("Comment 21-4-20: " + commitmentText);
+        log.info("Test passed");
     }
 }

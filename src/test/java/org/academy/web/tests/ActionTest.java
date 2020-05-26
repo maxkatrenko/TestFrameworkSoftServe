@@ -33,10 +33,9 @@ public class ActionTest extends AbstractWebDriver {
     public void precondition() {
         log.info("Start 'ActionTest'");
         mainPage = new MainPage(webDriver, true, MainConfig.getUrl());
-        loginPage = mainPage.clickOnSignIn();   
+        loginPage = mainPage.clickOnSignIn();
         login();
         basePage = loginPage.clickOnSignIn();
-        log.info("Logged in");
         repositoryPage = basePage.goToRepositoryLink();
         actionPage = repositoryPage.clickOnActionLink();
         runActionPage = actionPage.goToRunActionPage();

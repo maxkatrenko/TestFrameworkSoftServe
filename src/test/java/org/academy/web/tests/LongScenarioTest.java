@@ -9,8 +9,8 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+import java.util.NoSuchElementException;
 
-@Slf4j
 @Listeners(TestNgListener.class)
 public class LongScenarioTest extends AbstractWebDriver {
     private static Logger log = LoggerFactory.getLogger(LongScenarioTest.class);
@@ -29,14 +29,13 @@ public class LongScenarioTest extends AbstractWebDriver {
 
     @BeforeMethod(alwaysRun = true)
     public void precondition() {
-        log.info("Start 'LongScenarioTest'");
         loginPage = new LoginPage(webDriver, true);
         basePage = loginPage.login();
-        log.info("Logged in");
     }
 
     @Test
     public void getCommitHashCode() {
+        log.info("Start 'LongScenarioTest'");
         repositoryPage = basePage.goToRepositoryLink();
         projectTabPage = repositoryPage.goToProjectTab();
         kanbanBoardPage = projectTabPage.goToFirstProject();

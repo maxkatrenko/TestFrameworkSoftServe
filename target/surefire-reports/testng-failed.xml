@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [Test suite]">
+  <test thread-count="5" verbose="0" name="Tests(failed)">
+    <classes>
+      <class name="org.academy.web.tests.LongScenarioTest">
+        <methods>
+          <include name="openDriver"/>
+          <include name="getCommitHashCode"/>
+          <include name="closeDriver"/>
+          <include name="precondition"/>
+        </methods>
+      </class> <!-- org.academy.web.tests.LongScenarioTest -->
+      <class name="org.academy.web.tests.IssueTest">
+        <methods>
+          <include name="openDriver"/>
+          <include name="login"/>
+          <include name="closeDriver"/>
+          <include name="getCommentTest"/>
+        </methods>
+      </class> <!-- org.academy.web.tests.IssueTest -->
+    </classes>
+  </test> <!-- Tests(failed) -->
+</suite> <!-- Failed suite [Test suite] -->
