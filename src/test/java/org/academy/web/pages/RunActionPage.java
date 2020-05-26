@@ -14,7 +14,7 @@ public class RunActionPage extends AbstractPage {
     @FindBy(xpath = "//a[@class='muted-link no-underline d-inline text-normal']")
     private WebElement actionHashCode;
 
-    public String GetActionHashCode() {
+    public String getActionHashCode() {
         String url = actionHashCode.getAttribute("href");
         return url.substring(url.lastIndexOf('/') + 1);
 
