@@ -11,7 +11,6 @@ import org.testng.annotations.Test;
 import java.util.List;
 
 @Slf4j
-@Listeners(TestNgListener.class)
 public class UserTest extends AbstractWebDriver {
     private BasePage basePage;
     private LoginPage loginPage;

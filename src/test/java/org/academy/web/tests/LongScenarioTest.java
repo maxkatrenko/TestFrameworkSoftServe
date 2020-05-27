@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 
 import java.util.NoSuchElementException;
 
-@Listeners(TestNgListener.class)
+
 public class LongScenarioTest extends AbstractWebDriver {
     private static Logger log = LoggerFactory.getLogger(LongScenarioTest.class);
     private LoginPage loginPage;
