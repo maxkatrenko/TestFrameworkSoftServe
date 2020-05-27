@@ -28,7 +28,7 @@ public class AbstractPage {
     public AbstractPage(WebDriver webDriver, boolean navigateToPage) {
         String pageUrl = MainConfig.getPageUrl(this.getClass().getSimpleName());
         this.webDriver = webDriver;
-        webDriver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+        webDriver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
         PageFactory.initElements(webDriver, this);
         if (navigateToPage && !Objects.equals(webDriver.getCurrentUrl(), pageUrl)) {
             webDriver.get(pageUrl);

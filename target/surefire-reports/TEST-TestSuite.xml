@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="TestSuite" time="356.622" tests="13" errors="0" skipped="0" failures="2">
+  <properties>
+    <property name="sun.desktop" value="windows"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="webdriver.chrome.driver" value="src/main/resources/chromedriver.exe"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1251"/>
+    <property name="java.class.path" value="C:\Users\Karina\IdeaProjects\academylessons\target\test-classes;C:\Users\Karina\IdeaProjects\academylessons\target\classes;C:\Users\Karina\.m2\repository\org\testng\testng\7.1.0\testng-7.1.0.jar;C:\Users\Karina\.m2\repository\com\beust\jcommander\1.72\jcommander-1.72.jar;C:\Users\Karina\.m2\repository\com\google\inject\guice\4.1.0\guice-4.1.0-no_aop.jar;C:\Users\Karina\.m2\repository\javax\inject\javax.inject\1\javax.inject-1.jar;C:\Users\Karina\.m2\repository\aopalliance\aopalliance\1.0\aopalliance-1.0.jar;C:\Users\Karina\.m2\repository\org\yaml\snakeyaml\1.21\snakeyaml-1.21.jar;C:\Users\Karina\.m2\repository\org\projectlombok\lombok\1.18.12\lombok-1.18.12.jar;C:\Users\Karina\.m2\repository\org\slf4j\slf4j-api\1.7.30\slf4j-api-1.7.30.jar;C:\Users\Karina\.m2\repository\org\slf4j\slf4j-log4j12\1.7.30\slf4j-log4j12-1.7.30.jar;C:\Users\Karina\.m2\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar;C:\Users\Karina\.m2\repository\org\seleniumhq\selenium\selenium-java\3.141.59\selenium-java-3.141.59.jar;C:\Users\Karina\.m2\repository\org\seleniumhq\selenium\selenium-api\3.141.59\selenium-api-3.141.59.jar;C:\Users\Karina\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\3.141.59\selenium-chrome-driver-3.141.59.jar;C:\Users\Karina\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\3.141.59\selenium-edge-driver-3.141.59.jar;C:\Users\Karina\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\3.141.59\selenium-firefox-driver-3.141.59.jar;C:\Users\Karina\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\3.141.59\selenium-ie-driver-3.141.59.jar;C:\Users\Karina\.m2\repository\org\seleniumhq\selenium\selenium-opera-driver\3.141.59\selenium-opera-driver-3.141.59.jar;C:\Users\Karina\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\3.141.59\selenium-remote-driver-3.141.59.jar;C:\Users\Karina\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\3.141.59\selenium-safari-driver-3.141.59.jar;C:\Users\Karina\.m2\repository\org\seleniumhq\selenium\selenium-support\3.141.59\selenium-support-3.141.59.jar;C:\Users\Karina\.m2\repository\net\bytebuddy\byte-buddy\1.8.15\byte-buddy-1.8.15.jar;C:\Users\Karina\.m2\repository\org\apache\commons\commons-exec\1.3\commons-exec-1.3.jar;C:\Users\Karina\.m2\repository\com\google\guava\guava\25.0-jre\guava-25.0-jre.jar;C:\Users\Karina\.m2\repository\com\google\code\findbugs\jsr305\1.3.9\jsr305-1.3.9.jar;C:\Users\Karina\.m2\repository\org\checkerframework\checker-compat-qual\2.0.0\checker-compat-qual-2.0.0.jar;C:\Users\Karina\.m2\repository\com\google\errorprone\error_prone_annotations\2.1.3\error_prone_annotations-2.1.3.jar;C:\Users\Karina\.m2\repository\com\google\j2objc\j2objc-annotations\1.1\j2objc-annotations-1.1.jar;C:\Users\Karina\.m2\repository\org\codehaus\mojo\animal-sniffer-annotations\1.14\animal-sniffer-annotations-1.14.jar;C:\Users\Karina\.m2\repository\com\squareup\okhttp3\okhttp\3.11.0\okhttp-3.11.0.jar;C:\Users\Karina\.m2\repository\com\squareup\okio\okio\1.14.0\okio-1.14.0.jar;C:\Users\Karina\.m2\repository\org\assertj\assertj-core\3.16.1\assertj-core-3.16.1.jar;"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="user.timezone" value="Europe/Helsinki"/>
+    <property name="user.country.format" value="UA"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="os.name" value="Windows 10"/>
+    <property name="user.country" value="RU"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_191\jre\bin"/>
+    <property name="sun.java.command" value="C:\Users\Karina\AppData\Local\Temp\surefire8684352685332637282\surefirebooter6110354706649060622.jar C:\Users\Karina\AppData\Local\Temp\surefire8684352685332637282 2020-05-26T16-03-39_215-jvmRun1 surefire6801167581924232458tmp surefire_0989271731468587755tmp"/>
+    <property name="surefire.test.class.path" value="C:\Users\Karina\IdeaProjects\academylessons\target\test-classes;C:\Users\Karina\IdeaProjects\academylessons\target\classes;C:\Users\Karina\.m2\repository\org\testng\testng\7.1.0\testng-7.1.0.jar;C:\Users\Karina\.m2\repository\com\beust\jcommander\1.72\jcommander-1.72.jar;C:\Users\Karina\.m2\repository\com\google\inject\guice\4.1.0\guice-4.1.0-no_aop.jar;C:\Users\Karina\.m2\repository\javax\inject\javax.inject\1\javax.inject-1.jar;C:\Users\Karina\.m2\repository\aopalliance\aopalliance\1.0\aopalliance-1.0.jar;C:\Users\Karina\.m2\repository\org\yaml\snakeyaml\1.21\snakeyaml-1.21.jar;C:\Users\Karina\.m2\repository\org\projectlombok\lombok\1.18.12\lombok-1.18.12.jar;C:\Users\Karina\.m2\repository\org\slf4j\slf4j-api\1.7.30\slf4j-api-1.7.30.jar;C:\Users\Karina\.m2\repository\org\slf4j\slf4j-log4j12\1.7.30\slf4j-log4j12-1.7.30.jar;C:\Users\Karina\.m2\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar;C:\Users\Karina\.m2\repository\org\seleniumhq\selenium\selenium-java\3.141.59\selenium-java-3.141.59.jar;C:\Users\Karina\.m2\repository\org\seleniumhq\selenium\selenium-api\3.141.59\selenium-api-3.141.59.jar;C:\Users\Karina\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\3.141.59\selenium-chrome-driver-3.141.59.jar;C:\Users\Karina\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\3.141.59\selenium-edge-driver-3.141.59.jar;C:\Users\Karina\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\3.141.59\selenium-firefox-driver-3.141.59.jar;C:\Users\Karina\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\3.141.59\selenium-ie-driver-3.141.59.jar;C:\Users\Karina\.m2\repository\org\seleniumhq\selenium\selenium-opera-driver\3.141.59\selenium-opera-driver-3.141.59.jar;C:\Users\Karina\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\3.141.59\selenium-remote-driver-3.141.59.jar;C:\Users\Karina\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\3.141.59\selenium-safari-driver-3.141.59.jar;C:\Users\Karina\.m2\repository\org\seleniumhq\selenium\selenium-support\3.141.59\selenium-support-3.141.59.jar;C:\Users\Karina\.m2\repository\net\bytebuddy\byte-buddy\1.8.15\byte-buddy-1.8.15.jar;C:\Users\Karina\.m2\repository\org\apache\commons\commons-exec\1.3\commons-exec-1.3.jar;C:\Users\Karina\.m2\repository\com\google\guava\guava\25.0-jre\guava-25.0-jre.jar;C:\Users\Karina\.m2\repository\com\google\code\findbugs\jsr305\1.3.9\jsr305-1.3.9.jar;C:\Users\Karina\.m2\repository\org\checkerframework\checker-compat-qual\2.0.0\checker-compat-qual-2.0.0.jar;C:\Users\Karina\.m2\repository\com\google\errorprone\error_prone_annotations\2.1.3\error_prone_annotations-2.1.3.jar;C:\Users\Karina\.m2\repository\com\google\j2objc\j2objc-annotations\1.1\j2objc-annotations-1.1.jar;C:\Users\Karina\.m2\repository\org\codehaus\mojo\animal-sniffer-annotations\1.14\animal-sniffer-annotations-1.14.jar;C:\Users\Karina\.m2\repository\com\squareup\okhttp3\okhttp\3.11.0\okhttp-3.11.0.jar;C:\Users\Karina\.m2\repository\com\squareup\okio\okio\1.14.0\okio-1.14.0.jar;C:\Users\Karina\.m2\repository\org\assertj\assertj-core\3.16.1\assertj-core-3.16.1.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\Karina"/>
+    <property name="user.language" value="ru"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_191\jre"/>
+    <property name="basedir" value="C:\Users\Karina\IdeaProjects\academylessons"/>
+    <property name="file.separator" value="\"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="surefire.real.class.path" value="C:\Users\Karina\AppData\Local\Temp\surefire8684352685332637282\surefirebooter6110354706649060622.jar"/>
+    <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_191\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_191\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_191\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_191\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_191\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_191\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_191\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_191\jre\classes"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="1.8.0_191-b12"/>
+    <property name="user.name" value="Karina"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_191\jre\lib\endorsed"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="Cp1251"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="localRepository" value="C:\Users\Karina\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="C:\Users\Karina\AppData\Local\Temp\"/>
+    <property name="java.version" value="1.8.0_191"/>
+    <property name="user.dir" value="C:\Users\Karina\IdeaProjects\academylessons"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="user.language.format" value="uk"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="idea.version2019.3.4" value="true"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_191\jre\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Windows Live\Shared;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\PICT\;C:\Git\cmd;C:\Users\Karina\AppData\Local\Microsoft\WindowsApps;C:\Program Files\heroku\bin;."/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="25.191-b12"/>
+    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.8.0_191\jre\lib\ext;C:\WINDOWS\Sun\Java\lib\ext"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="52.0"/>
+  </properties>
+  <testcase name="getHash" classname="org.academy.web.tests.ActionTest" time="0.605"/>
+  <testcase name="getCommentTest" classname="org.academy.web.tests.IssueTest" time="51.957">
+    <failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#issue_3_alhonchar_academylessons_link&quot;}&#10;  (Session info: chrome=81.0.4044.138)&#10;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;&#10;System info: host: &apos;DESKTOP-T36K6HM&apos;, ip: &apos;192.168.1.12&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_191&apos;&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 81.0.4044.138, chrome: {chromedriverVersion: 80.0.3987.106 (f68069574609..., userDataDir: C:\Users\Karina\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:3079}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}&#10;Session ID: c41bc53a6d91a7875a446a587b2a8ab2&#10;*** Element info: {Using=id, value=issue_3_alhonchar_academylessons_link}" type="org.openqa.selenium.NoSuchElementException"><![CDATA[org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"css selector","selector":"#issue_3_alhonchar_academylessons_link"}
+  (Session info: chrome=81.0.4044.138)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-T36K6HM', ip: '192.168.1.12', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_191'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 81.0.4044.138, chrome: {chromedriverVersion: 80.0.3987.106 (f68069574609..., userDataDir: C:\Users\Karina\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:3079}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: c41bc53a6d91a7875a446a587b2a8ab2
+*** Element info: {Using=id, value=issue_3_alhonchar_academylessons_link}
+	at org.academy.web.tests.IssueTest.getCommentTest(IssueTest.java:39)
+]]></failure>
+    <system-out><![CDATA[On Before Class Listener
+[INFO] [::2020-05-26 16:04:52 IssueTest:26 login::]
+::Start 'IssueTest'
+
+[INFO] [::2020-05-26 16:05:17 IssueTest:31 login::]
+::logged in into github account
+
+[INFO] [::2020-05-26 16:05:17 IssueTest:36 getCommentTest::]
+::Test launched
+
+Test failed!
+]]></system-out>
+    <system-err><![CDATA[Starting ChromeDriver 80.0.3987.106 (f68069574609230cf9b635cd784cfb1bf81bb53a-refs/branch-heads/3987@{#882}) on port 14424
+Only local connections are allowed.
+Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
+[1590498291.734][WARNING]: This version of ChromeDriver has not been tested with Chrome version 81.
+трав. 26, 2020 4:04:52 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+[1590498292.921][SEVERE]: Timed out receiving message from renderer: 0.100
+[1590498293.036][SEVERE]: Timed out receiving message from renderer: 0.100
+[1590498293.185][SEVERE]: Timed out receiving message from renderer: 0.100
+[1590498296.394][SEVERE]: Timed out receiving message from renderer: 0.100
+[1590498296.796][SEVERE]: Timed out receiving message from renderer: 0.100
+[1590498297.456][SEVERE]: Timed out receiving message from renderer: 0.100
+[1590498298.807][SEVERE]: Timed out receiving message from renderer: 0.100
+[1590498317.674][SEVERE]: Timed out receiving message from renderer: 0.100
+[1590498318.633][SEVERE]: Timed out receiving message from renderer: 0.100
+[1590498318.890][SEVERE]: Timed out receiving message from renderer: 0.100
+]]></system-err>
+  </testcase>
+  <testcase name="negativeLoginTest" classname="org.academy.web.tests.LoginTest" time="2.489"/>
+  <testcase name="negativeLoginTest" classname="org.academy.web.tests.LoginTest" time="1.182"/>
+  <testcase name="negativeLoginTest" classname="org.academy.web.tests.LoginTest" time="1.093"/>
+  <testcase name="negativeLoginTest" classname="org.academy.web.tests.LoginTest" time="1.295"/>
+  <testcase name="negativeLoginTest" classname="org.academy.web.tests.LoginTest" time="1.389"/>
+  <testcase name="negativeLoginTest" classname="org.academy.web.tests.LoginTest" time="1.426"/>
+  <testcase name="positiveLoginTest" classname="org.academy.web.tests.LoginTest" time="1.802"/>
+  <testcase name="getCommitHashCode" classname="org.academy.web.tests.LongScenarioTest" time="10.487">
+    <failure message="stale element reference: element is not attached to the page document&#10;  (Session info: chrome=81.0.4044.138)&#10;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/stale_element_reference.html&#10;Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;&#10;System info: host: &apos;DESKTOP-T36K6HM&apos;, ip: &apos;192.168.1.12&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_191&apos;&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 81.0.4044.138, chrome: {chromedriverVersion: 80.0.3987.106 (f68069574609..., userDataDir: C:\Users\Karina\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:3254}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}&#10;Session ID: de825a83e407a510a4e3adb505211f81" type="org.openqa.selenium.StaleElementReferenceException"><![CDATA[org.openqa.selenium.StaleElementReferenceException: 
+stale element reference: element is not attached to the page document
+  (Session info: chrome=81.0.4044.138)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/stale_element_reference.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-T36K6HM', ip: '192.168.1.12', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_191'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 81.0.4044.138, chrome: {chromedriverVersion: 80.0.3987.106 (f68069574609..., userDataDir: C:\Users\Karina\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:3254}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: de825a83e407a510a4e3adb505211f81
+	at org.academy.web.tests.LongScenarioTest.getCommitHashCode(LongScenarioTest.java:45)
+]]></failure>
+    <system-out><![CDATA[On Before Class Listener
+[INFO] [::2020-05-26 16:07:01 LongScenarioTest:32 precondition::]
+::Start 'LongScenarioTest'
+
+[INFO] [::2020-05-26 16:07:29 LongScenarioTest:35 precondition::]
+::Logged in
+
+Test failed!
+]]></system-out>
+    <system-err><![CDATA[Starting ChromeDriver 80.0.3987.106 (f68069574609230cf9b635cd784cfb1bf81bb53a-refs/branch-heads/3987@{#882}) on port 12652
+Only local connections are allowed.
+Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
+[1590498420.918][WARNING]: This version of ChromeDriver has not been tested with Chrome version 81.
+трав. 26, 2020 4:07:01 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+[1590498426.494][SEVERE]: Timed out receiving message from renderer: 0.100
+[1590498427.848][SEVERE]: Timed out receiving message from renderer: 0.100
+[1590498428.678][SEVERE]: Timed out receiving message from renderer: 0.100
+[1590498428.869][SEVERE]: Timed out receiving message from renderer: 0.100
+[1590498430.826][SEVERE]: Timed out receiving message from renderer: 0.100
+[1590498430.949][SEVERE]: Timed out receiving message from renderer: 0.100
+[1590498451.381][SEVERE]: Timed out receiving message from renderer: 0.100
+[1590498451.731][SEVERE]: Timed out receiving message from renderer: 0.100
+[1590498452.910][SEVERE]: Timed out receiving message from renderer: 0.100
+[1590498457.827][SEVERE]: Timed out receiving message from renderer: 0.100
+[1590498457.973][SEVERE]: Timed out receiving message from renderer: 0.100
+]]></system-err>
+  </testcase>
+  <testcase name="slackResults" classname="org.academy.web.tests.MarketplaceTest" time="8.588"/>
+  <testcase name="fileContentTest" classname="org.academy.web.tests.SearchFileTest" time="6.548"/>
+  <testcase name="forkedUsersCheck" classname="org.academy.web.tests.UserTest" time="4.203"/>
+</testsuite>
