@@ -54,5 +54,8 @@ public class BasePage extends AbstractPage {
         marketplaceBtn.click();
         return new MarketplacePage(webDriver);
     }
+    public  boolean isRepositoryLinkPresense(){
+      return   wait.until(ExpectedConditions.elementToBeClickable(repositoryLinks.get(0))).isDisplayed();
+    }
 }
 

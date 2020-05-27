@@ -39,7 +39,8 @@ public class LoginPage extends AbstractPage {
 
     public LoginPage clickOnSubmit() {
         submitForm.click();
-        return this;
+        return (new BasePage(webDriver).isRepositoryLinkPresense()) ? this : (new HelpPage(webDriver))
+                .goToLoginPage();
     }
 
     public BasePage clickOnSignIn() {
