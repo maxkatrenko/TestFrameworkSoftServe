@@ -10,7 +10,6 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 @Slf4j
-@Listeners(TestNgListener.class)
 public class ActionTest extends AbstractWebDriver {
     private LoginPage loginPage;
     private MainPage mainPage;

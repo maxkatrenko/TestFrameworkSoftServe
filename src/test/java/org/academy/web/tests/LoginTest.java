@@ -4,8 +4,6 @@ import org.academy.MainConfig;
 import org.academy.web.AbstractWebDriver;
 import org.academy.web.pages.LoginPage;
 import org.academy.web.pages.MainPage;
-import org.testng.Assert;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -53,7 +51,6 @@ public class LoginTest extends AbstractWebDriver {
         String error = loginPage.getErrorMessage();
         assertThat(error).as("Got incorrect verification message").isEqualTo("Incorrect username or password.");
     }
-
 
 
 }

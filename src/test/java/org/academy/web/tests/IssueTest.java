@@ -11,7 +11,6 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 @Slf4j
-@Listeners(TestNgListener.class)
 public class IssueTest extends AbstractWebDriver {
 
     private MainPage mainPage;
