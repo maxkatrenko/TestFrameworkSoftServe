@@ -37,4 +37,7 @@ public class MainConfig {
     public static String getIssue21420Url() {
         return read("issue21420_url");
     }
+    public static String getFile() {
+        return read("file_properties");
+    }
 }
