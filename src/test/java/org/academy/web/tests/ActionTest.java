@@ -2,9 +2,11 @@ package org.academy.web.tests;
 
 import lombok.extern.slf4j.Slf4j;
 import org.academy.MainConfig;
+import org.academy.tools.TestNgListener;
 import org.academy.web.AbstractWebDriver;
 import org.academy.web.pages.*;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 @Slf4j
@@ -28,18 +30,19 @@ public class ActionTest extends AbstractWebDriver {
 
     @BeforeMethod(alwaysRun = true)
     public void precondition() {
+        log.info("Start 'ActionTest'");
         mainPage = new MainPage(webDriver, true, MainConfig.getUrl());
-        loginPage = mainPage.clickOnSignIn();   
+        loginPage = mainPage.clickOnSignIn();
         login();
         basePage = loginPage.clickOnSignIn();
         repositoryPage = basePage.goToRepositoryLink();
         actionPage = repositoryPage.clickOnActionLink();
-        runActionPage = actionPage.clickOnWorkflow();
+        runActionPage = actionPage.goToRunActionPage();
     }
 
     @Test
     public void getHash() {
-        log.info("Hash code " + runActionPage.GetActionHashCode());
+        log.info("Hash code " + runActionPage.getActionHashCode());
     }
 
 }

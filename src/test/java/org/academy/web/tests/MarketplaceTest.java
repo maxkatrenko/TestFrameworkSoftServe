@@ -2,11 +2,13 @@ package org.academy.web.tests;
 
 import lombok.extern.slf4j.Slf4j;
 import org.academy.MainConfig;
+import org.academy.tools.TestNgListener;
 import org.academy.web.AbstractWebDriver;
 import org.academy.web.pages.BasePage;
 import org.academy.web.pages.LoginPage;
 import org.academy.web.pages.MarketplacePage;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 @Slf4j
@@ -21,7 +23,7 @@ public class MarketplaceTest extends AbstractWebDriver {
 
     @BeforeMethod(alwaysRun = true)
     public void precondition() {
-        log.info("Start of test");
+        log.info("Start 'MarketplaceTest'");
         loginPage = new LoginPage(webDriver, true);
         basePage = loginPage.login();
         log.info("Logged in");

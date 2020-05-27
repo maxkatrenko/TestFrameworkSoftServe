@@ -13,7 +13,19 @@ public class ActionPage extends AbstractPage {
     @FindBy(xpath = "//a[contains(text(),'test file commit')]")
     private WebElement workflowLink;
 
-    public RunActionPage clickOnWorkflow() {
+    @FindBy(xpath = "//summary[contains(text(),'Branch')]")
+    private WebElement branches;
+
+    @FindBy(linkText = "check_branch")
+    private WebElement checkBranch;
+
+    public void findParticularBranch() {
+        branches.click();
+        checkBranch.click();
+    }
+
+    public RunActionPage goToRunActionPage() {
+        findParticularBranch();
         workflowLink.click();
         return new RunActionPage(webDriver);
     }

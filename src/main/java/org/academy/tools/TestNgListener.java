@@ -1,15 +1,22 @@
 package org.academy.tools;
 
+import lombok.extern.slf4j.Slf4j;
 import org.testng.*;
 
-public class TestNgListener extends TestListenerAdapter implements IInvokedMethodListener, IClassListener, ISuiteListener {
+@Slf4j
+public class TestNgListener implements ITestListener {
     @Override
-    public void onStart(ISuite suite) {
-        System.out.println("On Start Listener");
+    public void onTestSuccess(ITestResult result) {
+        log.info("The name of the testcase passed is :" + result.getName());
     }
 
     @Override
-    public void onBeforeClass(ITestClass itestClass) {
-        System.out.println("On Before Class Listener");
+    public void onTestFailure(ITestResult result) {
+        log.error("The name of the testcase failed is :" + result.getName());
+    }
+
+    @Override
+    public void onTestStart(ITestResult result) {
+        log.info(result.getName() + " test case started");
     }
 }
