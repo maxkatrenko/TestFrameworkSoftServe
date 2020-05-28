@@ -24,7 +24,7 @@ public class LocalWebDriverManager {
                 String chromeBinary = "src/main/resources/chromedriver" + (os.equals("win") ? ".exe" : "");
                 System.setProperty("webdriver.chrome.driver", chromeBinary);
                 WebDriver chromeWebDriver = new ChromeDriver(options);
-                chromeWebDriver.manage().timeouts().implicitlyWait(15000, TimeUnit.MILLISECONDS);
+                chromeWebDriver.manage().timeouts().implicitlyWait(400000, TimeUnit.MILLISECONDS);
                 chromeWebDriver.manage().window().maximize();
                 return chromeWebDriver;
         }
