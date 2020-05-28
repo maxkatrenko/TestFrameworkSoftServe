@@ -50,5 +50,8 @@ public class MainConfig {
 
     public static String getEmailPassword() { return read("emailPassword"); }
 
+    public static String getFile() {
+        return read("file_properties");
+    }
 
 }

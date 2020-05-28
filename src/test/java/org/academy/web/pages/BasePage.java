@@ -54,8 +54,25 @@ public class BasePage extends AbstractPage {
         marketplaceBtn.click();
         return new MarketplacePage(webDriver);
     }
-    public  boolean isRepositoryLinkPresense(){
-      return   wait.until(ExpectedConditions.elementToBeClickable(repositoryLinks.get(0))).isDisplayed();
+
+    public boolean isRepositoryLinkPresense() {
+        return wait.until(ExpectedConditions.elementToBeClickable(repositoryLinks.get(0))).isDisplayed();
+    }
+
+        @FindBy(xpath = "//div[@id='dashboard-repos-container']//div[@class='width-full text-bold']")
+        private WebElement repositoryLink;
+        @FindBy(xpath = "//a[@class='btn btn-sm empty-icon float-right BtnGroup-item']")
+        private WebElement findFileButton;
+
+        public CodePage clickOnRepositoryLink () {
+            repositoryLink.click();
+            return new CodePage(webDriver);
+        }
+        public CodePage clickOnFindFile () {
+            findFileButton.click();
+            return new CodePage(webDriver);
+
+        }
     }
 }
 
