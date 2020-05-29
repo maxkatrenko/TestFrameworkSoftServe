@@ -54,4 +54,8 @@ public class MainConfig {
         return read("file_properties");
     }
 
+    public static String getTrendingUrl() {
+        return read("trending_url");
+    }
+
 }

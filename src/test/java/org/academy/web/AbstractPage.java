@@ -40,6 +40,7 @@ public class AbstractPage {
     public AbstractPage(WebDriver webDriver) {
         this.webDriver = webDriver;
         PageFactory.initElements(webDriver, this);
-        wait = new WebDriverWait(webDriver, 500, 50);
+
+        wait = new WebDriverWait(webDriver, 400, 50);
     }
 }

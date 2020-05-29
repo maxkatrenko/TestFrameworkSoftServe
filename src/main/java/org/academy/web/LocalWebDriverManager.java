@@ -26,6 +26,7 @@ public class LocalWebDriverManager {
                 WebDriver chromeWebDriver = new ChromeDriver(options);
 
                 chromeWebDriver.manage().timeouts().implicitlyWait(500000, TimeUnit.MILLISECONDS);
+
                 chromeWebDriver.manage().window().maximize();
                 return chromeWebDriver;
         }
