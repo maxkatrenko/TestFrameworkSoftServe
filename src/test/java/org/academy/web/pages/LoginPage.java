@@ -39,8 +39,19 @@ public class LoginPage extends AbstractPage {
 
     public LoginPage clickOnSubmit() {
         submitForm.click();
-        return (new BasePage(webDriver).isRepositoryLinkPresense()) ? this : (new HelpPage(webDriver))
+
+        return ((webDriver.getTitle().equals("Sign in to GitHub · GitHub")) ||
+                webDriver.getTitle().equals("GitHub")) ? this : new HelpPage(webDriver)
                 .goToLoginPage();
+
+       /* if (webDriver.getTitle().equals("Sign in to GitHub · GitHub")){
+            return this;
+        }
+        else if( (new LoginPage(webDriver)).getErrorMessage().equals("Incorrect username or password.")){
+            return this;
+        }
+          else {  return    new HelpPage(webDriver)
+                .goToLoginPage();}*/
     }
 
     public BasePage clickOnSignIn() {

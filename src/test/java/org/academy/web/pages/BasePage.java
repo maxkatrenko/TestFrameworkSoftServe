@@ -24,7 +24,8 @@ public class BasePage extends AbstractPage {
     @FindBy(xpath = "//a[contains(text(),'Issues')]")
     private WebElement issuesLink;
 
-    @FindBy(xpath = "//a[@class='js-selected-navigation-item Header-link py-lg-3 d-inline-block'][contains(text(), 'Marketplace')]")
+    @FindBy(xpath = "//a[@class='js-selected-navigation-item Header-link py-lg-3 d-inline-block']" +
+            "[contains(text(), 'Marketplace')]")
     private WebElement marketplaceBtn;
 
     @FindBy(xpath = "//a[(@href='/alhonchar/academylessons')]")
@@ -74,5 +75,5 @@ public class BasePage extends AbstractPage {
 
         }
     }
-}
+
 
