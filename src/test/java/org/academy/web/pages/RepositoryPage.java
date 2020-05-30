@@ -2,6 +2,7 @@ package org.academy.web.pages;
 
 import org.academy.web.AbstractPage;
 import org.academy.web.WebWaiters;
+import org.academy.web.pages.wiki.WikiPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -19,11 +20,14 @@ public class RepositoryPage extends AbstractPage {
     @FindBy(xpath = "//li[contains(@class,'position-relative float-left')]//a[1]")
     private WebElement onActionLink;
 
-    @FindBy(xpath = "//li[8]//a[1]")
-    private WebElement insightsBtn;
+    @FindBy(xpath = "//a[@href=\"/alhonchar/academylessons/pulse\"]/div")
+    private WebElement insightsTab;
 
     @FindBy(xpath = "//a[@href=\"/alhonchar/academylessons/pulls\"]/div")
     private WebElement pullRequestsTab;
+
+    @FindBy(xpath = "//a[@href=\"/alhonchar/academylessons/wiki\"]/div")
+    private WebElement wikiTab;
 
     public PullPage clickOnPullRequestsTab() {
         wait.until(ExpectedConditions.elementToBeClickable(pullRequestsTab)).click();
@@ -42,8 +46,13 @@ public class RepositoryPage extends AbstractPage {
     }
 
     public InsightsPage clickOnInsights() {
-        insightsBtn.click();
+        insightsTab.click();
         return new InsightsPage(webDriver);
+    }
+
+    public WikiPage clickInWikiTab() {
+        wikiTab.click();
+        return new WikiPage(webDriver);
     }
 
 }

@@ -45,4 +45,16 @@ public class MainConfig {
     public static String getLabel() {
         return read("label");
     }
+
+    public static String getPageTitle() {
+        return read("pageTitle");
+    }
+
+    public static String getPageBody() {
+        return read("pageBody");
+    }
+
+    public static String getTestPageUrl() {
+        return read("wikiPage_url");
+    }
 }
