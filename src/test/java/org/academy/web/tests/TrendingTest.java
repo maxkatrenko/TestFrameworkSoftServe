@@ -9,6 +9,7 @@ import org.academy.web.pages.MainPage;
 import org.academy.web.pages.TrendingPage;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
 @Slf4j
 public class TrendingTest extends AbstractWebDriver {
 
@@ -22,15 +23,28 @@ public class TrendingTest extends AbstractWebDriver {
                 .fillLoginField(MainConfig.getLogin())
                 .fillPassField(MainConfig.getPassword())
                 .clickOnSubmit();
-        Thread.sleep(500000);
-        //trendingPage = new TrendingPage(webDriver, true, MainConfig.getTrendingUrl());
+        Thread.sleep(2000);
+        trendingPage = new TrendingPage(webDriver, true, MainConfig.getTrendingUrl());
     }
+
     @Test
-    public void trendingTest(){
-        trendingPage.insertSpokenLanguage("English")
-                .insertLanguage("Java")
+    public void trendingTest() {
+        trendingPage.clickOnSpokenLanguageTab()
+                .selectEnglishLanguage()
+                .clickOnLanguageTab()
+                .selectJavaLang()
                 .getTenRepos().forEach(log::info);
-        /*trendingPage.insertSpokenLanguage("")*/
+        log.info("Count of rus repos = ".concat(String.valueOf(trendingPage.clickOnSpokenLanguageTab()
+                .insertInSpokeInput("Russian")
+                .selectRussianLanguage()
+                .countRusRepos())));
+        log.info("Count of arab repos = ".concat(String.valueOf(trendingPage.clickOnSpokenLanguageTab()
+                .insertInSpokeInput("Arabic")
+                .selectArabianLanguage()
+                .clickOnDateRangeTab()
+                .selectMonthDateRange()
+                .countArabRepos())));
+
     }
 
 }

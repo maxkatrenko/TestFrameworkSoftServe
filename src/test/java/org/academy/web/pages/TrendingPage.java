@@ -1,6 +1,7 @@
 package org.academy.web.pages;
 
 import org.academy.web.AbstractPage;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,11 +16,9 @@ public class TrendingPage extends AbstractPage {
         super(webDriver, navigateToPage, navigateToPageUrl);
     }
 
-    @FindBy(xpath = "//input[@id='text-filter-field-spoken-language']")
-    private WebElement languageInput;
 
-    @FindBy(xpath = "//input[@placeholder=\"Filter languages\"]")
-    private WebElement languageFilterInput;
+    @FindBy(xpath = "//*[@href=\"/trending?spoken_language_code=en\"]")
+    private WebElement englishSection;
 
     @FindBy(xpath = "//summary[@class=\"btn-link select-menu-button\"]")
     private List<WebElement> allFilters;
@@ -30,22 +29,82 @@ public class TrendingPage extends AbstractPage {
     @FindBy(xpath = "//h1[@class='h3 lh-condensed']")
     private List<WebElement> trendingRepos;
 
-    @FindBy(xpath = "//span[contains(text(),  'Russian')]")
-    private WebElement russianLang;
+    @FindBy(xpath = "//span[contains(text(), 'Russian')]")
+    private WebElement russianLangSection;
 
-    public TrendingPage insertSpokenLanguage(String lang) {
-        languageInput.sendKeys(lang + Keys.ENTER);
+    @FindBy(xpath = "//span[contains(text(), 'Arabic')]")
+    private WebElement arabicLangSection;
+
+    @FindBy(xpath = "//span[contains(text(), 'month')]")
+    private WebElement monthDateSection;
+
+    @FindBy(xpath = "//a[@href=\"/trending/java?since=daily&spoken_language_code=en\"]")
+    private List<WebElement> javaLangSection;
+
+    @FindBy(id = "text-filter-field-spoken-language")
+    private WebElement spokeLanguageInput;
+
+    @FindBy(xpath = "//h3")
+    private WebElement messagesAboutRepos;
+
+    public TrendingPage insertInSpokeInput(String lang){
+        spokeLanguageInput.sendKeys(lang);
         return this;
     }
 
-    public TrendingPage insertLanguage(String lang) {
-        languageFilterInput.sendKeys(lang + Keys.ENTER);
+    public TrendingPage clickOnSpokenLanguageTab(){
+        allFilters.get(0).click();
         return this;
     }
+
+    public TrendingPage selectEnglishLanguage(){
+        englishSection.click();
+        return this;
+    }
+
+    public TrendingPage selectRussianLanguage(){
+        russianLangSection.click();
+        return this;
+    }
+
+    public TrendingPage selectArabianLanguage(){
+        arabicLangSection.click();
+        return this;
+    }
+    public TrendingPage selectMonthDateRange(){
+        monthDateSection.click();
+        return this;
+    }
+
+    public TrendingPage clickOnLanguageTab(){
+        allFilters.get(1).click();
+        return this;
+    }
+    public TrendingPage clickOnDateRangeTab(){
+        allFilters.get(2).click();
+        return this;
+    }
+
+    public TrendingPage selectJavaLang(){
+        javaLangSection.get(0).click();
+        return this;
+    }
+
     public List<String> getTenRepos() {
-        return wait
-                .until(ExpectedConditions.visibilityOfAllElements(trendingRepos)).stream()
-                .map(WebElement::getText).collect(Collectors.toList());
+        return trendingRepos.stream()
+                .map(WebElement::getText).limit(10).collect(Collectors.toList());
+    }
+    public int countRusRepos(){
+        if(trendingRepos.size() != 0){
+            return trendingRepos.size();
+        }
+        return 0;
+    }
+    public int countArabRepos(){
+        if((messagesAboutRepos.getText()).equals("It looks like we don’t have any trending repositories for Java.")){
+            return 0;
+        }
+        return trendingRepos.size();
     }
 
 }

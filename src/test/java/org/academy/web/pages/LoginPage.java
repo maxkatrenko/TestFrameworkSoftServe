@@ -10,6 +10,7 @@ public class LoginPage extends AbstractPage {
     public LoginPage(WebDriver webDriver) {
         super(webDriver, false, "");
     }
+
     public LoginPage(WebDriver webDriver, boolean navigateToPage) {
         super(webDriver, navigateToPage);
     }
@@ -39,19 +40,9 @@ public class LoginPage extends AbstractPage {
 
     public LoginPage clickOnSubmit() {
         submitForm.click();
-
         return ((webDriver.getTitle().equals("Sign in to GitHub · GitHub")) ||
                 webDriver.getTitle().equals("GitHub")) ? this : new HelpPage(webDriver)
                 .goToLoginPage();
-
-       /* if (webDriver.getTitle().equals("Sign in to GitHub · GitHub")){
-            return this;
-        }
-        else if( (new LoginPage(webDriver)).getErrorMessage().equals("Incorrect username or password.")){
-            return this;
-        }
-          else {  return    new HelpPage(webDriver)
-                .goToLoginPage();}*/
     }
 
     public BasePage clickOnSignIn() {
@@ -62,7 +53,7 @@ public class LoginPage extends AbstractPage {
         return errorMessage.getText();
     }
 
-    public BasePage login(){
+    public BasePage login() {
         loginField.sendKeys(MainConfig.getLogin());
         passField.sendKeys(MainConfig.getPassword());
         submitForm.click();

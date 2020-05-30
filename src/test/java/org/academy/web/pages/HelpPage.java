@@ -14,10 +14,13 @@ import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
 
 import java.time.Duration;
+import java.util.Arrays;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
+import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 import static java.util.concurrent.TimeUnit.SECONDS;
 
@@ -44,11 +47,21 @@ public class HelpPage extends AbstractPage {
     @FindBy(xpath = "//a[@href='https://mail.google.com/mail/u/0/#inbox']")
     private WebElement inboxLink;
 
-    @FindBy(xpath = "//tr[@class='zA yO']")
+    @FindBy(xpath = "//span[text()='[GitHub] Please verify your device']")
     private List<WebElement> gitHubEmails;
 
     @FindBy(xpath = "//*[@class=\"a3s aXjCH \"]")
     private WebElement divWithPassword;
+
+    @FindBy(xpath = "//input[@id='otp']")
+    private WebElement twoAuthInput;
+
+    @FindBy(xpath = "//button[text()='Verify']")
+    private WebElement verifyButton;
+
+    public void insertPassword() {
+        twoAuthInput.sendKeys(getPasswordFromGmail());
+    }
 
     @SneakyThrows
     public String getPasswordFromGmail() {
@@ -57,22 +70,32 @@ public class HelpPage extends AbstractPage {
         webDriver.get(MainConfig.getGmailUrl());
         wait.until(ExpectedConditions.visibilityOf(emailInput)).sendKeys(MainConfig.getEmail());
         nextButton.click();
-        Thread.sleep(2000);
+        Thread.sleep(3000);
         passwordInput.sendKeys(MainConfig.getEmailPassword());
         nextButtonPassword.click();
+        Thread.sleep(2000);
         inboxLink.click();
-        wait.until(ExpectedConditions.visibilityOf(gitHubEmails.get(0))).click();
-        String lastEmailText = divWithPassword.getText();
+        Thread.sleep(4000);
+        gitHubEmails.get(1).click();
+
+        String lastEmailText = wait.until(ExpectedConditions.visibilityOf(divWithPassword)).getText();
+        Pattern space = Pattern.compile("\\s");
+        String[] words = space.split(lastEmailText);
+        Pattern pattern = Pattern.compile("\\d{6}");
+        List<String> filterWords = Arrays.stream(words).filter(pattern.asPredicate())
+                .collect(Collectors.toList());
+
         WebHelpers.switchWindowTab(webDriver, 0);
-        return lastEmailText.substring(lastEmailText.length() - 6);
+        Thread.sleep(500);
+        return filterWords.get(filterWords.size() - 1);
 
     }
 
-    
 
+    @SneakyThrows
     public LoginPage goToLoginPage() {
-        this.getPasswordFromGmail();
-
+        insertPassword();
+        verifyButton.click();
         return new LoginPage(webDriver);
     }
 
