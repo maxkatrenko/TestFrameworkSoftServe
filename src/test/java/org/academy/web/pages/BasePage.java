@@ -67,5 +67,12 @@ public class BasePage extends AbstractPage {
         findFileButton.click();
         return new CodePage(webDriver);
     }
+    @FindBy(xpath = "//a[contains(text(),'Explore')]")
+    private WebElement exploreLink;
+
+    public ExplorePage clickOnExploreLink(){
+        exploreLink.click();
+        return new ExplorePage(webDriver);
+    }
 }
 
