@@ -12,8 +12,6 @@ public class CodePage extends AbstractPage {
 
     @FindBy(xpath = "//input[@id='tree-finder-field']")
     private WebElement searchFileField;
-    @FindBy(xpath ="//span[contains(text(),'Code')]")
-    private WebElement codeLabel;
     @FindBy(xpath="//span[@class='d-inline-block css-truncate-target js-tree-browser-result-path']")
     private WebElement fileProperties;
     @FindBy(xpath="//div[contains(@class,'application-main')]//div[3]")

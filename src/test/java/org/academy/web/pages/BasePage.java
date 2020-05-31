@@ -6,19 +6,29 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+
+import java.util.List;
 
 public class BasePage extends AbstractPage {
 
     public BasePage(WebDriver webDriver) {
-        super(webDriver, false, "");
+        super(webDriver);
     }
 
 
-    public BasePage(WebDriver webDriver, boolean navigateToPage) {super(webDriver, navigateToPage);
+    public BasePage(WebDriver webDriver, boolean navigateToPage) {
+        super(webDriver, navigateToPage);
     }
 
     @FindBy(xpath = "//a[contains(text(),'Issues')]")
     private WebElement issuesLink;
+
+    @FindBy(xpath = "//a[@class='js-selected-navigation-item Header-link py-lg-3 d-inline-block'][contains(text(), 'Marketplace')]")
+    private WebElement marketplaceBtn;
+
+    @FindBy(xpath = "//a[(@href='/alhonchar/academylessons')]")
+    private List<WebElement> repositoryLinks;
 
     public IssuesPage clickOnIssuesLink() {
         issuesLink.click();
@@ -27,10 +37,13 @@ public class BasePage extends AbstractPage {
 
     private WebElement toRepositoryLink = webDriver.findElement(By.xpath("//div[@id='dashboard-repos-container']"
             + "//span[@class='css-truncate css-truncate-target'][contains(text(),'"
-            + MainConfig.getParam("repository") +"')]"));
+            + MainConfig.getParam("repository") + "')]"));
 
-    @FindBy(xpath = "//a[@class='js-selected-navigation-item Header-link py-lg-3 d-inline-block'][contains(text(), 'Marketplace')]")
-    private WebElement marketplaceBtn;
+
+    public RepositoryPage clickOnAcademyLessonsLink() {
+        wait.until(ExpectedConditions.elementToBeClickable(repositoryLinks.get(0))).click();
+        return new RepositoryPage(webDriver);
+    }
 
     public RepositoryPage goToRepositoryLink() {
         toRepositoryLink.click();
@@ -53,6 +66,13 @@ public class BasePage extends AbstractPage {
     public CodePage clickOnFindFile() {
         findFileButton.click();
         return new CodePage(webDriver);
+    }
+    @FindBy(xpath = "//a[contains(text(),'Explore')]")
+    private WebElement exploreLink;
+
+    public ExplorePage clickOnExploreLink(){
+        exploreLink.click();
+        return new ExplorePage(webDriver);
     }
 }
 

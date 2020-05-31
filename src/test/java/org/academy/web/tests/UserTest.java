@@ -21,8 +21,7 @@ public class UserTest extends AbstractWebDriver {
     }
 
     @BeforeMethod(alwaysRun = true)
-    public void precondition() {
-        log.info("Start of test");
+    public void precondition() { ;
         loginPage = new LoginPage(webDriver, true);
         basePage = loginPage.login();
         log.info("Logged in");

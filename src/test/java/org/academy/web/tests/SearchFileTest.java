@@ -6,7 +6,6 @@ import org.academy.web.pages.BasePage;
 import org.academy.web.pages.CodePage;
 import org.academy.web.AbstractWebDriver;
 import org.academy.web.pages.LoginPage;
-import org.academy.web.pages.MainPage;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -19,7 +18,6 @@ public class SearchFileTest extends AbstractWebDriver {
 
     @BeforeMethod(alwaysRun = true)
     public void precondition() {
-        log.info("Starting test");
         loginPage = new LoginPage(webDriver, true);
         basePage = loginPage.login();
         log.info("Logged in");

@@ -13,7 +13,7 @@ public class IssuesPage extends AbstractPage {
         super(webDriver, navigateToPage, navigateToPageUrl);
     }
 
-    @FindBy(id = "issue_3_alhonchar_academylessons_link")
+    @FindBy(id = "issue_45_alhonchar_academylessons_link")
     private WebElement issue21420;
 
     public Issue21420Page clickOnIssue21420() {
