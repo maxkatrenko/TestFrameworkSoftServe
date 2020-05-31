@@ -1,11 +1,9 @@
 package org.academy.web.tests;
 
 import lombok.extern.slf4j.Slf4j;
-import org.academy.tools.TestNgListener;
 import org.academy.web.AbstractWebDriver;
 import org.academy.web.pages.*;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import java.util.List;
@@ -24,7 +22,6 @@ public class UserTest extends AbstractWebDriver {
 
     @BeforeMethod(alwaysRun = true)
     public void precondition() {
-        log.info("Start 'UserTest'");
         loginPage = new LoginPage(webDriver, true);
         basePage = loginPage.login();
         log.info("Logged in");
