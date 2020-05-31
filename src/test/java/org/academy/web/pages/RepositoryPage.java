@@ -25,6 +25,9 @@ public class RepositoryPage extends AbstractPage {
     @FindBy(xpath = "//a[@href=\"/alhonchar/academylessons/pulls\"]/div")
     private WebElement pullRequestsTab;
 
+    @FindBy(linkText ="Settings")
+    private WebElement settingsLink;
+
     public PullPage clickOnPullRequestsTab() {
         wait.until(ExpectedConditions.elementToBeClickable(pullRequestsTab)).click();
         return new PullPage(webDriver);
@@ -46,5 +49,9 @@ public class RepositoryPage extends AbstractPage {
         return new InsightsPage(webDriver);
     }
 
+    public SettingsPage clickOnSettingsLink(){
+        settingsLink.click();
+        return new SettingsPage(webDriver);
+    }
 }
 
