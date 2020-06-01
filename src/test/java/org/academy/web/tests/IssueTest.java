@@ -7,9 +7,8 @@ import org.academy.web.pages.BasePage;
 import org.academy.web.pages.IssuesInRepoPage;
 import org.academy.web.pages.MainPage;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 @Slf4j
@@ -23,7 +22,7 @@ public class IssueTest extends AbstractWebDriver {
     }
 
     @BeforeClass
-    public void login() {
+    private void login() {
         mainPage = new MainPage(webDriver, true, MainConfig.getUrl());
         log.info("Start 'IssueTest'");
         log.info("trying to login into github account");
@@ -33,7 +32,7 @@ public class IssueTest extends AbstractWebDriver {
         log.info("logged in into github account");
     }
 
-    @Test
+    @Test(priority = 1)
     public void getCommentTest() {
         String commitmentText =
                 basePage.clickOnIssuesLink()
@@ -42,14 +41,42 @@ public class IssueTest extends AbstractWebDriver {
         log.info("Comment 21-4-20: " + commitmentText);
     }
 
-    @Test
+    @Test(priority = 2)
     public void checkBoxesTest() {
         IssuesInRepoPage issuesCheckBoxes =
                 basePage.clickOnRepositoryLink()
-                .clickOnIssuesInRepo();
+                        .clickOnIssuesInRepo();
         int numberOfCheckBoxes = issuesCheckBoxes.clickOnRandCheckBoxes();
 
-        Assert.assertEquals(numberOfCheckBoxes,issuesCheckBoxes.getClickedCheckBoxes());
+        Assert.assertEquals(issuesCheckBoxes.getClickedCheckBoxes(), numberOfCheckBoxes);
+    }
 
+    @Test(priority = 2)
+    public void checkNewIssueFunction() {
+        IssuesInRepoPage issuesInRepoPage =
+                basePage
+                        .clickOnRepositoryLink()
+                        .clickOnIssuesInRepo()
+                        .clickOnNewIssueButton()
+                        .fillTheTitle("my_test")
+                        .clickOnSubmitNewIssueButton()
+                        .clickOnIssuesInRepoLink();
+
+        String testText =
+                issuesInRepoPage
+                        .getNewIssue()
+                        .getText();
+
+        Assert.assertNotNull(testText);
+
+        issuesInRepoPage
+                .clickOnNewIssue()
+                .clickOnDeleteIssue();
+    }
+
+    @AfterMethod
+    private void afterMethod() {
+        webDriver.get(MainConfig.getUrl());
+        log.info("returned to the mainPage");
     }
 }
