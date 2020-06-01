@@ -7,7 +7,6 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class TrafficPage extends AbstractPage {
     public TrafficPage(WebDriver webDriver) {
@@ -15,33 +14,24 @@ public class TrafficPage extends AbstractPage {
     }
 
     @FindBy(xpath = "//div[contains(@class,'col-6 top-content boxed-group')]//td[2]")
-    private List<WebElement> trafficViews;
+    private List<WebElement> popularContentViews;
 
     @FindBy(xpath = "//div[contains(@class,'col-6 top-content boxed-group')]//tr[1]//td[2]")
-    private List<WebElement> aloch;
+    private List<WebElement> firstContentViews;
 
-    public List<String> getAllContentViews() {
-        List<String> res = new ArrayList<>();
-        for (WebElement trafficView : trafficViews) {
-            res.add(trafficView.getText());
+    public List<Integer> getAllContentViews() {
+        List<Integer> res = new ArrayList<>();
+        for (WebElement trafficView : popularContentViews) {
+            res.add(Integer.valueOf(trafficView.getText().replaceAll(",", "")));
         }
         return res;
     }
 
-    public List<String> getFirstContentViews() {
-        List<String> res = new ArrayList<>();
-        for (WebElement trafficView : aloch) {
-            res.add(trafficView.getText());
+    public List<Integer> getFirstContentViews() {
+        List<Integer> res = new ArrayList<>();
+        for (WebElement trafficView : firstContentViews) {
+            res.add(Integer.valueOf(trafficView.getText().replaceAll(",", "")));
         }
         return res;
-    }
-
-    public List<Integer> convertToInteger(List<String> res) {
-        List<Integer> result = new ArrayList<>();
-                result= res.stream()
-                .map(Integer::valueOf)
-                .sorted()
-                .collect(Collectors.toList());
-        return result;
     }
 }
