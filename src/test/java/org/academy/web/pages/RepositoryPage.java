@@ -29,6 +29,9 @@ public class RepositoryPage extends AbstractPage {
     @FindBy(xpath = "//a[@href=\"/alhonchar/academylessons/wiki\"]/div")
     private WebElement wikiTab;
 
+    @FindBy(linkText ="Settings")
+    private WebElement settingsLink;
+
     public PullPage clickOnPullRequestsTab() {
         wait.until(ExpectedConditions.elementToBeClickable(pullRequestsTab)).click();
         return new PullPage(webDriver);
@@ -53,6 +56,11 @@ public class RepositoryPage extends AbstractPage {
     public WikiPage clickInWikiTab() {
         wikiTab.click();
         return new WikiPage(webDriver);
+    }
+
+    public SettingsPage clickOnSettingsLink(){
+        settingsLink.click();
+        return new SettingsPage(webDriver);
     }
 
 }

@@ -54,18 +54,30 @@ public class BasePage extends AbstractPage {
         marketplaceBtn.click();
         return new MarketplacePage(webDriver);
     }
+
     @FindBy(xpath = "//div[@id='dashboard-repos-container']//div[@class='width-full text-bold']")
     private WebElement repositoryLink;
-    @FindBy(xpath="//a[@class='btn btn-sm empty-icon float-right BtnGroup-item']")
+    @FindBy(xpath = "//a[@class='btn btn-sm empty-icon float-right BtnGroup-item']")
     private WebElement findFileButton;
 
     public CodePage clickOnRepositoryLink() {
         repositoryLink.click();
         return new CodePage(webDriver);
     }
+
     public CodePage clickOnFindFile() {
         findFileButton.click();
         return new CodePage(webDriver);
     }
+
+    @FindBy(xpath = "//a[contains(text(),'Explore')]")
+    private WebElement exploreLink;
+
+    public ExplorePage clickOnExploreLink() {
+        exploreLink.click();
+        return new ExplorePage(webDriver);
+    }
+
+
 }
 

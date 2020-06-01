@@ -57,4 +57,9 @@ public class MainConfig {
     public static String getTestPageUrl() {
         return read("wikiPage_url");
     }
+
+    public static String getCollaborator() {
+        return read("collaborator");
+    }
+
 }
