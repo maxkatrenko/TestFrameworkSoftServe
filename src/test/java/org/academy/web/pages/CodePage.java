@@ -16,7 +16,8 @@ public class CodePage extends AbstractPage {
     private WebElement fileProperties;
     @FindBy(xpath="//div[contains(@class,'application-main')]//div[3]")
     private WebElement fileContent;
-
+    @FindBy(xpath = "//span[contains(text(),'Issues')]")
+    private WebElement issuesLinkInRepo;
 
     public CodePage fillNameFile(String file){
         searchFileField.sendKeys(file);
@@ -25,6 +26,10 @@ public class CodePage extends AbstractPage {
     public CodePage clickOnFile(){
         fileProperties.click();
         return new CodePage(webDriver);
+    }
+    public IssuesInRepoPage clickOnIssuesInRepo() {
+        issuesLinkInRepo.click();
+        return new IssuesInRepoPage(webDriver);
     }
 
     public String getFileContent() {
