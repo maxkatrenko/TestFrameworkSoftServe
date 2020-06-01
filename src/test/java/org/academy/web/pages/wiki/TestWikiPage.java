@@ -15,7 +15,6 @@ public class TestWikiPage extends AbstractPage {
 
     @FindBy(xpath = "//span[@class='Counter Counter--gray']")
     private WebElement pageCounter;
-    //TODO reusability
 
     public TestWikiEditPage editPage() {
         editBtn.click();

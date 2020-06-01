@@ -2,10 +2,12 @@ package org.academy.web.pages;
 
 import org.academy.MainConfig;
 import org.academy.web.AbstractPage;
+import org.academy.web.WebWaiters;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+
 
 public class LabelsPage extends AbstractPage {
     public LabelsPage(WebDriver webDriver) {
@@ -30,10 +32,13 @@ public class LabelsPage extends AbstractPage {
     @FindBy(xpath = "//span[@class='js-labels-count']")
     private WebElement count;
 
-    String label = "//div/a/span[contains(text(),'" + MainConfig.getLabel() + "')]/following::*[11]";
-    private WebElement deletebtn = webDriver.findElement(By.xpath(label));
+    @FindBy(xpath = "//dd[@id='label--name-error']")
+    private WebElement errorMessage;
 
-//    private WebElement deletebtn = webDriver.findElement(By.xpath("//div/a/span[contains(text(),'test')]/following::*[11]"));
+    @FindBy(xpath = "//button[@class='btn js-details-target js-edit-label-cancel']")
+    private WebElement cancelBtn;
+
+    private String label = "//div/a/span[contains(text(),'" + MainConfig.getLabel() + "')]/following::*[11]";
 
     public LabelsPage addNewLabel() {
         newLabelBtn.click();
@@ -45,13 +50,45 @@ public class LabelsPage extends AbstractPage {
     }
 
     public LabelsPage deleteLabel() {
-        deletebtn.click();
+        WebElement deleteBtn = webDriver.findElement(By.xpath(label));
+        deleteBtn.click();
         webDriver.switchTo().alert().accept();
         return this;
     }
 
     public int getLabelsAmount() {
+        WebWaiters.waitUntilElementIsVisible(count, webDriver, 2);
         return Integer.parseInt(count.getText());
+    }
+
+    public String getErrorMessage() {
+        WebWaiters.waitUntilElementIsVisible(errorMessage, webDriver, 4);
+        return errorMessage.getText();
+    }
+
+    public LabelsPage fillLabelTitle(String title) {
+        labelName.sendKeys(title);
+        return this;
+    }
+
+    public LabelsPage fillLabelDesc(String description) {
+        labelDescription.sendKeys(description);
+        return this;
+    }
+
+    public LabelsPage clickOnCreateBtn() {
+        createBtn.click();
+        return this;
+    }
+
+    public LabelsPage clickOnNewLabelBtn() {
+        newLabelBtn.click();
+        return this;
+    }
+
+    public LabelsPage clickOnCancelBtn() {
+        cancelBtn.click();
+        return this;
     }
 
 }

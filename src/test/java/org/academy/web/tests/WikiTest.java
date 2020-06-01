@@ -33,17 +33,24 @@ public class WikiTest extends AbstractWebDriver {
     }
 
     @Test
-    public void newPageTest() {
+    public void addAndDeletePageTest() {
         int pages;
         log.info("Launching repository page");
         repositoryPage = basePage.goToRepositoryLink();
         wikiPage = repositoryPage.clickInWikiTab();
+        log.info("Open Wiki page");
         pages = wikiPage.getPagesAmount();
+        log.info("Pages Amount: " + pages);
         newWikiPage = wikiPage.clickOnNewPageBtn();
+        log.info("Start creating new page");
         testWikiPage = newWikiPage.createPage();
         assertThat(pages).isNotEqualTo(testWikiPage.getPagesAmount());
+        log.info("Check whether page amount has been changed");
         editPage = testWikiPage.editPage();
+        log.info("Start deleting page");
         wikiPage = editPage.deletePage();
         assertThat(pages).isEqualTo(wikiPage.getPagesAmount());
+        assertThat(wikiPage.getSuccessMessage()).isEqualTo("The wiki page was successfully deleted.");
+        log.info("Check whether page has been deleted");
     }
 }

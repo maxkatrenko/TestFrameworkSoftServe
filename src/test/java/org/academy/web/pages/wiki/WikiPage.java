@@ -16,6 +16,9 @@ public class WikiPage extends AbstractPage {
     @FindBy(xpath = "//span[@class='Counter Counter--gray']")
     private WebElement pageCounter;
 
+    @FindBy(xpath = "//div[@class='container-lg px-2']/button/parent::*")
+    private WebElement successMesssage;
+
     public NewWikiPage clickOnNewPageBtn() {
         newPageBtn.click();
         return new NewWikiPage(webDriver);
@@ -23,5 +26,9 @@ public class WikiPage extends AbstractPage {
 
     public int getPagesAmount() {
         return Integer.parseInt(pageCounter.getText());
+    }
+
+    public String getSuccessMessage() {
+        return successMesssage.getText();
     }
 }
