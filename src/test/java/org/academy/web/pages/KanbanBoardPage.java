@@ -35,10 +35,10 @@ public class KanbanBoardPage extends AbstractPage {
         return this;
     }
 
-    public PullPage goToPullPage(){
+    public Pull15Page goToPull15Page(){
         WebWaiters.waitUntilElementIsClickable(webDriver, detailsExternalLink);
         detailsExternalLink.click();
         WebHelpers.switchToLastOpenedTab(webDriver);
-        return new PullPage(webDriver);
+        return new Pull15Page(webDriver);
     }
 }
