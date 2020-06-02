@@ -19,7 +19,7 @@ public class LongScenarioTest extends AbstractWebDriver {
     private RepositoryPage repositoryPage;
     private ProjectTabPage projectTabPage;
     private KanbanBoardPage kanbanBoardPage;
-    private PullPage pullPage;
+    private Pull15Page pull15Page;
     private CommitPage commitPage;
 
 
@@ -41,8 +41,8 @@ public class LongScenarioTest extends AbstractWebDriver {
         kanbanBoardPage = projectTabPage.goToFirstProject();
         kanbanBoardPage.expandCardDetails();
         kanbanBoardPage.showDetailsFrame();
-        pullPage = kanbanBoardPage.goToPullPage();
-        commitPage=pullPage.goToCommitPage();
+        pull15Page = kanbanBoardPage.goToPull15Page();
+        commitPage=pull15Page.goToCommitPage();
         String sha = commitPage.getShaValue();
         log.info("Commit hash-code = " + sha);
     }
