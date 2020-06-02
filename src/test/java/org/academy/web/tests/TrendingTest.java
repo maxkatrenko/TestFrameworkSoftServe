@@ -15,7 +15,7 @@ public class TrendingTest extends AbstractWebDriver {
 
     private TrendingPage trendingPage;
 
-    @SneakyThrows
+
     @BeforeMethod(alwaysRun = true)
     public void precondition() {
         MainPage mainPage = new MainPage(webDriver, true, MainConfig.getUrl());
@@ -23,7 +23,6 @@ public class TrendingTest extends AbstractWebDriver {
                 .fillLoginField(MainConfig.getLogin())
                 .fillPassField(MainConfig.getPassword())
                 .clickOnSubmit();
-        Thread.sleep(2000);
         trendingPage = new TrendingPage(webDriver, true, MainConfig.getTrendingUrl());
     }
 

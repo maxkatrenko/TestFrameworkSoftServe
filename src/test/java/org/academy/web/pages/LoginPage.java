@@ -40,9 +40,7 @@ public class LoginPage extends AbstractPage {
 
     public LoginPage clickOnSubmit() {
         submitForm.click();
-        return ((webDriver.getTitle().equals("Sign in to GitHub · GitHub")) ||
-                webDriver.getTitle().equals("GitHub")) ? this : new HelpPage(webDriver)
-                .goToLoginPage();
+        return new LoginPage(webDriver);
     }
 
     public BasePage clickOnSignIn() {
