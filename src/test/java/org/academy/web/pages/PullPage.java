@@ -17,6 +17,8 @@ public class PullPage extends AbstractPage {
     @FindBy(xpath = "//a[@id='issue_15_link']")
     private WebElement testFileCommitLink;
 
+    @FindBy(xpath = "//a[@href=\"/alhonchar/academylessons/labels\"]")
+    private WebElement labelsLink;
 
     String commitName = MainConfig.getParam("commit");
     private WebElement commitNameLink = webDriver.findElement(By.linkText(commitName));
@@ -30,5 +32,10 @@ public class PullPage extends AbstractPage {
         WebWaiters.waitUntilElementIsVisible(commitNameLink, webDriver, 10);
         commitNameLink.click();
         return new CommitPage(webDriver);
+    }
+
+    public LabelsPage clickOnLabels() {
+        labelsLink.click();
+        return new LabelsPage(webDriver);
     }
 }

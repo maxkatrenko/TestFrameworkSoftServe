@@ -42,7 +42,24 @@ public class MainConfig {
         return read("file_properties");
     }
 
+    public static String getLabel() {
+        return read("label");
+    }
+
+    public static String getPageTitle() {
+        return read("pageTitle");
+    }
+
+    public static String getPageBody() {
+        return read("pageBody");
+    }
+
+    public static String getTestPageUrl() {
+        return read("wikiPage_url");
+    }
+
     public static String getCollaborator() {
         return read("collaborator");
     }
+
 }
