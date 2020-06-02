@@ -42,20 +42,32 @@ public class MainConfig {
         return read("issue21420_url");
     }
 
-    public static String getGmailUrl() {
-        return read("gmailUrl");
-    }
-
-    public static String getEmail() { return read("email"); }
-
-    public static String getEmailPassword() { return read("emailPassword"); }
-
     public static String getFile() {
         return read("file_properties");
     }
 
     public static String getTrendingUrl() {
         return read("trending_url");
+    }
+
+    public static String getLabel() {
+        return read("label");
+    }
+
+    public static String getPageTitle() {
+        return read("pageTitle");
+    }
+
+    public static String getPageBody() {
+        return read("pageBody");
+    }
+
+    public static String getTestPageUrl() {
+        return read("wikiPage_url");
+    }
+
+    public static String getCollaborator() {
+        return read("collaborator");
     }
 
 }

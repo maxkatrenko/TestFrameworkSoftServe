@@ -11,10 +11,12 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import java.util.List;
 import java.util.stream.Collectors;
 
+
+
 public class TrendingPage extends AbstractPage {
 
     public TrendingPage(WebDriver webDriver) {
-        super(webDriver);
+        super(webDriver, false);
     }
     @FindBy(xpath = "//div[@class='mb-3 mb-sm-0']//span[@class='text-bold']")
     private WebElement dropDownLanguage;
@@ -44,6 +46,7 @@ public class TrendingPage extends AbstractPage {
         thisMonthDateRange.click();
         return new TrendingPage(webDriver);
     }
+
 
     public TrendingPage(WebDriver webDriver, boolean navigateToPage, String navigateToPageUrl) {
         super(webDriver, navigateToPage, navigateToPageUrl);
@@ -139,5 +142,6 @@ public class TrendingPage extends AbstractPage {
         }
         return trendingRepos.size();
     }
+
 
 }

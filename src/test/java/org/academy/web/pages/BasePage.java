@@ -24,8 +24,7 @@ public class BasePage extends AbstractPage {
     @FindBy(xpath = "//a[contains(text(),'Issues')]")
     private WebElement issuesLink;
 
-    @FindBy(xpath = "//a[@class='js-selected-navigation-item Header-link py-lg-3 d-inline-block']" +
-            "[contains(text(), 'Marketplace')]")
+    @FindBy(xpath = "//a[@class='js-selected-navigation-item Header-link py-lg-3 d-inline-block'][contains(text(), 'Marketplace')]")
     private WebElement marketplaceBtn;
 
     @FindBy(xpath = "//a[(@href='/alhonchar/academylessons')]")
@@ -56,24 +55,29 @@ public class BasePage extends AbstractPage {
         return new MarketplacePage(webDriver);
     }
 
-    public boolean isRepositoryLinkPresense() {
-        return wait.until(ExpectedConditions.elementToBeClickable(repositoryLinks.get(0))).isDisplayed();
+    @FindBy(xpath = "//div[@id='dashboard-repos-container']//div[@class='width-full text-bold']")
+    private WebElement repositoryLink;
+    @FindBy(xpath = "//a[@class='btn btn-sm empty-icon float-right BtnGroup-item']")
+    private WebElement findFileButton;
+
+    public CodePage clickOnRepositoryLink() {
+        repositoryLink.click();
+        return new CodePage(webDriver);
     }
 
-        @FindBy(xpath = "//div[@id='dashboard-repos-container']//div[@class='width-full text-bold']")
-        private WebElement repositoryLink;
-        @FindBy(xpath = "//a[@class='btn btn-sm empty-icon float-right BtnGroup-item']")
-        private WebElement findFileButton;
-
-        public CodePage clickOnRepositoryLink () {
-            repositoryLink.click();
-            return new CodePage(webDriver);
-        }
-        public CodePage clickOnFindFile () {
-            findFileButton.click();
-            return new CodePage(webDriver);
-
-        }
+    public CodePage clickOnFindFile() {
+        findFileButton.click();
+        return new CodePage(webDriver);
     }
 
+    @FindBy(xpath = "//a[contains(text(),'Explore')]")
+    private WebElement exploreLink;
+
+    public ExplorePage clickOnExploreLink() {
+        exploreLink.click();
+        return new ExplorePage(webDriver);
+    }
+
+
+}
 
