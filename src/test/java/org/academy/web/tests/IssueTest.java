@@ -32,7 +32,7 @@ public class IssueTest extends AbstractWebDriver {
         log.info("logged in into github account");
     }
 
-    @Test(priority = 1)
+    @Test
     public void getCommentTest() {
         String commitmentText =
                 basePage.clickOnIssuesLink()
@@ -41,17 +41,18 @@ public class IssueTest extends AbstractWebDriver {
         log.info("Comment 21-4-20: " + commitmentText);
     }
 
-    @Test(priority = 2)
+    @Test
     public void checkBoxesTest() {
         IssuesInRepoPage issuesCheckBoxes =
                 basePage.clickOnRepositoryLink()
                         .clickOnIssuesInRepo();
+
         int numberOfCheckBoxes = issuesCheckBoxes.clickOnRandCheckBoxes();
 
         Assert.assertEquals(issuesCheckBoxes.getClickedCheckBoxes(), numberOfCheckBoxes);
     }
 
-    @Test(priority = 2)
+    @Test
     public void checkNewIssueFunction() {
         IssuesInRepoPage issuesInRepoPage =
                 basePage
