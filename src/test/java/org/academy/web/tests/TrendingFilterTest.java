@@ -22,11 +22,12 @@ public class TrendingFilterTest extends AbstractWebDriver {
         basePage = mainPage.clickOnSignIn().login();
         log.info("Logged in");
     }
-    /*@AfterMethod(alwaysRun = true)
-    public void clearPrecondition(){
-        WebHelpers.deleteCookieByName(MainConfig.getUserCookie(), webDriver);
+
+    @AfterMethod(alwaysRun = true)
+    public void clearPrecondition() {
+        webDriver.manage().deleteAllCookies();
         WebHelpers.refreshPage(webDriver);
-    }*/
+    }
 
     @Test
     public void filterTrending() {
@@ -42,8 +43,6 @@ public class TrendingFilterTest extends AbstractWebDriver {
         log.info("Click on drop down 'Date Range'");
         trendingPage.clickOnThisMonth();
         log.info("Click on 'This Month'");
-        WebHelpers.deleteCookieByName(MainConfig.getUserCookie(), webDriver);
-        WebHelpers.refreshPage(webDriver);
     }
 
     @Test
@@ -64,9 +63,7 @@ public class TrendingFilterTest extends AbstractWebDriver {
                 .clickOnDateRangeTab()
                 .selectMonthDateRange()
                 .countArabRepos())));
-        WebHelpers.deleteCookieByName(MainConfig.getUserCookie(), webDriver);
-        WebHelpers.refreshPage(webDriver);
-
     }
+
 
 }
