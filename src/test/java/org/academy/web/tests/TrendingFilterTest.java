@@ -25,7 +25,7 @@ public class TrendingFilterTest extends AbstractWebDriver {
 
     @AfterMethod(alwaysRun = true)
     public void clearPrecondition() {
-        webDriver.manage().deleteAllCookies();
+        WebHelpers.deleteCookieByName(MainConfig.getUserCookie(), webDriver);
         WebHelpers.refreshPage(webDriver);
     }
 
@@ -46,7 +46,7 @@ public class TrendingFilterTest extends AbstractWebDriver {
     }
 
     @Test
-    public void compareTadrendsTest() {
+    public void matchTrendsTest() {
         trendingPage = new TrendingPage(webDriver, true, MainConfig.getTrendingUrl());
         trendingPage.clickOnSpokenLanguageTab()
                 .selectEnglishLanguage()
@@ -64,6 +64,4 @@ public class TrendingFilterTest extends AbstractWebDriver {
                 .selectMonthDateRange()
                 .countArabRepos())));
     }
-
-
 }

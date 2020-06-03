@@ -52,27 +52,4 @@ public class LabelTest extends AbstractWebDriver {
         WebHelpers.refreshPage(webDriver);
     }
 
-    @DataProvider(name = "labels values form provider")
-    public Object[][] dataProviderAuthUserType() {
-        return new Object[][]{
-                {" ", "text12345"},
-                {"  ", "  "},
-                {" ", "some text"},
-        };
-    }
-
-    @Test(dataProvider = "labels values form provider", priority = 3)
-    public void negativeAddLabelTest(String title, String description) {
-        labelsPage
-                .clickOnNewLabelBtn()
-                .fillLabelTitle(title)
-                .fillLabelDesc(description)
-                .clickOnCreateBtn();
-        String errorMessage = labelsPage.getErrorMessage();
-        labelsPage.clickOnCancelBtn();
-        assertThat(errorMessage).isEqualTo("Name can't be blank");
-    }
-
-
-
 }
