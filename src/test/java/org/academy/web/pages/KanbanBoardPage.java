@@ -23,19 +23,19 @@ public class KanbanBoardPage extends AbstractPage {
     @FindBy(xpath = "//span[@class='text-bold js-issue-title']")
     WebElement detailsExternalLink;
 
-    public KanbanBoardPage expandCardDetails(){
+    public KanbanBoardPage expandCardDetails() {
         WebWaiters.waitUntilElementIsClickable(webDriver, issueCardShowDetails);
         issueCardShowDetails.click();
         return this;
     }
 
-    public KanbanBoardPage showDetailsFrame(){
+    public KanbanBoardPage showDetailsFrame() {
         WebWaiters.waitUntilElementIsClickable(webDriver, issueCardRelatedLink);
         issueCardRelatedLink.click();
         return this;
     }
 
-    public Pull15Page goToPull15Page(){
+    public Pull15Page goToPull15Page() {
         WebWaiters.waitUntilElementIsClickable(webDriver, detailsExternalLink);
         detailsExternalLink.click();
         WebHelpers.switchToLastOpenedTab(webDriver);

@@ -57,6 +57,4 @@ public class LoginPage extends AbstractPage {
         submitForm.click();
         return new BasePage(webDriver, false);
     }
-
-
 }

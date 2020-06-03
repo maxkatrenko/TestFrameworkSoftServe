@@ -18,5 +18,4 @@ public class MainPage extends AbstractPage {
         signInButton.click();
         return new LoginPage(webDriver);
     }
-
 }

@@ -69,6 +69,7 @@ public class MainConfig {
     public static String getCollaborator() {
         return read("collaborator");
     }
+
     public static String getUserCookie(){
         return read("userCookie");
     }

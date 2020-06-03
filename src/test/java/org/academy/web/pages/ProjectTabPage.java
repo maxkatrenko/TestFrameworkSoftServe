@@ -6,16 +6,16 @@ import org.academy.web.WebWaiters;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 
 public class ProjectTabPage extends AbstractPage {
-    public ProjectTabPage(WebDriver webDriver){super(webDriver, false);
+    public ProjectTabPage(WebDriver webDriver) {
+        super(webDriver, false);
     }
 
 
     private WebElement firstProjectLink = webDriver.findElement(By.linkText(MainConfig.getParam("project")));
 
-    public KanbanBoardPage goToFirstProject(){
+    public KanbanBoardPage goToFirstProject() {
         WebWaiters.waitUntilElementIsClickable(webDriver, firstProjectLink);
         firstProjectLink.click();
         return new KanbanBoardPage(webDriver);

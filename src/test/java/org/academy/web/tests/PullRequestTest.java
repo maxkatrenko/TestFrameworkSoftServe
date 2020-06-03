@@ -1,4 +1,5 @@
 package org.academy.web.tests;
+
 import lombok.extern.slf4j.Slf4j;
 import org.academy.web.AbstractWebDriver;
 import org.academy.web.LocalWebDriverManager;
@@ -20,26 +21,26 @@ public class PullRequestTest extends AbstractWebDriver {
     }
 
     @BeforeMethod(alwaysRun = true)
-    public void goToPullRequestPage(){
+    public void goToPullRequestPage() {
         if (webDriver.toString().contains("null")) webDriver = LocalWebDriverManager.getWebDriver();
         loginPage = new LoginPage(webDriver, true);
         loginPage.login();
-         pullPage = new PullPage(webDriver, true);
+        pullPage = new PullPage(webDriver, true);
     }
 
-    @AfterMethod (alwaysRun = true)
-    public void endTest(){
+    @AfterMethod(alwaysRun = true)
+    public void endTest() {
         webDriver.quit();
     }
 
     @Test
-    public void checkNumberOfRequestsCount(){
+    public void checkNumberOfRequestsCount() {
         Assert.assertEquals(pullPage.numberOfRequests(), pullPage.requestsInList(),
                 "number of requests doesn't match");
     }
 
     @Test
-    public void checkIncorrectRequestSearch(){
+    public void checkIncorrectRequestSearch() {
         pullPage.searchRequest("incorrect name");
         assert pullPage.isSearchResultEmpty();
     }

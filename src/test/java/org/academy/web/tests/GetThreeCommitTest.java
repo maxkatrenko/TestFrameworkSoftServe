@@ -31,6 +31,4 @@ public class GetThreeCommitTest extends AbstractWebDriver {
                 .clickOnCommitsLink()
                 .getFullShas().forEach(log::info);
     }
-
-
 }

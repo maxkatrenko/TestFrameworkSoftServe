@@ -29,7 +29,7 @@ public class RepositoryPage extends AbstractPage {
     @FindBy(xpath = "//a[@href=\"/alhonchar/academylessons/wiki\"]/div")
     private WebElement wikiTab;
 
-    @FindBy(linkText ="Settings")
+    @FindBy(linkText = "Settings")
     private WebElement settingsLink;
 
     public PullPage clickOnPullRequestsTab() {
@@ -58,7 +58,7 @@ public class RepositoryPage extends AbstractPage {
         return new WikiPage(webDriver);
     }
 
-    public SettingsPage clickOnSettingsLink(){
+    public SettingsPage clickOnSettingsLink() {
         settingsLink.click();
         return new SettingsPage(webDriver);
     }

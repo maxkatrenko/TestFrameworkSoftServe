@@ -23,6 +23,5 @@ public class ForksPage extends AbstractPage {
         }
         return res;
     }
-
 }
 

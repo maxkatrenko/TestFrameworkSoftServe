@@ -17,7 +17,6 @@ public class Issue21420Page extends AbstractPage {
     private List<WebElement> commentsList;
 
     public String getLastComment() {
-        return commentsList.get(commentsList.size()-1).getText();
+        return commentsList.get(commentsList.size() - 1).getText();
     }
-
 }

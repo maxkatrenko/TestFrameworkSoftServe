@@ -51,6 +51,4 @@ public class LoginTest extends AbstractWebDriver {
         String error = loginPage.getErrorMessage();
         assertThat(error).as("Got incorrect verification message").isEqualTo("Incorrect username or password.");
     }
-
-
 }

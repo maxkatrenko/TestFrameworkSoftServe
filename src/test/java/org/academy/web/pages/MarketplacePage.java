@@ -27,5 +27,4 @@ public class MarketplacePage extends AbstractPage {
     public String results() {
         return results.getText();
     }
-
 }

@@ -3,11 +3,7 @@ package org.academy.web.tests;
 import lombok.extern.slf4j.Slf4j;
 import org.academy.MainConfig;
 import org.academy.web.AbstractWebDriver;
-import org.academy.web.pages.BasePage;
-import org.academy.web.pages.LoginPage;
-import org.academy.web.pages.MainPage;
-import org.academy.web.pages.RepositoryPage;
-import org.academy.web.pages.SettingsPage;
+import org.academy.web.pages.*;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
@@ -37,7 +33,7 @@ public class SettingsTest extends AbstractWebDriver {
         settingsPage.goToManageAccess();
     }
 
-    @BeforeMethod(onlyForGroups = {"g2"}, alwaysRun = false)
+    @BeforeMethod(onlyForGroups = {"g2"})
     public void precondition() {
         settingsPage.inviteCollaborator();
     }

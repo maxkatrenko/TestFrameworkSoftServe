@@ -1,9 +1,6 @@
 package org.academy.web.pages;
 
-import org.academy.MainConfig;
 import org.academy.web.AbstractPage;
-import org.academy.web.WebWaiters;
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -19,7 +16,9 @@ public class PullPage extends AbstractPage {
         super(webDriver);
     }
 
-    public PullPage (WebDriver webDriver, boolean navigateToPage){super(webDriver, navigateToPage);}
+    public PullPage(WebDriver webDriver, boolean navigateToPage) {
+        super(webDriver, navigateToPage);
+    }
 
     @FindBy(xpath = "//a[@id='issue_15_link']")
     private WebElement testFileCommitLink;
@@ -39,24 +38,26 @@ public class PullPage extends AbstractPage {
     @FindBy(xpath = "//h3[contains(text(),'No results matched your search.')]")
     private WebElement noResult;
 
-    public void searchRequest(String searchText){
+    public void searchRequest(String searchText) {
         SearchBox.clear();
         SearchBox.sendKeys(searchText);
         SearchBox.sendKeys(Keys.ENTER);
     }
 
-    public String requestsInList(){
+    public String requestsInList() {
         return String.valueOf(pullRequestList.size());
 
     }
 
-    public String numberOfRequests(){
+    public String numberOfRequests() {
         return OpenRequestsButton.getText().replace(" Open", "");
     }
 
-    public boolean isSearchResultEmpty(){
-        try{WebElement element = noResult;
-            return true;}catch (NoSuchElementException e){
+    public boolean isSearchResultEmpty() {
+        try {
+            WebElement element = noResult;
+            return true;
+        } catch (NoSuchElementException e) {
             return false;
         }
     }
@@ -65,7 +66,6 @@ public class PullPage extends AbstractPage {
         wait.until(ExpectedConditions.elementToBeClickable(testFileCommitLink)).click();
         return new Pull15Page(webDriver);
     }
-
 
 
     public LabelsPage clickOnLabels() {

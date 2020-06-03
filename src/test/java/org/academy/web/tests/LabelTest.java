@@ -5,7 +5,6 @@ import org.academy.web.AbstractWebDriver;
 import org.academy.web.WebHelpers;
 import org.academy.web.pages.*;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
@@ -30,7 +29,6 @@ public class LabelTest extends AbstractWebDriver {
         labelsPage = pullPage.clickOnLabels();
         log.info("Launched labels page");
     }
-
 
     @Test
     public void addAndDeleteTest() {

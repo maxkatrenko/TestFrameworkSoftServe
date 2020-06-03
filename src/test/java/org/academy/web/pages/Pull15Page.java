@@ -18,9 +18,7 @@ public class Pull15Page extends AbstractPage {
     private WebElement commitsLink;
 
     String commitName = MainConfig.getParam("commit");
-    private WebElement commitNameLink = webDriver.findElement(By.xpath("//a[@title='"+commitName+"']"));
-
-
+    private WebElement commitNameLink = webDriver.findElement(By.xpath("//a[@title='" + commitName + "']"));
 
     public CommitPage clickOnCommitsLink() {
         wait.until(ExpectedConditions.elementToBeClickable(commitsLink)).click();

@@ -20,9 +20,9 @@ public class InsightsPage extends AbstractPage {
         forksBtn.click();
         return new ForksPage(webDriver);
     }
+
     public TrafficPage clickOnTraffic() {
         trafficBtn.click();
         return new TrafficPage(webDriver);
     }
-
 }

@@ -45,7 +45,7 @@ public class GetPopularContentTest extends AbstractWebDriver {
         allContentViews = trafficPage.getAllContentViews();
         log.info("All popular content Views: " + allContentViews);
 
-        firstContentViews=trafficPage.getFirstContentViews();
+        firstContentViews = trafficPage.getFirstContentViews();
         log.info("First content Views: " + firstContentViews);
 
         log.info("MAX amount of views from popular content: " + max(allContentViews));

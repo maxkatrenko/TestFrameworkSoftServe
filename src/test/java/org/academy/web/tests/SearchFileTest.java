@@ -2,9 +2,9 @@ package org.academy.web.tests;
 
 import lombok.extern.slf4j.Slf4j;
 import org.academy.MainConfig;
+import org.academy.web.AbstractWebDriver;
 import org.academy.web.pages.BasePage;
 import org.academy.web.pages.CodePage;
-import org.academy.web.AbstractWebDriver;
 import org.academy.web.pages.LoginPage;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
