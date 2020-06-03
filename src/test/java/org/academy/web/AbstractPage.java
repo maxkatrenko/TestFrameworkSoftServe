@@ -28,7 +28,8 @@ public class AbstractPage {
     public AbstractPage(WebDriver webDriver, boolean navigateToPage) {
         String pageUrl = MainConfig.getPageUrl(this.getClass().getSimpleName());
         this.webDriver = webDriver;
-        webDriver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+        webDriver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+
         PageFactory.initElements(webDriver, this);
         if (navigateToPage && !Objects.equals(webDriver.getCurrentUrl(), pageUrl)) {
             webDriver.get(pageUrl);
@@ -39,6 +40,6 @@ public class AbstractPage {
     public AbstractPage(WebDriver webDriver) {
         this.webDriver = webDriver;
         PageFactory.initElements(webDriver, this);
-        wait = new WebDriverWait(webDriver, 40, 50);
+        wait = new WebDriverWait(webDriver, 10, 50);
     }
 }
