@@ -10,6 +10,8 @@ import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.function.Function;
 
+
+
 public class WebHelpers {
 
 	public static void scrollToElement(WebDriver driver, WebElement element) throws InterruptedException {
@@ -43,6 +45,16 @@ public class WebHelpers {
 
 	public static void refreshPage(WebDriver webDriver) {
 		webDriver.navigate().refresh();
+	}
+
+	public static void deleteCookieByName(String name, WebDriver driver){
+		Cookie cookie = driver.manage().getCookies().stream().filter(x->x.getName().equals(name)).findFirst().get();
+		if(cookie!=null){
+			driver.manage().deleteCookie(cookie);
+		}
+		else {
+			driver.manage().deleteAllCookies();
+		}
 	}
 
 	public static void openNewBlankBrowserTab(WebDriver driver) {
