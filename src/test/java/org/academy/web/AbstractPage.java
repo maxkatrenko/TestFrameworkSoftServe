@@ -2,6 +2,7 @@ package org.academy.web;
 
 import lombok.extern.slf4j.Slf4j;
 import org.academy.TestConfigurations;
+import org.academy.utils.web.WebHelpers;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;

@@ -2,7 +2,6 @@ package org.academy.web.pages;
 
 import org.academy.TestConfigurations;
 import org.academy.web.AbstractPage;
-import org.academy.web.WebWaiters;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;

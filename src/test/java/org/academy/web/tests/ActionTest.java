@@ -2,7 +2,7 @@ package org.academy.web.tests;
 
 import lombok.extern.slf4j.Slf4j;
 import org.academy.TestConfigurations;
-import org.academy.web.AbstractWebDriver;
+import org.academy.utils.web.AbstractWebDriver;
 import org.academy.web.pages.*;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;

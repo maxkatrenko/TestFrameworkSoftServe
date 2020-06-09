@@ -1,15 +1,9 @@
-package org.academy.web;
+package org.academy.utils.web;
 
 import org.openqa.selenium.*;
-import org.openqa.selenium.support.ui.FluentWait;
-import org.openqa.selenium.support.ui.Wait;
 
-import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.NoSuchElementException;
-import java.util.function.Function;
-
 
 
 public class WebHelpers {
