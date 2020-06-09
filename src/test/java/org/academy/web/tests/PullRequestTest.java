@@ -1,7 +1,7 @@
 package org.academy.web.tests;
 import lombok.extern.slf4j.Slf4j;
-import org.academy.web.AbstractWebDriver;
-import org.academy.web.LocalWebDriverManager;
+import org.academy.utils.web.AbstractWebDriver;
+import org.academy.utils.web.LocalWebDriverManager;
 import org.academy.web.pages.LoginPage;
 import org.academy.web.pages.PullPage;
 import org.testng.Assert;

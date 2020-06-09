@@ -1,12 +1,11 @@
 package org.academy.web;
 
 import lombok.extern.slf4j.Slf4j;
-import org.academy.MainConfig;
+import org.academy.TestConfigurations;
+import org.academy.utils.web.WebHelpers;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.util.*;
 
 import java.util.Objects;
 import java.util.concurrent.TimeUnit;
@@ -26,7 +25,7 @@ public class AbstractPage {
     }
 
     public AbstractPage(WebDriver webDriver, boolean navigateToPage) {
-        String pageUrl = MainConfig.getPageUrl(this.getClass().getSimpleName());
+        String pageUrl = TestConfigurations.getPageUrl(this.getClass().getSimpleName());
         this.webDriver = webDriver;
         webDriver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 

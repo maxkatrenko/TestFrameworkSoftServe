@@ -1,9 +1,9 @@
 package org.academy.web.tests;
 
 import lombok.extern.slf4j.Slf4j;
-import org.academy.MainConfig;
-import org.academy.web.AbstractWebDriver;
-import org.academy.web.WebHelpers;
+import org.academy.TestConfigurations;
+import org.academy.utils.web.AbstractWebDriver;
+import org.academy.utils.web.WebHelpers;
 import org.academy.web.pages.*;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -18,14 +18,14 @@ public class TrendingFilterTest extends AbstractWebDriver {
 
     @BeforeMethod(alwaysRun = true)
     public void precondition() {
-        MainPage mainPage = new MainPage(webDriver, true, MainConfig.getUrl());
+        MainPage mainPage = new MainPage(webDriver, true, TestConfigurations.getUrl());
         basePage = mainPage.clickOnSignIn().login();
         log.info("Logged in");
     }
 
     @AfterMethod(alwaysRun = true)
     public void clearPrecondition() {
-        WebHelpers.deleteCookieByName(MainConfig.getUserCookie(), webDriver);
+        WebHelpers.deleteCookieByName(TestConfigurations.getUserCookie(), webDriver);
         WebHelpers.refreshPage(webDriver);
     }
 
@@ -47,7 +47,7 @@ public class TrendingFilterTest extends AbstractWebDriver {
 
     @Test
     public void matchTrendsTest() {
-        trendingPage = new TrendingPage(webDriver, true, MainConfig.getTrendingUrl());
+        trendingPage = new TrendingPage(webDriver, true, TestConfigurations.getTrendingUrl());
         trendingPage.clickOnSpokenLanguageTab()
                 .selectEnglishLanguage()
                 .clickOnLanguageTab()
