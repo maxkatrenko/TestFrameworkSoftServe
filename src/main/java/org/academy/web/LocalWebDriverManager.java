@@ -1,7 +1,7 @@
 package org.academy.web;
 
 import lombok.extern.slf4j.Slf4j;
-import org.academy.MainConfig;
+import org.academy.TestConfigurations;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -17,7 +17,7 @@ import java.util.concurrent.TimeUnit;
 public class LocalWebDriverManager {
 
     public static synchronized WebDriver getWebDriver() {
-        return getWebDriver(MainConfig.getBrowser());
+        return getWebDriver(TestConfigurations.getBrowser());
     }
 
     public static WebDriver getWebDriver(String browser) {

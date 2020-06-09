@@ -1,6 +1,6 @@
 package org.academy.web.pages;
 
-import org.academy.MainConfig;
+import org.academy.TestConfigurations;
 import org.academy.web.AbstractPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -51,8 +51,8 @@ public class LoginPage extends AbstractPage {
     }
 
     public BasePage login(){
-        loginField.sendKeys(MainConfig.getLogin());
-        passField.sendKeys(MainConfig.getPassword());
+        loginField.sendKeys(TestConfigurations.getLogin());
+        passField.sendKeys(TestConfigurations.getPassword());
         submitForm.click();
         return new BasePage(webDriver, false);
     }

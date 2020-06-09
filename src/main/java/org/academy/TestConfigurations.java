@@ -1,9 +1,9 @@
 package org.academy;
 
-public class MainConfig {
+public class TestConfigurations {
 
     private static String read(String value) {
-        return ConfigurationReader.get().readValue(value);
+        return PropertyReader.get().readValue(value);
     }
 
     public static String getUrl() {
@@ -37,7 +37,16 @@ public class MainConfig {
     public static String getIssue21420Url() {
         return read("issue21420_url");
     }
+
     public static String getFile() {
         return read("file_properties");
+    }
+
+    public static String getApiUri() {
+        return read("api_uri");
+    }
+
+    public static String getApiToken() {
+        return read("api_token");
     }
 }
