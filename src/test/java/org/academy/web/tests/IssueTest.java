@@ -23,7 +23,7 @@ public class IssueTest extends AbstractWebDriver {
 
     @BeforeClass
     private void login() {
-        mainPage = new MainPage(webDriver, true, MainConfig.getUrl());
+        mainPage = new MainPage(webDriver, true, TestConfigurations.getUrl());
         log.info("Start 'IssueTest'");
         log.info("trying to login into github account");
         basePage = mainPage
@@ -76,7 +76,7 @@ public class IssueTest extends AbstractWebDriver {
 
     @AfterMethod
     private void afterMethod() {
-        webDriver.get(MainConfig.getUrl());
+        webDriver.get(TestConfigurations.getUrl());
         log.info("returned to the mainPage");
     }
 }
