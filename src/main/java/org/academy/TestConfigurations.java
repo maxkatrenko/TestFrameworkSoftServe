@@ -1,9 +1,9 @@
 package org.academy;
 
-public class MainConfig {
+public class TestConfigurations {
 
     private static String read(String value) {
-        return ConfigurationReader.get().readValue(value);
+        return PropertyReader.get().readValue(value);
     }
 
     public static String getUrl() {
@@ -74,4 +74,11 @@ public class MainConfig {
         return read("userCookie");
     }
 
+    public static String getApiUri() {
+        return read("api_uri");
+    }
+
+    public static String getApiToken() {
+        return read("api_token");
+    }
 }

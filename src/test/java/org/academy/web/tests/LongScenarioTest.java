@@ -1,9 +1,8 @@
 package org.academy.web.tests;
-
-import org.academy.web.AbstractWebDriver;
-import org.academy.web.pages.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.academy.utils.web.AbstractWebDriver;
+import org.academy.web.pages.*;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -38,7 +37,7 @@ public class LongScenarioTest extends AbstractWebDriver {
         kanbanBoardPage.expandCardDetails();
         kanbanBoardPage.showDetailsFrame();
         pull15Page = kanbanBoardPage.goToPull15Page();
-        commitPage = pull15Page.goToCommitPage();
+        commitPage=pull15Page.goToCommitPage();
         String sha = commitPage.getShaValue();
         log.info("Commit hash-code = " + sha);
     }
