@@ -22,9 +22,13 @@ public class TestConfigurations {
         return read("login");
     }
 
-    public static String getPageUrl(String name){return read("main_url") + read(name);}
+    public static String getPageUrl(String name) {
+        return read("main_url") + read(name);
+    }
 
-    public static String getParam(String param) {return read(param);}
+    public static String getParam(String param) {
+        return read(param);
+    }
 
     public static String getSearchApp() {
         return read("searchApp");
@@ -40,6 +44,33 @@ public class TestConfigurations {
 
     public static String getFile() {
         return read("file_properties");
+    }
+
+    public static String getTrendingUrl() {
+        return read("trending_url");
+    }
+
+    public static String getLabel() {
+        return read("label");
+    }
+
+    public static String getPageTitle() {
+        return read("pageTitle");
+    }
+
+    public static String getPageBody() {
+        return read("pageBody");
+    }
+
+    public static String getTestPageUrl() {
+        return read("wikiPage_url");
+    }
+
+    public static String getCollaborator() {
+        return read("collaborator");
+    }
+    public static String getUserCookie(){
+        return read("userCookie");
     }
 
     public static String getApiUri() {

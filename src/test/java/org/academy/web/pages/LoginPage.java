@@ -10,6 +10,7 @@ public class LoginPage extends AbstractPage {
     public LoginPage(WebDriver webDriver) {
         super(webDriver, false, "");
     }
+
     public LoginPage(WebDriver webDriver, boolean navigateToPage) {
         super(webDriver, navigateToPage);
     }
@@ -39,7 +40,7 @@ public class LoginPage extends AbstractPage {
 
     public LoginPage clickOnSubmit() {
         submitForm.click();
-        return this;
+        return new LoginPage(webDriver);
     }
 
     public BasePage clickOnSignIn() {

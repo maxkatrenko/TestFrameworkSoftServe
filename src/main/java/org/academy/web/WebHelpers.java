@@ -1,12 +1,16 @@
 package org.academy.web;
 
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Wait;
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.function.Function;
+
+
 
 public class WebHelpers {
 
@@ -43,7 +47,18 @@ public class WebHelpers {
 		webDriver.navigate().refresh();
 	}
 
+	public static void deleteCookieByName(String name, WebDriver driver){
+		Cookie cookie = driver.manage().getCookies().stream().filter(x->x.getName().equals(name)).findFirst().get();
+		if(cookie!=null){
+			driver.manage().deleteCookie(cookie);
+		}
+		else {
+			driver.manage().deleteAllCookies();
+		}
+	}
+
 	public static void openNewBlankBrowserTab(WebDriver driver) {
 		((JavascriptExecutor)driver).executeScript("window.open();");
 	}
+
 }

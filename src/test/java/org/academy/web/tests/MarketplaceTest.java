@@ -21,7 +21,6 @@ public class MarketplaceTest extends AbstractWebDriver {
 
     @BeforeMethod(alwaysRun = true)
     public void precondition() {
-        log.info("Start 'MarketplaceTest'");
         loginPage = new LoginPage(webDriver, true);
         basePage = loginPage.login();
         log.info("Logged in");
