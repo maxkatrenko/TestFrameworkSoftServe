@@ -18,7 +18,7 @@ public class PostRequest {
 
     public Response withToken(String token, String body, int responseCode, String resources) {
         ValidateResponseWaiter responseWaiter = () -> {
-            RestAssured.baseURI = TestConfigurations.getApi();
+            RestAssured.baseURI = TestConfigurations.getApiUrl();
             return given()
                     .relaxedHTTPSValidation()
                     .auth().oauth2(token)

@@ -18,7 +18,7 @@ public class DeleteRequest {
 
     public Response withToken(String token, int responseCode, String resources) {
         ValidateResponseWaiter responseWaiter = () -> {
-            RestAssured.baseURI = TestConfigurations.getApi();
+            RestAssured.baseURI = TestConfigurations.getApiUrl();
             return given()
                     .relaxedHTTPSValidation()
                     .auth().oauth2(token)
