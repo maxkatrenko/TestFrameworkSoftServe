@@ -7,7 +7,7 @@ import org.academy.api.pojo.RepositoryPojo;
 import org.academy.api.requests.RepositoryRequests;
 import org.testng.annotations.Test;
 
-public class RepositoryPojoTest {
+public class RepositoryTest {
 
     private RepositoryRequests repositoryRequests = new RepositoryRequests();
     private ObjectMapper mapper = new ObjectMapper();
@@ -15,8 +15,8 @@ public class RepositoryPojoTest {
     @Test
     public void createRepository() throws JsonProcessingException {
         String repositoryName = "test";
-        RepositoryPojo repositoryPojo = new RepositoryPojo(repositoryName, "test repository",
-                "https://github.com/");
+
+        RepositoryPojo repositoryPojo = new RepositoryPojo(repositoryName, "test repository");
 
         String jsonBody = mapper.writeValueAsString(repositoryPojo);
 
