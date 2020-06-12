@@ -77,6 +77,9 @@ public class TestConfigurations {
     public static String getApiUri() {
         return read("api_uri");
     }
+    public static String getApi() {
+        return read("api");
+    }
 
     public static String getApiToken() {
         return read("api_token");
