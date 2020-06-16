@@ -7,6 +7,7 @@ import org.academy.api.pojo.RepositoryPojo;
 import org.academy.api.requests.RepositoryRequests;
 import org.testng.annotations.Test;
 
+@Test
 public class RepositoryTest {
 
     private RepositoryRequests repositoryRequests = new RepositoryRequests();
