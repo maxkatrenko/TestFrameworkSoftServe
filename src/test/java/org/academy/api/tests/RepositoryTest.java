@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.academy.TestConfigurations;
 import org.academy.api.pojo.RepositoryPojo;
 import org.academy.api.requests.RepositoryRequests;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class RepositoryTest {
@@ -13,12 +14,17 @@ public class RepositoryTest {
     private ObjectMapper mapper = new ObjectMapper();
 
     @Test
-    public void createRepository() throws JsonProcessingException {
+    public void createRepository() {
         String repositoryName = "test";
 
         RepositoryPojo repositoryPojo = new RepositoryPojo(repositoryName, "test repository");
 
-        String jsonBody = mapper.writeValueAsString(repositoryPojo);
+        String jsonBody = null;
+        try {
+            jsonBody = mapper.writeValueAsString(repositoryPojo);
+        } catch (JsonProcessingException e) {
+            Assert.fail();
+        }
 
         repositoryRequests.createRepository(TestConfigurations.getApiToken(), jsonBody, 201);
         repositoryRequests.deleteRepository(TestConfigurations.getApiToken(), repositoryName, 204);
