@@ -8,6 +8,7 @@ import org.academy.api.requests.RepositoryRequests;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+@Test
 public class RepositoryTest {
 
     private RepositoryRequests repositoryRequests = new RepositoryRequests();
