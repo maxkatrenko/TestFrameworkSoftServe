@@ -22,7 +22,9 @@ public class PullRequestTest extends AbstractWebDriver {
 
     @BeforeMethod(alwaysRun = true)
     public void goToPullRequestPage() {
-        if (webDriver.toString().contains("null")) webDriver = LocalWebDriverManager.getWebDriver();
+        if (webDriver.toString().contains("null")) {
+            webDriver = LocalWebDriverManager.getWebDriver();
+        }
         loginPage = new LoginPage(webDriver, true);
         loginPage.login();
         pullPage = new PullPage(webDriver, true);
