@@ -72,8 +72,11 @@ public class LocalWebDriverManager {
                 } catch (MalformedURLException e) {
                     e.printStackTrace();
                 }
-                webDriver.manage().timeouts().implicitlyWait(4000, TimeUnit.MILLISECONDS);
-                webDriver.manage().window().maximize();
+                if (webDriver != null) {
+                    webDriver.manage().timeouts().implicitlyWait(4000, TimeUnit.MILLISECONDS);
+                    webDriver.manage().window().maximize();
+                }
+
                 return webDriver;
             case "chrome_remote_selenoid":
                 DesiredCapabilities capabilities = new DesiredCapabilities();
@@ -85,14 +88,16 @@ public class LocalWebDriverManager {
                 RemoteWebDriver driver = null;
                 try {
                     driver = new RemoteWebDriver(
-                            URI.create("http://localhost:4444/wd/hub").toURL(),
+                            URI.create("http://172.17.0.2:4444/wd/hub").toURL(),
                             capabilities
                     );
                 } catch (MalformedURLException e) {
                     e.printStackTrace();
                 }
-                driver.manage().timeouts().implicitlyWait(4000, TimeUnit.MILLISECONDS);
-                driver.manage().window().maximize();
+                if (driver != null) {
+                    driver.manage().timeouts().implicitlyWait(4000, TimeUnit.MILLISECONDS);
+                    driver.manage().window().maximize();
+                }
                 return driver;
         }
     }
