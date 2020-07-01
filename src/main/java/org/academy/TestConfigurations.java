@@ -18,8 +18,15 @@ public class TestConfigurations {
         return read("pass");
     }
 
+    public static String getMyPass() {
+        return read("myPass");
+    }
     public static String getLogin() {
         return read("login");
+    }
+
+    public static String getMyLogin() {
+        return read("myLogin");
     }
 
     public static String getPageUrl(String name) {

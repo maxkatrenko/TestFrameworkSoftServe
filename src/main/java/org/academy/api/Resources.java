@@ -15,6 +15,10 @@ public class Resources {
         return read("new_repo");
     }
 
+    public static String getNewIssue() {
+        return read("new_issue");
+    }
+
     public static String getRepoForDelete() {
         return read("repo_for_delete");
     }

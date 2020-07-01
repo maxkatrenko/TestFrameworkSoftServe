@@ -1,4 +1,4 @@
-package org.academy.web.pages;
+package org.academy.web.demo4pages;
 
 import org.academy.TestConfigurations;
 import org.academy.web.AbstractPage;
@@ -8,13 +8,8 @@ import org.openqa.selenium.support.FindBy;
 
 public class LoginPage extends AbstractPage {
     public LoginPage(WebDriver webDriver) {
-        super(webDriver, false, "");
+        super(webDriver);
     }
-
-    public LoginPage(WebDriver webDriver, boolean navigateToPage) {
-        super(webDriver, navigateToPage);
-    }
-
 
     @FindBy(xpath = "//input[@name='login']")
     private WebElement loginField;
@@ -52,9 +47,10 @@ public class LoginPage extends AbstractPage {
     }
 
     public BasePage login(){
-        loginField.sendKeys(TestConfigurations.getLogin());
-        passField.sendKeys(TestConfigurations.getPassword());
+        loginField.sendKeys(TestConfigurations.getMyLogin());
+        passField.sendKeys(TestConfigurations.getMyPass());
         submitForm.click();
         return new BasePage(webDriver);
     }
+
 }

@@ -33,7 +33,7 @@ public class IssueTest extends AbstractWebDriver {
     }
 
     @Test
-    public void getCommentTest() {
+    public void lastCommentFromIssueTest() {
         String commitmentText =
                 basePage.clickOnIssuesLink()
                         .clickOnIssue21420()
@@ -53,7 +53,7 @@ public class IssueTest extends AbstractWebDriver {
     }
 
     @Test
-    public void checkNewIssueFunction() {
+    public void checkNewIssueFunctionTest() {
         IssuesInRepoPage issuesInRepoPage =
                 basePage
                         .clickOnRepositoryLink()
