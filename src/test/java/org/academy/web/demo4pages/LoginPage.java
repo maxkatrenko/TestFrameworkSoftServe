@@ -6,6 +6,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.Base64;
+
 public class LoginPage extends AbstractPage {
     public LoginPage(WebDriver webDriver) {
         super(webDriver);
@@ -46,9 +48,11 @@ public class LoginPage extends AbstractPage {
         return errorMessage.getText();
     }
 
-    public BasePage login(){
-        loginField.sendKeys(TestConfigurations.getAccountUsername());
-        passField.sendKeys(TestConfigurations.getAccountPassword());
+    public BasePage login() {
+        byte[] decodedUsername = Base64.getDecoder().decode(TestConfigurations.getEncodedAccountUsername());
+        byte[] decodedPass = Base64.getDecoder().decode(TestConfigurations.getEncodedAccountPassword());
+        loginField.sendKeys(new String(decodedUsername));
+        passField.sendKeys(new String(decodedPass));
         submitForm.click();
         return new BasePage(webDriver);
     }

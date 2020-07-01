@@ -39,8 +39,7 @@ public class IssueUiApiTest extends AbstractWebDriver {
         ObjectMapper objectMapper = new ObjectMapper();
         IssuesInRepoPage issuesInRepoPage = new IssuesInRepoPage(webDriver);
 
-        byte[] decoded = Base64.getDecoder().decode(TestConfigurations.getEncodedApiToken());
-        String decodedToken = new String(decoded);
+        byte[] decodedToken = Base64.getDecoder().decode(TestConfigurations.getEncodedApiToken());
 
         String nameOfIssue = "test_issue";
         String jsonObject = null;
@@ -53,7 +52,7 @@ public class IssueUiApiTest extends AbstractWebDriver {
             Assert.fail();
         }
 
-        issueRequests.createIssue(decodedToken, jsonObject, 201);
+        issueRequests.createIssue(new String(decodedToken), jsonObject, 201);
         log.info("Issue created");
 
         boolean isIssuePresent =

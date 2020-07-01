@@ -18,15 +18,15 @@ public class TestConfigurations {
         return read("pass");
     }
 
-    public static String getAccountPassword() {
-        return read("accountPassword");
+    public static String getEncodedAccountPassword() {
+        return read("encodedAccountPassword");
     }
     public static String getLogin() {
         return read("login");
     }
 
-    public static String getAccountUsername() {
-        return read("accountUsername");
+    public static String getEncodedAccountUsername() {
+        return read("encodedAccountUsername");
     }
 
     public static String getPageUrl(String name) {
