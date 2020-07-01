@@ -47,7 +47,7 @@ public class IssueUiApiTest extends AbstractWebDriver {
         } catch (JsonProcessingException e) {
             Assert.fail();
         }
-        issueRequests.createIssue(TestConfigurations.getApiToken(), jsonObject, 201);
+        issueRequests.createIssue(jsonObject, 201);
         log.info("Issue created");
 
         boolean isIssuePresent =

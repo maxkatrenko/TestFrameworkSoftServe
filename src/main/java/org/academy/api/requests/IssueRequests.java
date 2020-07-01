@@ -7,9 +7,8 @@ import org.academy.api.Resources;
 @Slf4j
 public class IssueRequests extends AbstractRequests {
 
-    public void createIssue(String token, String body, int responseCode) {
-        Response response = postRequest.withToken(token, body, responseCode, Resources.getNewIssue());
+    public void createIssue(String body, int responseCode) {
+        Response response = postRequest.withoutToken(body, responseCode, Resources.getNewIssue());
         log.info(response.asString());
     }
-
 }

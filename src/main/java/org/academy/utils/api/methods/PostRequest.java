@@ -20,7 +20,6 @@ public class PostRequest {
         ValidateResponseWaiter responseWaiter = () -> {
             RestAssured.baseURI = TestConfigurations.getApiUrl();
             return given()
-                    .relaxedHTTPSValidation()
                     .auth().oauth2(token)
                     .contentType(ContentType.JSON)
                     .header("Accept", "application/vnd.github.v3+json")
@@ -29,6 +28,25 @@ public class PostRequest {
                     .post(resources)
                     .then();
         };
+        return getResponse(responseCode, responseWaiter);
+    }
+
+    public Response withoutToken(String body, int responseCode, String resources) {
+        ValidateResponseWaiter responseWaiter = () -> {
+            RestAssured.baseURI = TestConfigurations.getApiUrl();
+            return given()
+                    .relaxedHTTPSValidation().auth().form(TestConfigurations.getMyLogin(), TestConfigurations.getMyPass())
+                    .contentType(ContentType.JSON)
+                    .header("Accept", "application/vnd.github.v3+json")
+                    .body(body)
+                    .when()
+                    .post(resources)
+                    .then();
+        };
+        return getResponse(responseCode, responseWaiter);
+    }
+
+    private Response getResponse(int responseCode, ValidateResponseWaiter responseWaiter) {
         ValidatableResponse validatableResponse = apiWaiter.waitForResponse(responseWaiter, responseCode);
         Response resp = validatableResponse.contentType(ContentType.JSON).extract().response();
         log.info("Response returned - {}", resp.asString());
