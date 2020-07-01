@@ -15,6 +15,8 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.util.Base64;
+
 @Slf4j
 public class IssueUiApiTest extends AbstractWebDriver {
 
@@ -37,6 +39,9 @@ public class IssueUiApiTest extends AbstractWebDriver {
         ObjectMapper objectMapper = new ObjectMapper();
         IssuesInRepoPage issuesInRepoPage = new IssuesInRepoPage(webDriver);
 
+        byte[] decoded = Base64.getDecoder().decode(TestConfigurations.getEncodedApiToken());
+        String decodedToken = new String(decoded);
+
         String nameOfIssue = "test_issue";
         String jsonObject = null;
 
@@ -47,7 +52,8 @@ public class IssueUiApiTest extends AbstractWebDriver {
         } catch (JsonProcessingException e) {
             Assert.fail();
         }
-        issueRequests.createIssue(jsonObject, 201);
+
+        issueRequests.createIssue(decodedToken, jsonObject, 201);
         log.info("Issue created");
 
         boolean isIssuePresent =

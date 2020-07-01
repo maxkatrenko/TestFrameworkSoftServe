@@ -47,8 +47,8 @@ public class LoginPage extends AbstractPage {
     }
 
     public BasePage login(){
-        loginField.sendKeys(TestConfigurations.getMyLogin());
-        passField.sendKeys(TestConfigurations.getMyPass());
+        loginField.sendKeys(TestConfigurations.getAccountUsername());
+        passField.sendKeys(TestConfigurations.getAccountPassword());
         submitForm.click();
         return new BasePage(webDriver);
     }

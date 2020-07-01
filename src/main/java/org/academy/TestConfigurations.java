@@ -18,15 +18,15 @@ public class TestConfigurations {
         return read("pass");
     }
 
-    public static String getMyPass() {
-        return read("myPass");
+    public static String getAccountPassword() {
+        return read("accountPassword");
     }
     public static String getLogin() {
         return read("login");
     }
 
-    public static String getMyLogin() {
-        return read("myLogin");
+    public static String getAccountUsername() {
+        return read("accountUsername");
     }
 
     public static String getPageUrl(String name) {
@@ -90,5 +90,9 @@ public class TestConfigurations {
 
     public static String getApiToken() {
         return read("api_token");
+    }
+
+    public static String getEncodedApiToken() {
+        return read("encoded_api_token");
     }
 }
