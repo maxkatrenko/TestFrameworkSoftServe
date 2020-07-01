@@ -45,7 +45,7 @@ public class LocalWebDriverManager {
                 RemoteWebDriver driver = null;
                 try {
                     driver = new RemoteWebDriver(
-                            URI.create("http://localhost:4444/wd/hub").toURL(), //172.17.0.2:4444/wd/hub
+                            URI.create("172.17.0.2:4444/wd/hub").toURL(),
                             capabilities
                     );
                 } catch (MalformedURLException e) {
