@@ -13,12 +13,12 @@ import java.util.Base64;
 
 public class RepositoryTest {
 
-    private RepositoryRequests repositoryRequests = new RepositoryRequests();
-    private ObjectMapper mapper = new ObjectMapper();
+    private final RepositoryRequests repositoryRequests = new RepositoryRequests();
+    private final ObjectMapper mapper = new ObjectMapper();
     byte[] decodedToken = Base64.getDecoder().decode(TestConfigurations.getEncodedApiToken());
 
     @Test
-    public void createRepository() {
+    public void createRepositoryTest() {
         String repositoryName = "test";
 
         RepositoryPojo repositoryPojo = new RepositoryPojo(repositoryName, "test repository");
