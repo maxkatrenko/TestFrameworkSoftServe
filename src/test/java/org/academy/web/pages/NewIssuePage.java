@@ -16,7 +16,7 @@ public class NewIssuePage extends AbstractPage {
     @FindBy(xpath = "//button[@class='btn btn-primary']")
     private WebElement submitNewIssueButton;
 
-    @FindBy(xpath = "//ul[@class='list-style-none']//span[contains(text(),'Issues')]")
+    @FindBy(xpath = "//span[contains(text(),'Issues')]")
     private WebElement issuesInRepoLink;
 
     @FindBy(xpath = "//strong[contains(text(),'Delete issue')]")

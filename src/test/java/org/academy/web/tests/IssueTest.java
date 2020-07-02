@@ -24,12 +24,11 @@ public class IssueTest extends AbstractWebDriver {
     @BeforeClass
     private void login() {
         mainPage = new MainPage(webDriver, true, TestConfigurations.getUrl());
-        log.info("Start 'IssueTest'");
-        log.info("trying to login into github account");
+        log.info("logining...");
         basePage = mainPage
                 .clickOnSignIn()
                 .login();
-        log.info("logged in into github account");
+        log.info("logged");
     }
 
     @Test
@@ -55,8 +54,7 @@ public class IssueTest extends AbstractWebDriver {
     @Test
     public void checkNewIssueFunctionTest() {
         IssuesInRepoPage issuesInRepoPage =
-                basePage
-                        .clickOnRepositoryLink()
+                basePage.clickOnRepositoryLink()
                         .clickOnIssuesInRepo()
                         .clickOnNewIssueButton()
                         .fillTheTitle("my_test")

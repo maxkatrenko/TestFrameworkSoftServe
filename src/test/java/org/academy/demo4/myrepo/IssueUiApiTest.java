@@ -22,6 +22,7 @@ public class IssueUiApiTest extends AbstractWebDriver {
 
     private MainPage mainPage;
     private BasePage basePage;
+    byte[] decodedToken = Base64.getDecoder().decode(TestConfigurations.getEncodedApiToken());
 
     @BeforeMethod
     private void login() {
@@ -38,8 +39,6 @@ public class IssueUiApiTest extends AbstractWebDriver {
         IssueRequests issueRequests = new IssueRequests();
         ObjectMapper objectMapper = new ObjectMapper();
         IssuesInRepoPage issuesInRepoPage = new IssuesInRepoPage(webDriver);
-
-        byte[] decodedToken = Base64.getDecoder().decode(TestConfigurations.getEncodedApiToken());
 
         String nameOfIssue = "test_issue";
         String jsonObject = null;
@@ -70,5 +69,6 @@ public class IssueUiApiTest extends AbstractWebDriver {
     @AfterMethod
     private void afterMethod() {
         webDriver.get(TestConfigurations.getUrl());
+        log.info("returning to the mainPage");
     }
 }

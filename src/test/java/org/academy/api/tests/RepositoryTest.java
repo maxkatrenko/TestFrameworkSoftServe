@@ -8,11 +8,14 @@ import org.academy.api.requests.RepositoryRequests;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.util.Base64;
+
 
 public class RepositoryTest {
 
     private RepositoryRequests repositoryRequests = new RepositoryRequests();
     private ObjectMapper mapper = new ObjectMapper();
+    byte[] decodedToken = Base64.getDecoder().decode(TestConfigurations.getEncodedApiToken());
 
     @Test
     public void createRepository() {
@@ -27,7 +30,7 @@ public class RepositoryTest {
             Assert.fail();
         }
 
-        repositoryRequests.createRepository(TestConfigurations.getApiToken(), jsonBody, 201);
-        repositoryRequests.deleteRepository(TestConfigurations.getApiToken(), repositoryName, 204);
+        repositoryRequests.createRepository(new String(decodedToken), jsonBody, 201);
+        repositoryRequests.deleteRepository(new String(decodedToken), repositoryName, 204);
     }
 }
