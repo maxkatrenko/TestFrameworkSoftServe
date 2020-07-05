@@ -16,7 +16,7 @@ public class RepositoryTest {
     private final ObjectMapper mapper = new ObjectMapper();
     byte[] decodedToken = Base64.getDecoder().decode(TestConfigurations.getEncodedApiToken());
 
-    @Test(groups = "api_tests")
+    @Test
     public void createRepositoryTest() {
         String repositoryName = "test";
 

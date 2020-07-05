@@ -24,7 +24,7 @@ public class IssueUiApiTest extends AbstractWebDriver {
     private BasePage basePage;
     byte[] decodedToken = Base64.getDecoder().decode(TestConfigurations.getEncodedApiToken());
 
-    @BeforeMethod(groups = "my_tests")
+    @BeforeMethod
     private void login() {
         log.info("logining...");
         mainPage = new MainPage(webDriver, true, TestConfigurations.getUrl());
@@ -34,7 +34,7 @@ public class IssueUiApiTest extends AbstractWebDriver {
         log.info("logged");
     }
 
-    @Test(groups = "ui_api_tests")
+    @Test
     public void checkNewIssueFunctionWithApiTest() {
         IssueRequests issueRequests = new IssueRequests();
         ObjectMapper objectMapper = new ObjectMapper();
@@ -66,7 +66,7 @@ public class IssueUiApiTest extends AbstractWebDriver {
         log.info("Issue deleted");
     }
 
-    @AfterMethod(groups = "my_tests")
+    @AfterMethod
     private void afterMethod() {
         webDriver.get(TestConfigurations.getUrl());
         log.info("returning to the mainPage");

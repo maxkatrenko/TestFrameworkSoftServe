@@ -21,7 +21,7 @@ public class IssueTest extends AbstractWebDriver {
         super();
     }
 
-    @BeforeClass(groups = "ui_tests")
+    @BeforeClass
     private void login() {
         mainPage = new MainPage(webDriver, true, TestConfigurations.getUrl());
         log.info("logining...");
@@ -31,7 +31,7 @@ public class IssueTest extends AbstractWebDriver {
         log.info("logged");
     }
 
-    @Test(groups = "ui_tests")
+    @Test
     public void lastCommentFromIssueTest() {
         String commitmentText =
                 basePage.clickOnIssuesLink()
@@ -40,7 +40,7 @@ public class IssueTest extends AbstractWebDriver {
         log.info("Comment 21-4-20: " + commitmentText);
     }
 
-    @Test(groups = "ui_tests")
+    @Test
     public void checkBoxesTest() {
         IssuesInRepoPage issuesCheckBoxes =
                 basePage.clickOnRepositoryLink()
@@ -51,7 +51,7 @@ public class IssueTest extends AbstractWebDriver {
         Assert.assertEquals(issuesCheckBoxes.getClickedCheckBoxes(), numberOfCheckBoxes);
     }
 
-    @Test(groups = "ui_tests")
+    @Test
     public void checkNewIssueFunctionTest() {
         IssuesInRepoPage issuesInRepoPage =
                 basePage.clickOnRepositoryLink()
@@ -73,7 +73,7 @@ public class IssueTest extends AbstractWebDriver {
                 .clickOnDeleteIssue();
     }
 
-    @AfterMethod(groups = "ui_tests")
+    @AfterMethod
     private void afterMethod() {
         webDriver.get(TestConfigurations.getUrl());
         log.info("returned to the mainPage");
