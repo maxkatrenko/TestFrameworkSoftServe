@@ -18,14 +18,13 @@ import org.testng.annotations.Test;
 import java.util.Base64;
 
 @Slf4j
-@Test(groups = "my_tests")
 public class IssueUiApiTest extends AbstractWebDriver {
 
     private MainPage mainPage;
     private BasePage basePage;
     byte[] decodedToken = Base64.getDecoder().decode(TestConfigurations.getEncodedApiToken());
 
-    @BeforeMethod
+    @BeforeMethod(groups = "my_tests")
     private void login() {
         log.info("logining...");
         mainPage = new MainPage(webDriver, true, TestConfigurations.getUrl());
@@ -35,7 +34,7 @@ public class IssueUiApiTest extends AbstractWebDriver {
         log.info("logged");
     }
 
-    @Test
+    @Test(groups = "my_tests")
     public void checkNewIssueFunctionWithApiTest() {
         IssueRequests issueRequests = new IssueRequests();
         ObjectMapper objectMapper = new ObjectMapper();
@@ -67,7 +66,7 @@ public class IssueUiApiTest extends AbstractWebDriver {
         log.info("Issue deleted");
     }
 
-    @AfterMethod
+    @AfterMethod(groups = "my_tests")
     private void afterMethod() {
         webDriver.get(TestConfigurations.getUrl());
         log.info("returning to the mainPage");

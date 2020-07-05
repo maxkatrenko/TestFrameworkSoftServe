@@ -12,7 +12,6 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 @Slf4j
-@Test(groups = "my_tests")
 public class IssueTest extends AbstractWebDriver {
 
     private MainPage mainPage;
@@ -22,7 +21,7 @@ public class IssueTest extends AbstractWebDriver {
         super();
     }
 
-    @BeforeClass
+    @BeforeClass(groups = "my_tests")
     private void login() {
         mainPage = new MainPage(webDriver, true, TestConfigurations.getUrl());
         log.info("logining...");
@@ -32,7 +31,7 @@ public class IssueTest extends AbstractWebDriver {
         log.info("logged");
     }
 
-    @Test
+    @Test(groups = "my_tests")
     public void lastCommentFromIssueTest() {
         String commitmentText =
                 basePage.clickOnIssuesLink()
@@ -41,7 +40,7 @@ public class IssueTest extends AbstractWebDriver {
         log.info("Comment 21-4-20: " + commitmentText);
     }
 
-    @Test
+    @Test(groups = "my_tests")
     public void checkBoxesTest() {
         IssuesInRepoPage issuesCheckBoxes =
                 basePage.clickOnRepositoryLink()
@@ -52,7 +51,7 @@ public class IssueTest extends AbstractWebDriver {
         Assert.assertEquals(issuesCheckBoxes.getClickedCheckBoxes(), numberOfCheckBoxes);
     }
 
-    @Test
+    @Test(groups = "my_tests")
     public void checkNewIssueFunctionTest() {
         IssuesInRepoPage issuesInRepoPage =
                 basePage.clickOnRepositoryLink()
@@ -74,7 +73,7 @@ public class IssueTest extends AbstractWebDriver {
                 .clickOnDeleteIssue();
     }
 
-    @AfterMethod
+    @AfterMethod(groups = "my_tests")
     private void afterMethod() {
         webDriver.get(TestConfigurations.getUrl());
         log.info("returned to the mainPage");
