@@ -18,6 +18,7 @@ import org.testng.annotations.Test;
 import java.util.Base64;
 
 @Slf4j
+@Test(groups = "my_tests")
 public class IssueUiApiTest extends AbstractWebDriver {
 
     private MainPage mainPage;
@@ -34,7 +35,7 @@ public class IssueUiApiTest extends AbstractWebDriver {
         log.info("logged");
     }
 
-    @Test(groups = "my_tests")
+    @Test
     public void checkNewIssueFunctionWithApiTest() {
         IssueRequests issueRequests = new IssueRequests();
         ObjectMapper objectMapper = new ObjectMapper();

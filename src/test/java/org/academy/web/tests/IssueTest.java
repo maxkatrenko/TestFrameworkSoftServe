@@ -12,6 +12,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 @Slf4j
+@Test(groups = "my_tests")
 public class IssueTest extends AbstractWebDriver {
 
     private MainPage mainPage;
@@ -31,7 +32,7 @@ public class IssueTest extends AbstractWebDriver {
         log.info("logged");
     }
 
-    @Test(groups = "my_tests")
+    @Test
     public void lastCommentFromIssueTest() {
         String commitmentText =
                 basePage.clickOnIssuesLink()
@@ -40,7 +41,7 @@ public class IssueTest extends AbstractWebDriver {
         log.info("Comment 21-4-20: " + commitmentText);
     }
 
-    @Test(groups = "my_tests")
+    @Test
     public void checkBoxesTest() {
         IssuesInRepoPage issuesCheckBoxes =
                 basePage.clickOnRepositoryLink()
@@ -51,7 +52,7 @@ public class IssueTest extends AbstractWebDriver {
         Assert.assertEquals(issuesCheckBoxes.getClickedCheckBoxes(), numberOfCheckBoxes);
     }
 
-    @Test(groups = "my_tests")
+    @Test
     public void checkNewIssueFunctionTest() {
         IssuesInRepoPage issuesInRepoPage =
                 basePage.clickOnRepositoryLink()
