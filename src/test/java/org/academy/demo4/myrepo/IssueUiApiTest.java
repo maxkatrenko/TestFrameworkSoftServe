@@ -34,7 +34,7 @@ public class IssueUiApiTest extends AbstractWebDriver {
         log.info("logged");
     }
 
-    @Test
+    @Test(groups = "my_tests")
     public void checkNewIssueFunctionWithApiTest() {
         IssueRequests issueRequests = new IssueRequests();
         ObjectMapper objectMapper = new ObjectMapper();

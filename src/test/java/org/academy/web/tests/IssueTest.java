@@ -31,7 +31,7 @@ public class IssueTest extends AbstractWebDriver {
         log.info("logged");
     }
 
-    @Test
+    @Test(groups = "my_tests")
     public void lastCommentFromIssueTest() {
         String commitmentText =
                 basePage.clickOnIssuesLink()
@@ -40,7 +40,7 @@ public class IssueTest extends AbstractWebDriver {
         log.info("Comment 21-4-20: " + commitmentText);
     }
 
-    @Test
+    @Test(groups = "my_tests")
     public void checkBoxesTest() {
         IssuesInRepoPage issuesCheckBoxes =
                 basePage.clickOnRepositoryLink()
@@ -51,7 +51,7 @@ public class IssueTest extends AbstractWebDriver {
         Assert.assertEquals(issuesCheckBoxes.getClickedCheckBoxes(), numberOfCheckBoxes);
     }
 
-    @Test
+    @Test(groups = "my_tests")
     public void checkNewIssueFunctionTest() {
         IssuesInRepoPage issuesInRepoPage =
                 basePage.clickOnRepositoryLink()
