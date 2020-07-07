@@ -21,6 +21,7 @@ public class TestConfigurations {
     public static String getEncodedAccountPassword() {
         return read("encodedAccountPassword");
     }
+
     public static String getLogin() {
         return read("login");
     }
@@ -77,13 +78,14 @@ public class TestConfigurations {
         return read("collaborator");
     }
 
-    public static String getUserCookie(){
+    public static String getUserCookie() {
         return read("userCookie");
     }
 
     public static String getApiUri() {
         return read("api_uri");
     }
+
     public static String getApiUrl() {
         return read("api_url");
     }

@@ -10,15 +10,14 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class CommitPage extends AbstractPage {
+    @FindBy(xpath = "//span[@class='sha user-select-contain']")
+    WebElement sha;
+    @FindBy(xpath = "//clipboard-copy[@aria-label='Copy the full SHA']")
+    private List<WebElement> clipBoardTabs;
+
     public CommitPage(WebDriver webDriver) {
         super(webDriver);
     }
-
-    @FindBy(xpath = "//span[@class='sha user-select-contain']")
-    WebElement sha;
-
-    @FindBy(xpath = "//clipboard-copy[@aria-label='Copy the full SHA']")
-    private List<WebElement> clipBoardTabs;
 
     public List<String> getFullShas() {
         return wait

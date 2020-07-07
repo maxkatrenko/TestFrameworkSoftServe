@@ -11,6 +11,33 @@ import java.util.stream.Collectors;
 
 public class TrendingPage extends AbstractPage {
 
+    @FindBy(xpath = "//div[@class='mb-3 mb-sm-0']//span[@class='text-bold']")
+    private WebElement dropDownLanguage;
+    @FindBy(xpath = "//details[@id='select-menu-language']//a[3]//*[contains(text(),'Java')]")
+    private WebElement javaLanguage;
+    @FindBy(xpath = "//details[@id='select-menu-date']//summary//span")
+    private WebElement dropDownDateRange;
+    @FindBy(xpath = "//span[contains(text(),'This week')]")
+    private WebElement thisMonthDateRange;
+    @FindBy(xpath = "//*[@href=\"/trending?spoken_language_code=en\"]")
+    private WebElement englishSection;
+    @FindBy(xpath = "//summary[@class=\"btn-link select-menu-button\"]")
+    private List<WebElement> allFilters;
+    @FindBy(xpath = "//a[@href='https://github.com/trending/java?since=monthly&spoken_language_code=en']")
+    private WebElement thisMonthTimeSpan;
+    @FindBy(xpath = "//h1[@class='h3 lh-condensed']")
+    private List<WebElement> trendingRepos;
+    @FindBy(xpath = "//span[contains(text(), 'Russian')]")
+    private WebElement russianLangSection;
+    @FindBy(xpath = "//span[contains(text(), 'Arabic')]")
+    private WebElement arabicLangSection;
+    @FindBy(xpath = "//span[contains(text(), 'month')]")
+    private WebElement monthDateSection;
+    @FindBy(id = "text-filter-field-spoken-language")
+    private WebElement spokeLanguageInput;
+    @FindBy(xpath = "//h3")
+    private List<WebElement> messagesAboutRepos;
+
     public TrendingPage(WebDriver webDriver) {
         super(webDriver, false);
     }
@@ -18,45 +45,6 @@ public class TrendingPage extends AbstractPage {
     public TrendingPage(WebDriver webDriver, boolean navigateToPage, String navigateToPageUrl) {
         super(webDriver, navigateToPage, navigateToPageUrl);
     }
-
-    @FindBy(xpath = "//div[@class='mb-3 mb-sm-0']//span[@class='text-bold']")
-    private WebElement dropDownLanguage;
-
-    @FindBy(xpath = "//details[@id='select-menu-language']//a[3]//*[contains(text(),'Java')]")
-    private WebElement javaLanguage;
-
-    @FindBy(xpath = "//details[@id='select-menu-date']//summary//span")
-    private WebElement dropDownDateRange;
-
-    @FindBy(xpath = "//span[contains(text(),'This week')]")
-    private WebElement thisMonthDateRange;
-
-    @FindBy(xpath = "//*[@href=\"/trending?spoken_language_code=en\"]")
-    private WebElement englishSection;
-
-    @FindBy(xpath = "//summary[@class=\"btn-link select-menu-button\"]")
-    private List<WebElement> allFilters;
-
-    @FindBy(xpath = "//a[@href='https://github.com/trending/java?since=monthly&spoken_language_code=en']")
-    private WebElement thisMonthTimeSpan;
-
-    @FindBy(xpath = "//h1[@class='h3 lh-condensed']")
-    private List<WebElement> trendingRepos;
-
-    @FindBy(xpath = "//span[contains(text(), 'Russian')]")
-    private WebElement russianLangSection;
-
-    @FindBy(xpath = "//span[contains(text(), 'Arabic')]")
-    private WebElement arabicLangSection;
-
-    @FindBy(xpath = "//span[contains(text(), 'month')]")
-    private WebElement monthDateSection;
-
-    @FindBy(id = "text-filter-field-spoken-language")
-    private WebElement spokeLanguageInput;
-
-    @FindBy(xpath = "//h3")
-    private List<WebElement> messagesAboutRepos;
 
     public TrendingPage clickOndropDownLanguage() {
         dropDownLanguage.click();

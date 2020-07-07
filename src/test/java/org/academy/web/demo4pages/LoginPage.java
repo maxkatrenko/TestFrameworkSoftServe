@@ -9,21 +9,18 @@ import org.openqa.selenium.support.FindBy;
 import java.util.Base64;
 
 public class LoginPage extends AbstractPage {
+    @FindBy(xpath = "//input[@name='login']")
+    private WebElement loginField;
+    @FindBy(xpath = "//input[@name='password']")
+    private WebElement passField;
+    @FindBy(xpath = "//input[@name='commit']")
+    private WebElement submitForm;
+    @FindBy(xpath = "//div[@class='container-lg px-2']")
+    private WebElement errorMessage;
+
     public LoginPage(WebDriver webDriver) {
         super(webDriver);
     }
-
-    @FindBy(xpath = "//input[@name='login']")
-    private WebElement loginField;
-
-    @FindBy(xpath = "//input[@name='password']")
-    private WebElement passField;
-
-    @FindBy(xpath = "//input[@name='commit']")
-    private WebElement submitForm;
-
-    @FindBy(xpath = "//div[@class='container-lg px-2']")
-    private WebElement errorMessage;
 
     public LoginPage fillLoginField(String login) {
         loginField.sendKeys(login);

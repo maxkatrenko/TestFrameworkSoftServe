@@ -9,12 +9,12 @@ import org.openqa.selenium.support.FindBy;
 import java.util.List;
 
 public class IssuesInRepoPage extends AbstractPage {
+    @FindBy(xpath = "//a[contains(@data-hovercard-type,\"issue\")]")
+    private List<WebElement> listOfIssues;
+
     public IssuesInRepoPage(WebDriver webDriver) {
         super(webDriver);
     }
-
-    @FindBy(xpath = "//a[contains(@data-hovercard-type,\"issue\")]")
-    private List<WebElement> listOfIssues;
 
     public boolean checkIsIssuePresentByName(String name) {
         for (WebElement issue : listOfIssues) {

@@ -6,18 +6,16 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class ActionPage extends AbstractPage {
+    @FindBy(xpath = "//a[contains(text(),'test file commit')]")
+    private WebElement workflowLink;
+    @FindBy(xpath = "//summary[contains(text(),'Branch')]")
+    private WebElement branches;
+    @FindBy(linkText = "check_branch")
+    private WebElement checkBranch;
+
     public ActionPage(WebDriver webDriver) {
         super(webDriver, false, "");
     }
-
-    @FindBy(xpath = "//a[contains(text(),'test file commit')]")
-    private WebElement workflowLink;
-
-    @FindBy(xpath = "//summary[contains(text(),'Branch')]")
-    private WebElement branches;
-
-    @FindBy(linkText = "check_branch")
-    private WebElement checkBranch;
 
     public void findParticularBranch() {
         branches.click();

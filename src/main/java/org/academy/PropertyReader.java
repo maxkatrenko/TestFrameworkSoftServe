@@ -9,13 +9,13 @@ import java.util.Properties;
 
 @Slf4j
 public class PropertyReader {
+    private static final PropertyReader INSTANCE = new PropertyReader();
+    private static final Properties properties = new Properties();
+
     {
         copyValues(fromPath("config.properties"), true);
         copyValues(fromPath("resources.properties"), true);
     }
-
-    private static Properties properties = new Properties();
-    private static final PropertyReader INSTANCE = new PropertyReader();
 
     private PropertyReader() {
     }

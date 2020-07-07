@@ -9,15 +9,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TrafficPage extends AbstractPage {
+    @FindBy(xpath = "//div[contains(@class,'col-6 top-content boxed-group')]//td[2]")
+    private List<WebElement> popularContentViews;
+    @FindBy(xpath = "//div[contains(@class,'col-6 top-content boxed-group')]//tr[1]//td[2]")
+    private List<WebElement> firstContentViews;
+
     public TrafficPage(WebDriver webDriver) {
         super(webDriver, false);
     }
-
-    @FindBy(xpath = "//div[contains(@class,'col-6 top-content boxed-group')]//td[2]")
-    private List<WebElement> popularContentViews;
-
-    @FindBy(xpath = "//div[contains(@class,'col-6 top-content boxed-group')]//tr[1]//td[2]")
-    private List<WebElement> firstContentViews;
 
     public List<Integer> getAllContentViews() {
         List<Integer> res = new ArrayList<>();

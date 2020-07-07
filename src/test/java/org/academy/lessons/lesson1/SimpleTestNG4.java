@@ -7,7 +7,7 @@ public class SimpleTestNG4 {
 
     @DataProvider(name = "provider-test")
     public Object[][] dataProviderTest() {
-        return new Object[][] {
+        return new Object[][]{
                 {"first sum", 5, 5},
                 {"second sum", 1, 2},
                 {"third sum", 3, 4}

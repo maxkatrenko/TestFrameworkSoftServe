@@ -6,12 +6,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class BasePage extends AbstractPage {
+    @FindBy(xpath = "//span[@title=\"demo3\"]")
+    private WebElement repLink;
+
     public BasePage(WebDriver webDriver) {
         super(webDriver);
     }
-
-    @FindBy (xpath = "//span[@title=\"demo3\"]")
-    private WebElement repLink;
 
     public RepositoryPage clickOnRepositoryLink() {
         repLink.click();

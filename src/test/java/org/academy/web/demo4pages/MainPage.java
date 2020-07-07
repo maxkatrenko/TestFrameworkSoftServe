@@ -6,12 +6,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class MainPage extends AbstractPage {
+    @FindBy(xpath = "//a[(contains(@class, 'HeaderMenu-link')) and (@href='/login')]")
+    private WebElement signInButton;
+
     public MainPage(WebDriver webDriver, boolean navigateToPage, String navigateToPageUrl) {
         super(webDriver, navigateToPage, navigateToPageUrl);
     }
-
-    @FindBy(xpath = "//a[(contains(@class, 'HeaderMenu-link')) and (@href='/login')]")
-    private WebElement signInButton;
 
     public LoginPage clickOnSignIn() {
         signInButton.click();

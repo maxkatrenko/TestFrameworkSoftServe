@@ -6,10 +6,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class CodePage extends AbstractPage {
-    public CodePage(WebDriver webDriver) {
-        super(webDriver, false, "");
-    }
-
     @FindBy(xpath = "//input[@id='tree-finder-field']")
     private WebElement searchFileField;
     @FindBy(xpath = "//span[@class='d-inline-block css-truncate-target js-tree-browser-result-path']")
@@ -18,6 +14,10 @@ public class CodePage extends AbstractPage {
     private WebElement fileContent;
     @FindBy(xpath = "//span[contains(text(),'Issues')]")
     private WebElement issuesLinkInRepo;
+
+    public CodePage(WebDriver webDriver) {
+        super(webDriver, false, "");
+    }
 
     public CodePage fillNameFile(String file) {
         searchFileField.sendKeys(file);

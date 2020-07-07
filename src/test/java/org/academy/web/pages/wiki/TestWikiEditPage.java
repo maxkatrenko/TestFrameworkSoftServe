@@ -6,12 +6,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class TestWikiEditPage extends AbstractPage {
+    @FindBy(xpath = "//button[@class='btn btn-sm btn-danger' and contains(text(), 'Delete Page')]")
+    private WebElement deleteBtn;
+
     public TestWikiEditPage(WebDriver webDriver) {
         super(webDriver, false);
     }
-
-    @FindBy(xpath = "//button[@class='btn btn-sm btn-danger' and contains(text(), 'Delete Page')]")
-    private WebElement deleteBtn;
 
     public WikiPage deletePage() {
         deleteBtn.click();

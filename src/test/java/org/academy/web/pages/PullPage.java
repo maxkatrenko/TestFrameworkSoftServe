@@ -14,50 +14,49 @@ import java.util.List;
 import java.util.NoSuchElementException;
 
 public class PullPage extends AbstractPage {
+    String commitName = TestConfigurations.getParam("commit");
+    @FindBy(xpath = "//a[@id='issue_15_link']")
+    private WebElement testFileCommitLink;
+    @FindBy(xpath = "//a[@href=\"/alhonchar/academylessons/labels\"]")
+    private WebElement labelsLink;
+    @FindBy(xpath = "//input[@id='js-issues-search']")
+    private WebElement SearchBox;
+    @FindBy(xpath = "//div[contains(@class,'flex-auto d-none d-lg-block no-wrap')]//a[contains (@href, 'open')]")
+    private WebElement OpenRequestsButton;
+    @FindAll(@FindBy(xpath = "//div[@role='group']//a[@data-hovercard-type='pull_request']"))
+    private List<WebElement> pullRequestList;
+    @FindBy(xpath = "//h3[contains(text(),'No results matched your search.')]")
+    private WebElement noResult;
+    private final WebElement commitNameLink = webDriver.findElement(By.linkText(commitName));
+
     public PullPage(WebDriver webDriver) {
         super(webDriver);
     }
 
-    public PullPage (WebDriver webDriver, boolean navigateToPage){super(webDriver, navigateToPage);}
+    public PullPage(WebDriver webDriver, boolean navigateToPage) {
+        super(webDriver, navigateToPage);
+    }
 
-    @FindBy(xpath = "//a[@id='issue_15_link']")
-    private WebElement testFileCommitLink;
-
-    @FindBy(xpath = "//a[@href=\"/alhonchar/academylessons/labels\"]")
-    private WebElement labelsLink;
-
-    @FindBy(xpath = "//input[@id='js-issues-search']")
-    private WebElement SearchBox;
-
-    @FindBy(xpath = "//div[contains(@class,'flex-auto d-none d-lg-block no-wrap')]//a[contains (@href, 'open')]")
-    private WebElement OpenRequestsButton;
-
-    @FindAll(@FindBy(xpath = "//div[@role='group']//a[@data-hovercard-type='pull_request']"))
-    private List<WebElement> pullRequestList;
-
-    @FindBy(xpath = "//h3[contains(text(),'No results matched your search.')]")
-    private WebElement noResult;
-
-    public void searchRequest(String searchText){
+    public void searchRequest(String searchText) {
         SearchBox.clear();
         SearchBox.sendKeys(searchText);
         SearchBox.sendKeys(Keys.ENTER);
     }
 
-    public String requestsInList(){
+    public String requestsInList() {
         return String.valueOf(pullRequestList.size());
 
     }
 
-    String commitName = TestConfigurations.getParam("commit");
-    private WebElement commitNameLink = webDriver.findElement(By.linkText(commitName));
-    public String numberOfRequests(){
+    public String numberOfRequests() {
         return OpenRequestsButton.getText().replace(" Open", "");
     }
 
-    public boolean isSearchResultEmpty(){
-        try{WebElement element = noResult;
-            return true;}catch (NoSuchElementException e){
+    public boolean isSearchResultEmpty() {
+        try {
+            WebElement element = noResult;
+            return true;
+        } catch (NoSuchElementException e) {
             return false;
         }
     }

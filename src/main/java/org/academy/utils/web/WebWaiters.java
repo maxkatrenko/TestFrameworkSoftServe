@@ -11,30 +11,30 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElemen
 
 @Slf4j
 public class WebWaiters {
-	private static Integer timeForWaiting = 30;
+    private static final Integer timeForWaiting = 30;
 
 
-	public static void waitUntilElementIsVisible(WebElement webElement, WebDriver webDriver, int timeOutInSeconds) {
-		new WebDriverWait(webDriver, timeOutInSeconds).until(ExpectedConditions.visibilityOf(webElement));
-	}
+    public static void waitUntilElementIsVisible(WebElement webElement, WebDriver webDriver, int timeOutInSeconds) {
+        new WebDriverWait(webDriver, timeOutInSeconds).until(ExpectedConditions.visibilityOf(webElement));
+    }
 
-	public static void waitUntilElementIsInvisible(WebElement webElement, WebDriver webDriver) {
-		new WebDriverWait(webDriver, timeForWaiting).until(ExpectedConditions.invisibilityOf(webElement));
-	}
+    public static void waitUntilElementIsInvisible(WebElement webElement, WebDriver webDriver) {
+        new WebDriverWait(webDriver, timeForWaiting).until(ExpectedConditions.invisibilityOf(webElement));
+    }
 
-	public static void waitUntilElementIsPresent(String xpath, WebDriver webDriver, int timeOutInSeconds) {
-		new WebDriverWait(webDriver, timeOutInSeconds).until(presenceOfElementLocated(By.xpath(xpath)));
-	}
+    public static void waitUntilElementIsPresent(String xpath, WebDriver webDriver, int timeOutInSeconds) {
+        new WebDriverWait(webDriver, timeOutInSeconds).until(presenceOfElementLocated(By.xpath(xpath)));
+    }
 
-	public static void waitUntilElementIsNotPresent(String xpath, WebDriver webDriver) {
-		new WebDriverWait(webDriver, timeForWaiting).until(ExpectedConditions.numberOfElementsToBe(By.xpath(xpath), 0));
-	}
+    public static void waitUntilElementIsNotPresent(String xpath, WebDriver webDriver) {
+        new WebDriverWait(webDriver, timeForWaiting).until(ExpectedConditions.numberOfElementsToBe(By.xpath(xpath), 0));
+    }
 
-	public static void waitUntilAlertPresent(WebDriver driver){
-		new WebDriverWait(driver, timeForWaiting).until(ExpectedConditions.alertIsPresent());
-	}
+    public static void waitUntilAlertPresent(WebDriver driver) {
+        new WebDriverWait(driver, timeForWaiting).until(ExpectedConditions.alertIsPresent());
+    }
 
-	public static void waitUntilElementIsClickable(WebDriver webDriver, WebElement element){
-		new WebDriverWait(webDriver, timeForWaiting).until(ExpectedConditions.elementToBeClickable(element));
-	}
+    public static void waitUntilElementIsClickable(WebDriver webDriver, WebElement element) {
+        new WebDriverWait(webDriver, timeForWaiting).until(ExpectedConditions.elementToBeClickable(element));
+    }
 }

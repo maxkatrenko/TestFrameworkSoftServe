@@ -7,6 +7,15 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class LoginPage extends AbstractPage {
+    @FindBy(xpath = "//input[@name='login']")
+    private WebElement loginField;
+    @FindBy(xpath = "//input[@name='password']")
+    private WebElement passField;
+    @FindBy(xpath = "//input[@name='commit']")
+    private WebElement submitForm;
+    @FindBy(xpath = "//div[@class='container-lg px-2']")
+    private WebElement errorMessage;
+
     public LoginPage(WebDriver webDriver) {
         super(webDriver, false, "");
     }
@@ -14,19 +23,6 @@ public class LoginPage extends AbstractPage {
     public LoginPage(WebDriver webDriver, boolean navigateToPage) {
         super(webDriver, navigateToPage);
     }
-
-
-    @FindBy(xpath = "//input[@name='login']")
-    private WebElement loginField;
-
-    @FindBy(xpath = "//input[@name='password']")
-    private WebElement passField;
-
-    @FindBy(xpath = "//input[@name='commit']")
-    private WebElement submitForm;
-
-    @FindBy(xpath = "//div[@class='container-lg px-2']")
-    private WebElement errorMessage;
 
     public LoginPage fillLoginField(String login) {
         loginField.sendKeys(login);
@@ -51,7 +47,7 @@ public class LoginPage extends AbstractPage {
         return errorMessage.getText();
     }
 
-    public BasePage login(){
+    public BasePage login() {
         loginField.sendKeys(TestConfigurations.getLogin());
         passField.sendKeys(TestConfigurations.getPassword());
         submitForm.click();

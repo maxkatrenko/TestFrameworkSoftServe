@@ -20,9 +20,9 @@ import java.util.Base64;
 @Slf4j
 public class IssueUiApiTest extends AbstractWebDriver {
 
+    byte[] decodedToken = Base64.getDecoder().decode(TestConfigurations.getEncodedApiToken());
     private MainPage mainPage;
     private BasePage basePage;
-    byte[] decodedToken = Base64.getDecoder().decode(TestConfigurations.getEncodedApiToken());
 
     @BeforeMethod
     private void login() {

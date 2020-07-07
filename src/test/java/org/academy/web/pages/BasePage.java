@@ -12,6 +12,22 @@ import java.util.List;
 
 public class BasePage extends AbstractPage {
 
+    @FindBy(xpath = "//a[contains(text(),'Issues')]")
+    private WebElement issuesLink;
+    @FindBy(xpath = "//a[@class='js-selected-navigation-item Header-link py-lg-3 d-inline-block'][contains(text(), 'Marketplace')]")
+    private WebElement marketplaceBtn;
+    @FindBy(xpath = "//a[(@href='/alhonchar/academylessons')]")
+    private List<WebElement> repositoryLinks;
+    @FindBy(xpath = "//div[@id='dashboard-repos-container']//div[@class='width-full text-bold']")
+    private WebElement repositoryLink;
+    @FindBy(xpath = "//a[@class='btn btn-sm empty-icon float-right BtnGroup-item']")
+    private WebElement findFileButton;
+    @FindBy(xpath = "//a[contains(text(),'Explore')]")
+    private WebElement exploreLink;
+    private final WebElement toRepositoryLink = webDriver.findElement(By.xpath("//div[@id='dashboard-repos-container']"
+            + "//span[@class='css-truncate css-truncate-target'][contains(text(),'"
+            + TestConfigurations.getParam("repository") + "')]"));
+
     public BasePage(WebDriver webDriver) {
         super(webDriver);
     }
@@ -21,34 +37,10 @@ public class BasePage extends AbstractPage {
         super(webDriver, navigateToPage);
     }
 
-    @FindBy(xpath = "//a[contains(text(),'Issues')]")
-    private WebElement issuesLink;
-
-    @FindBy(xpath = "//a[@class='js-selected-navigation-item Header-link py-lg-3 d-inline-block'][contains(text(), 'Marketplace')]")
-    private WebElement marketplaceBtn;
-
-    @FindBy(xpath = "//a[(@href='/alhonchar/academylessons')]")
-    private List<WebElement> repositoryLinks;
-
-    @FindBy(xpath = "//div[@id='dashboard-repos-container']//div[@class='width-full text-bold']")
-    private WebElement repositoryLink;
-
-    @FindBy(xpath = "//a[@class='btn btn-sm empty-icon float-right BtnGroup-item']")
-    private WebElement findFileButton;
-
-    @FindBy(xpath = "//a[contains(text(),'Explore')]")
-    private WebElement exploreLink;
-
-
     public IssuesPage clickOnIssuesLink() {
         issuesLink.click();
         return new IssuesPage(webDriver, true, TestConfigurations.getIssuesUrl());
     }
-
-    private WebElement toRepositoryLink = webDriver.findElement(By.xpath("//div[@id='dashboard-repos-container']"
-            + "//span[@class='css-truncate css-truncate-target'][contains(text(),'"
-            + TestConfigurations.getParam("repository") + "')]"));
-
 
     public RepositoryPage clickOnAcademyLessonsLink() {
         wait.until(ExpectedConditions.elementToBeClickable(repositoryLinks.get(0))).click();

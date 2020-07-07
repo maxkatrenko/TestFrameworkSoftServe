@@ -8,21 +8,18 @@ import org.openqa.selenium.support.FindBy;
 import java.util.List;
 
 public class IssuesInRepoPage extends AbstractPage {
+    @FindBy(xpath = "//input[contains(@name,'issues[]')]")
+    private List<WebElement> checkBoxes;
+    @FindBy(xpath = "//span[contains(@class,'text-gray')]/span")
+    private WebElement clickedCheckBoxes;
+    @FindBy(xpath = "//span[@class='d-none d-md-block']")
+    private WebElement newIssueButton;
+    @FindBy(xpath = "//a[contains(text(),'my_test')]")
+    private WebElement newIssue;
+
     public IssuesInRepoPage(WebDriver webDriver) {
         super(webDriver);
     }
-
-    @FindBy(xpath = "//input[contains(@name,'issues[]')]")
-    private List<WebElement> checkBoxes;
-
-    @FindBy(xpath = "//span[contains(@class,'text-gray')]/span")
-    private WebElement clickedCheckBoxes;
-
-    @FindBy(xpath = "//span[@class='d-none d-md-block']")
-    private WebElement newIssueButton;
-
-    @FindBy(xpath = "//a[contains(text(),'my_test')]")
-    private WebElement newIssue;
 
     public int clickOnRandCheckBoxes() {
         int numberOfCheckBoxes = (int) (Math.random() * checkBoxes.size() + 1);

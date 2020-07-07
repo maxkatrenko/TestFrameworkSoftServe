@@ -2,7 +2,6 @@ package org.academy.api.requests;
 
 import io.restassured.response.Response;
 import lombok.extern.slf4j.Slf4j;
-import org.academy.TestConfigurations;
 import org.academy.api.Resources;
 
 @Slf4j
