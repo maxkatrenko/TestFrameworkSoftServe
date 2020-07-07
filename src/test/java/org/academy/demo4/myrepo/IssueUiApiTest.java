@@ -48,7 +48,7 @@ public class IssueUiApiTest extends AbstractWebDriver {
         try {
             jsonObject = objectMapper.writeValueAsString(issuePojo);
         } catch (JsonProcessingException e) {
-            Assert.fail();
+            e.printStackTrace();
         }
 
         issueRequests.createIssue(new String(decodedToken), jsonObject, 201);
