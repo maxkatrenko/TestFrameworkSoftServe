@@ -6,14 +6,15 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class TestWikiPage extends AbstractPage {
-    @FindBy(xpath = "//a[@class='btn btn-sm ml-0' and contains(text(), 'Edit')]")
-    private WebElement editBtn;
-    @FindBy(xpath = "//span[@class='Counter Counter--gray']")
-    private WebElement pageCounter;
-
     public TestWikiPage(WebDriver webDriver, boolean navigateToPage, String navigateToPageUrl) {
         super(webDriver, navigateToPage, navigateToPageUrl);
     }
+
+    @FindBy(xpath = "//a[@class='btn btn-sm ml-0' and contains(text(), 'Edit')]")
+    private WebElement editBtn;
+
+    @FindBy(xpath = "//span[@class='Counter Counter--gray']")
+    private WebElement pageCounter;
 
     public TestWikiEditPage editPage() {
         editBtn.click();

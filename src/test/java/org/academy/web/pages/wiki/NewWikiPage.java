@@ -7,16 +7,18 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class NewWikiPage extends AbstractPage {
-    @FindBy(xpath = "//input[@id='gollum-editor-page-title']")
-    private WebElement title;
-    @FindBy(xpath = "//textarea[@id='gollum-editor-body']")
-    private WebElement pageBody;
-    @FindBy(xpath = "//button[@id='gollum-editor-submit']")
-    private WebElement submitBtn;
-
     public NewWikiPage(WebDriver webDriver) {
         super(webDriver, false);
     }
+
+    @FindBy(xpath = "//input[@id='gollum-editor-page-title']")
+    private WebElement title;
+
+    @FindBy(xpath = "//textarea[@id='gollum-editor-body']")
+    private WebElement pageBody;
+
+    @FindBy(xpath = "//button[@id='gollum-editor-submit']")
+    private WebElement submitBtn;
 
     public TestWikiPage createPage() {
         title.sendKeys(TestConfigurations.getPageTitle());

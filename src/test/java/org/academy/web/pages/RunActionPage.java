@@ -7,12 +7,12 @@ import org.openqa.selenium.support.FindBy;
 
 
 public class RunActionPage extends AbstractPage {
-    @FindBy(xpath = "//a[@class='muted-link no-underline d-inline text-normal']")
-    private WebElement actionHashCode;
-
     public RunActionPage(WebDriver webDriver) {
         super(webDriver, false, "");
     }
+
+    @FindBy(xpath = "//a[@class='muted-link no-underline d-inline text-normal']")
+    private WebElement actionHashCode;
 
     public String getActionHashCode() {
         String url = actionHashCode.getAttribute("href");

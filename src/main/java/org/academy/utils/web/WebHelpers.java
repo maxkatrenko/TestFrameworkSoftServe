@@ -43,7 +43,11 @@ public class WebHelpers {
 
     public static void deleteCookieByName(String name, WebDriver driver) {
         Cookie cookie = driver.manage().getCookies().stream().filter(x -> x.getName().equals(name)).findFirst().get();
-        driver.manage().deleteCookie(cookie);
+        if (cookie != null) {
+            driver.manage().deleteCookie(cookie);
+        } else {
+            driver.manage().deleteAllCookies();
+        }
     }
 
     public static void openNewBlankBrowserTab(WebDriver driver) {

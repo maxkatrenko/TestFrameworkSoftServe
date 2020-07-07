@@ -6,14 +6,15 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class InsightsPage extends AbstractPage {
-    @FindBy(xpath = "//a[contains(text(),'Forks')]")
-    private WebElement forksBtn;
-    @FindBy(xpath = "//a[contains(text(),'Traffic')]")
-    private WebElement trafficBtn;
-
     public InsightsPage(WebDriver webDriver) {
         super(webDriver, false, "");
     }
+
+    @FindBy(xpath = "//a[contains(text(),'Forks')]")
+    private WebElement forksBtn;
+
+    @FindBy(xpath = "//a[contains(text(),'Traffic')]")
+    private WebElement trafficBtn;
 
     public ForksPage clickOnForks() {
         forksBtn.click();

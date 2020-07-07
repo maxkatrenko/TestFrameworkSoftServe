@@ -6,12 +6,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class RepositoryPage extends AbstractPage {
-    @FindBy(xpath = "//span[contains(text(),'Issues')]")
-    private WebElement issuesInRepoLink;
-
     public RepositoryPage(WebDriver webDriver) {
         super(webDriver);
     }
+
+    @FindBy(xpath = "//span[contains(text(),'Issues')]")
+    private WebElement issuesInRepoLink;
 
     public IssuesInRepoPage clickOnIssuesInRepoLink() {
         issuesInRepoLink.click();

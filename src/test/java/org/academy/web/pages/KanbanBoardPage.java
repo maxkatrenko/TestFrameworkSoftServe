@@ -8,17 +8,20 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class KanbanBoardPage extends AbstractPage {
-    @FindBy(xpath = "//article[@id='card-38121666']//div[@class='d-flex flex-justify-between flex-items-center']")
-    WebElement issueCardShowDetails;
-    @FindBy(xpath = "//article[@id='card-38121666']//a[@data-content-label='pull request']")
-    WebElement issueCardRelatedLink;
-    @FindBy(xpath = "//span[@class='text-bold js-issue-title']")
-    WebElement detailsExternalLink;
-
-
     public KanbanBoardPage(WebDriver webDriver) {
         super(webDriver, false);
     }
+
+    @FindBy(xpath = "//article[@id='card-38121666']//div[@class='d-flex flex-justify-between flex-items-center']")
+    WebElement issueCardShowDetails;
+
+
+    @FindBy(xpath = "//article[@id='card-38121666']//a[@data-content-label='pull request']")
+    WebElement issueCardRelatedLink;
+
+
+    @FindBy(xpath = "//span[@class='text-bold js-issue-title']")
+    WebElement detailsExternalLink;
 
     public KanbanBoardPage expandCardDetails() {
         WebWaiters.waitUntilElementIsClickable(webDriver, issueCardShowDetails);

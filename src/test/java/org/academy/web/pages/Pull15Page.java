@@ -11,13 +11,14 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class Pull15Page extends AbstractPage {
     String commitName = TestConfigurations.getParam("commit");
+
     @FindBy(xpath = "//a[@href=\"/alhonchar/academylessons/pull/15/commits\"]")
     private WebElement commitsLink;
     private final WebElement commitNameLink = webDriver.findElement(By.xpath("//a[@title='" + commitName + "']"));
-
     public Pull15Page(WebDriver webDriver) {
         super(webDriver);
     }
+
 
     public CommitPage clickOnCommitsLink() {
         wait.until(ExpectedConditions.elementToBeClickable(commitsLink)).click();

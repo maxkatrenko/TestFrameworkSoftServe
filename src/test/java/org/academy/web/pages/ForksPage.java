@@ -9,12 +9,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ForksPage extends AbstractPage {
-    @FindBy(xpath = "//div[contains(@class,'repo')]//a[contains(@data-hovercard-type, 'user')][position() > 1]")
-    private List<WebElement> users;
-
     public ForksPage(WebDriver webDriver) {
         super(webDriver, false, "");
     }
+
+    @FindBy(xpath = "//div[contains(@class,'repo')]//a[contains(@data-hovercard-type, 'user')][position() > 1]")
+    private List<WebElement> users;
 
     public List<String> userNames() {
         List<String> res = new ArrayList<>();

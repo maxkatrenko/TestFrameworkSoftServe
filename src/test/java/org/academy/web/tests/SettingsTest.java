@@ -33,7 +33,7 @@ public class SettingsTest extends AbstractWebDriver {
         settingsPage.goToManageAccess();
     }
 
-    @BeforeMethod(onlyForGroups = {"g2"})
+    @BeforeMethod(onlyForGroups = {"g2"}, alwaysRun = false)
     public void precondition() {
         settingsPage.inviteCollaborator();
     }

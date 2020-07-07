@@ -8,12 +8,12 @@ import org.openqa.selenium.support.FindBy;
 
 public class RelatedCommitPage extends AbstractPage {
 
-    @FindBy(xpath = "(//div[class='text-right'])[1]")
-    private WebElement shortShaLink;
-
     public RelatedCommitPage(WebDriver webDriver) {
         super(webDriver, false);
     }
+
+    @FindBy(xpath = "(//div[class='text-right'])[1]")
+    private WebElement shortShaLink;
 
     public CommitPage goToTestFileCommitPage() {
         WebWaiters.waitUntilElementIsClickable(webDriver, shortShaLink);

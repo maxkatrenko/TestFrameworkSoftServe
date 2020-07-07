@@ -7,14 +7,15 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class MarketplacePage extends AbstractPage {
-    @FindBy(xpath = "//input[@placeholder='Search for apps and actions']")
-    private WebElement searchForm;
-    @FindBy(xpath = "//span[@class='text-bold']")
-    private WebElement results;
-
     public MarketplacePage(WebDriver webDriver) {
         super(webDriver, false, "");
     }
+
+    @FindBy(xpath = "//input[@placeholder='Search for apps and actions']")
+    private WebElement searchForm;
+
+    @FindBy(xpath = "//span[@class='text-bold']")
+    private WebElement results;
 
     @SneakyThrows
     public MarketplacePage searchApp(String app) {

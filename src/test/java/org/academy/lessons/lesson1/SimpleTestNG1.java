@@ -32,24 +32,24 @@ public class SimpleTestNG1 {
     @Test
     public void testA1() {
         System.out.println("testA1");
-        Assert.assertTrue(true);
+        Assert.assertEquals(true, true);
     }
 
     @Test
     public void testB1() {
         System.out.println("testB1");
-        Assert.assertTrue(true);
+        Assert.assertEquals(true, true);
     }
 
     @Test(groups = "academy")
     public void testC1() {
         System.out.println("testC1");
-        Assert.assertTrue(true);
+        Assert.assertEquals(true, true);
     }
 
     @Test
     public void testD1() {
         System.out.println("testD1");
-        Assert.assertTrue(true);
+        Assert.assertEquals(true, true);
     }
 }

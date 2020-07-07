@@ -6,13 +6,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class ExplorePage extends AbstractPage {
-    @FindBy(xpath = "//div[@class='site-subnav bg-white site-subnav-sticky js-sticky']//a[3]")
-
-    private WebElement trendingLink;
-
     public ExplorePage(WebDriver webDriver) {
         super(webDriver, false);
     }
+
+    @FindBy(xpath = "//div[@class='site-subnav bg-white site-subnav-sticky js-sticky']//a[3]")
+
+    private WebElement trendingLink;
 
     public TrendingPage clickOnTrendingLink() {
         trendingLink.click();

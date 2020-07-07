@@ -15,19 +15,25 @@ import java.util.NoSuchElementException;
 
 public class PullPage extends AbstractPage {
     String commitName = TestConfigurations.getParam("commit");
+    private final WebElement commitNameLink = webDriver.findElement(By.linkText(commitName));
+
     @FindBy(xpath = "//a[@id='issue_15_link']")
     private WebElement testFileCommitLink;
+
     @FindBy(xpath = "//a[@href=\"/alhonchar/academylessons/labels\"]")
     private WebElement labelsLink;
+
     @FindBy(xpath = "//input[@id='js-issues-search']")
     private WebElement SearchBox;
+
     @FindBy(xpath = "//div[contains(@class,'flex-auto d-none d-lg-block no-wrap')]//a[contains (@href, 'open')]")
     private WebElement OpenRequestsButton;
+
     @FindAll(@FindBy(xpath = "//div[@role='group']//a[@data-hovercard-type='pull_request']"))
     private List<WebElement> pullRequestList;
+
     @FindBy(xpath = "//h3[contains(text(),'No results matched your search.')]")
     private WebElement noResult;
-    private final WebElement commitNameLink = webDriver.findElement(By.linkText(commitName));
 
     public PullPage(WebDriver webDriver) {
         super(webDriver);
