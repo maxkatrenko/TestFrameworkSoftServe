@@ -8,12 +8,12 @@ import org.testng.ITestResult;
 public class TestNgListener implements ITestListener {
     @Override
     public void onTestSuccess(ITestResult result) {
-        log.info("The name of the testcase passed is :" + result.getName());
+        log.info("Testcase passed: " + result.getName());
     }
 
     @Override
     public void onTestFailure(ITestResult result) {
-        log.error("The name of the testcase failed is :" + result.getName());
+        log.error("Testcase failed: " + result.getName());
     }
 
     @Override
