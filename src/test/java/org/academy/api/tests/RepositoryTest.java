@@ -18,7 +18,7 @@ public class RepositoryTest {
 
     @Test
     public void createRepositoryTest() {
-        String repositoryName = "test";
+        String repositoryName = "testRepository";
 
         RepositoryPojo repositoryPojo = new RepositoryPojo(repositoryName, "test repository");
 
