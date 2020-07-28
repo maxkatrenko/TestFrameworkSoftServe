@@ -36,11 +36,17 @@ public class LocalWebDriverManager {
                 return chromeWebDriver;
 
             case "chrome_remote_selenoid":
+                DesiredCapabilities capabilities = new DesiredCapabilities();
+                capabilities.setBrowserName("chrome");
+                capabilities.setVersion("81.0");
+                capabilities.setCapability("enableVNC", true);
+                capabilities.setCapability("enableVideo", false);
+
                 RemoteWebDriver driver = null;
                 try {
                     driver = new RemoteWebDriver(
                             URI.create("http://172.17.0.2:4444/wd/hub").toURL(),
-                            DesiredCapabilities.chrome()
+                            capabilities
                     );
                 } catch (MalformedURLException e) {
                     e.printStackTrace();
@@ -52,11 +58,10 @@ public class LocalWebDriverManager {
                 return driver;
 
             case "chrome_remote_selenium":
-
+                DesiredCapabilities caps = DesiredCapabilities.chrome();
                 RemoteWebDriver wdriver = null;
                 try {
-                    wdriver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),
-                            DesiredCapabilities.chrome());
+                    wdriver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), caps);
                 } catch (MalformedURLException e) {
                     e.printStackTrace();
                 }
