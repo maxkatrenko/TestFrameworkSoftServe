@@ -1,4 +1,4 @@
-package org.academy.web.tests;
+package org.academy.web.tests.ci.ui;
 
 import lombok.extern.slf4j.Slf4j;
 import org.academy.TestConfigurations;
