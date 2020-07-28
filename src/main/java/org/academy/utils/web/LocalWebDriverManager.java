@@ -52,10 +52,11 @@ public class LocalWebDriverManager {
                 return driver;
 
             case "chrome_remote_selenium":
-                DesiredCapabilities caps = DesiredCapabilities.chrome();
+
                 RemoteWebDriver wdriver = null;
                 try {
-                    wdriver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), caps);
+                    wdriver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),
+                            DesiredCapabilities.chrome());
                 } catch (MalformedURLException e) {
                     e.printStackTrace();
                 }
