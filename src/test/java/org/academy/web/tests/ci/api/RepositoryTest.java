@@ -1,10 +1,10 @@
-package org.academy.api.tests;
+package org.academy.web.tests.ci.api;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.academy.TestConfigurations;
 import org.academy.api.pojo.RepositoryPojo;
 import org.academy.api.requests.RepositoryRequests;
+import org.academy.utils.GetRealSSHKKeyForGit;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -14,7 +14,6 @@ public class RepositoryTest {
 
     private final RepositoryRequests repositoryRequests = new RepositoryRequests();
     private final ObjectMapper mapper = new ObjectMapper();
-    byte[] decodedToken = Base64.getDecoder().decode(TestConfigurations.getEncodedApiToken());
 
     @Test
     public void createRepositoryTest() {
@@ -29,7 +28,7 @@ public class RepositoryTest {
             Assert.fail();
         }
 
-        repositoryRequests.createRepository(new String(decodedToken), jsonBody, 201);
-        repositoryRequests.deleteRepository(new String(decodedToken), repositoryName, 204);
+        repositoryRequests.createRepository(GetRealSSHKKeyForGit.getDecodedKey(), jsonBody, 201);
+        repositoryRequests.deleteRepository(GetRealSSHKKeyForGit.getDecodedKey(), repositoryName, 204);
     }
 }

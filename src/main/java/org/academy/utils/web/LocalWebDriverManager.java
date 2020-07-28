@@ -51,20 +51,25 @@ public class LocalWebDriverManager {
                 } catch (MalformedURLException e) {
                     e.printStackTrace();
                 }
-                driver.manage().timeouts().implicitlyWait(40000, TimeUnit.MILLISECONDS);
-                driver.manage().window().maximize();
+                if (driver != null) {
+                    driver.manage().timeouts().implicitlyWait(40000, TimeUnit.MILLISECONDS);
+                    driver.manage().window().maximize();
+                }
                 return driver;
 
             case "chrome_remote_selenium":
                 DesiredCapabilities caps = DesiredCapabilities.chrome();
                 RemoteWebDriver wdriver = null;
                 try {
-                    wdriver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), caps);
+                    wdriver = new RemoteWebDriver(new URL("http://172.17.0.3:4444/wd/hub"), caps);
                 } catch (MalformedURLException e) {
                     e.printStackTrace();
                 }
-                wdriver.manage().timeouts().implicitlyWait(40000, TimeUnit.MILLISECONDS);
-                wdriver.manage().window().maximize();
+                if (wdriver != null) {
+                    wdriver.manage().timeouts().implicitlyWait(40000, TimeUnit.MILLISECONDS);
+                    wdriver.manage().window().maximize();
+                }
+
                 return wdriver;
         }
     }

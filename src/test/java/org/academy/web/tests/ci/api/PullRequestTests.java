@@ -1,7 +1,7 @@
-package org.academy.api.tests;
+package org.academy.web.tests.ci.api;
 
-import org.academy.TestConfigurations;
 import org.academy.api.requests.PullRequestRequests;
+import org.academy.utils.GetRealSSHKKeyForGit;
 import org.testng.annotations.Test;
 
 public class PullRequestTests {
@@ -9,6 +9,6 @@ public class PullRequestTests {
 
     @Test
     public void getAllPullRequests() {
-        pullRequestRequests.getAllPRRequest(TestConfigurations.getApiToken(), 200);
+        pullRequestRequests.getAllPRRequest(GetRealSSHKKeyForGit.getDecodedKey(),200);
     }
 }
