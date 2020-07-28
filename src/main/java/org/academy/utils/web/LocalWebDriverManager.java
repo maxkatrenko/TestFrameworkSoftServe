@@ -45,14 +45,16 @@ public class LocalWebDriverManager {
                 RemoteWebDriver driver = null;
                 try {
                     driver = new RemoteWebDriver(
-                            URI.create("http://172.17.0.2:4444/wd/hub").toURL(),
+                            URI.create("http://127.17.0.2:4444/wd/hub").toURL(),
                             capabilities
                     );
                 } catch (MalformedURLException e) {
                     e.printStackTrace();
                 }
-                driver.manage().timeouts().implicitlyWait(40000, TimeUnit.MILLISECONDS);
-                driver.manage().window().maximize();
+                if (driver != null) {
+                    driver.manage().timeouts().implicitlyWait(40000, TimeUnit.MILLISECONDS);
+                    driver.manage().window().maximize();
+                }
                 return driver;
 
             case "chrome_remote_selenium":
@@ -63,8 +65,11 @@ public class LocalWebDriverManager {
                 } catch (MalformedURLException e) {
                     e.printStackTrace();
                 }
-                wdriver.manage().timeouts().implicitlyWait(40000, TimeUnit.MILLISECONDS);
-                wdriver.manage().window().maximize();
+                if (wdriver != null) {
+                    wdriver.manage().timeouts().implicitlyWait(40000, TimeUnit.MILLISECONDS);
+                    wdriver.manage().window().maximize();
+                }
+
                 return wdriver;
         }
     }
