@@ -61,7 +61,7 @@ public class LocalWebDriverManager {
                 DesiredCapabilities caps = DesiredCapabilities.chrome();
                 RemoteWebDriver wdriver = null;
                 try {
-                    wdriver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), caps);
+                    wdriver = new RemoteWebDriver(new URL("http://172.17.0.3:4444/wd/hub"), caps);
                 } catch (MalformedURLException e) {
                     e.printStackTrace();
                 }
