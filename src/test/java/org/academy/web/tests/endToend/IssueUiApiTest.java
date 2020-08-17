@@ -1,4 +1,4 @@
-package org.academy.web.endToend;
+package org.academy.web.tests.endToend;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
