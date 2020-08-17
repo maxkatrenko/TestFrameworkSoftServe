@@ -1,4 +1,4 @@
-package org.academy.web.demo4pages;
+package org.academy.web.pages;
 
 import org.academy.web.AbstractPage;
 import org.openqa.selenium.WebDriver;

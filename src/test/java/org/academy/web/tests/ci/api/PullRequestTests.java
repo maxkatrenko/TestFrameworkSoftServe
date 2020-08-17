@@ -9,6 +9,6 @@ public class PullRequestTests {
 
     @Test
     public void getAllPullRequests() {
-        pullRequestRequests.getAllPRRequest(GetRealSSHKKeyForGit.getDecodedKey(),200);
+        pullRequestRequests.getAllPRRequest(GetRealSSHKKeyForGit.getDecodedKey(), 200);
     }
 }
