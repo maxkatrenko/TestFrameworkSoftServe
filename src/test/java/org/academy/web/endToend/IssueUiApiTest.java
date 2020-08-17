@@ -1,4 +1,4 @@
-package org.academy.demo4.myrepo;
+package org.academy.web.endToend;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -7,9 +7,9 @@ import org.academy.TestConfigurations;
 import org.academy.api.pojo.IssuePojo;
 import org.academy.api.requests.IssueRequests;
 import org.academy.utils.web.AbstractWebDriver;
-import org.academy.web.demo4pages.BasePage;
-import org.academy.web.demo4pages.IssuesInRepoPage;
-import org.academy.web.demo4pages.MainPage;
+import org.academy.web.pages.BasePage;
+import org.academy.web.pages.IssuesInRepoPage;
+import org.academy.web.pages.MainPage;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -56,7 +56,7 @@ public class IssueUiApiTest extends AbstractWebDriver {
 
         boolean isIssuePresent =
                 basePage.clickOnRepositoryLink()
-                        .clickOnIssuesInRepoLink()
+                        .clickOnIssuesInRepo()
                         .checkIsIssuePresentByName(nameOfIssue);
         Assert.assertTrue(isIssuePresent);
 

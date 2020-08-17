@@ -8,8 +8,6 @@ import org.academy.utils.GetRealSSHKKeyForGit;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.util.Base64;
-
 public class RepositoryTest {
 
     private final RepositoryRequests repositoryRequests = new RepositoryRequests();
