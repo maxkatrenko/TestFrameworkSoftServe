@@ -2,8 +2,7 @@
 <suite name="Test suite">
     <test name="Tests">
         <packages>
-            <package name="org.academy.web.tests.ci.ui"/>
-            <package name="org.academy.web.tests.ci.api"/>
+            <package name="org.academy.web.tests"/>
         </packages>
     </test>
 </suite>
